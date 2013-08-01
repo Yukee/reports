@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+%% user-defined commands 
+\newcommand\Chapter[2]{
+  \chapter[#1: {\itshape#2}]{#1\\[2ex]\Large\itshape#2}
+}
+
+\author{Nicolas Macé}
+\title{Segregation effects in a granular free-surface flow}
+\begin{document}
+
+\Chapter{General presentation}{What is a granular material?}
+
+\section{A polymorphic object}
+
+A granular material is a system composed of a huge number of small interaction units, called \textit{grains}. 
+To understand this definition, we need to explain exactly how \textit{huge} we expect the number of grains to be, and exactly how \textit{small} we expect the grains to be.
+
+By "a huge number of grains", we mean a number so huge that we can start using macroscopic quantities to describe the collection of grains. In other words, we want to be able to see the collection of grains as a whole, which we will call \textit{the} granular material.
+What is a typical number of grains in a granular material? TO answer this question, it is perhaps useful to look at some examples.
+A collective behaviour can be observed, either by direct observations or by finite-elements simulations CIT in a pile of sand of only DAT grains.
+We know from our daily morning experiments that we can consider the sugar we pour in our tea or our coffee as a granular flow, whereas it is only constituted of DAT grains.
+During this report, we will talk a lot about an experiment implying a granular flow of roughly DAT huge grains.
+We see that this "huge number" can be surprisingly small compared for example to the number of molecules in one cubic meter of air ($10^{25}$ molecules at usual temperature and pressure), or even to the number of water molecules in a water droplet ($10^{15}$ in a $500$ $\mu m$ diameter droplet).
+
+Now, what do we mean by "small grains"?
+In fact, this number can be surprisingly large!
+Examples: cereal silos DAT (mm). Pyroclastic flows DAT (cm). Debris avalanche DAT (m). 
+In our case: DAT (cm).
+At such scales, gravity plays an important role and in fact, gravitational and contact forces are of comparable intensity. This situation is totally impossible in a gas or in a liquid. A water molecule for example, is so small that its individual behaviour in dictated mainly by Van der Walls forces.
+The gravitational forces on a grain may force it to stop, or prevent it from moving (accordingly to Coulomb's friction law).
+This is a situation we all experienced when pouring down some sugar. At first, the sugar refuses to flow. This is because the existence of important frictions between grains, driven by gravity. 
+In those situations, the granular material can be seen as a solid body.
+When flowing, the material behaves in a liquid-like fashion. But we can already note some essential differences with a flowing  liquid: a granular flow can go down a slope slipping while the layer of liquid the closest to the base of the inclined plan is not slipping. This is once again a consequence of the no-so-small size of the grains. Those lying against the base are slipping because they are pulled down by gravity. 
+On the other hand, gravitational forces on water molecules of the external layer are neglectables compared to Van der Walls forces. 
+Finally, a granular material can behave as a gas in some very special situations. It is the case of the sand in a sand storm, or of the snow particles forming the upper, dilute layer of a snow avalanche. In these cases forces exerted by the flow of air on the grains are so intense that gravitational effects are neglectables. 
+Those granular materials have the properties of a gas. One can for example define the "temperature" of such a material CIT.
+
+\end{document}
