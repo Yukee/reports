@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%Gummi|061|=)
+\title{\textbf{Partial densities}}
+\author{Nicolas}
+\date{}
+\begin{document}
+
+\maketitle
+
+One \footnote{Gray and Thornton, 2005, A theory for particle size segregation in shallow granular free-surface flows} of the papers you gave me to read at the beginning of my internship presents a derivation of the segregation equation I used extensively during my internship. 
+So I think about including this derivation in my internship report. 
+Therefore I read through the paper. The derivation is very easy to understand and to explain (no use of complicated statistical mechanics here!), but there's something I can't figure out: what exactly is a \textit{partial density}?
+
+Let me sum up what I understood. We work with a mixture of two constituents, let's say small and large particles, labelled with $s$ and $l$ superscripts.
+We have a mass and a momentum balance for each one of the two constituents. 
+In this balances we will have \textit{partial} quantities: partial velocities, partial pressures, partial densities. 
+I imagine the partial velocity is the velocity of the constituent. I also guess that partial pressure, let's say for the smalls $s$, is the pressure we would measure if the larges weren't there. 
+But I can't think of a similar definition for the partial density. 
+At first I thought that it was defined as (still for smalls)
+\[
+\rho^s = n^s m^s
+\]
+were $n^s$ is the number of small particles per unit of volume. That is, if we take a small volume $d\tau$ in the neighbourhood of $x$, and if $dN^s$ is the number of small particles in this volume,
+\[
+n^s(x) = \frac{dN^s}{d\tau}
+\]
+
+This definition seemed reasonable to me because then we have
+\[
+\rho^s + \rho^l = \frac{ dN^s m^s + dN^l m^l }{d\tau} 
+= \frac{dN}{d\tau}\bar{m} = \rho
+\]
+
+The trouble is, in the paper they use
+\[
+\rho^s = \phi^s \rho
+\]
+where $\phi^s$ is the volume fraction occupied by smalls, that is $\phi^s = dn^s/(dn^s + dn^l)$.
+Using my guess for $\rho^s$, we have
+\[
+\rho^s = n^s m^s = \frac{dn^s}{dn^s + dn^l} \frac{dn^s + dn^l}{d\tau} m^s = \phi^s \frac{dn^s + dn^l}{d\tau} m^s
+\]
+but $m^s (dn^s + dn^l)/d\tau = \rho$ only if $m^s = m^l$, which is obviously not true!
+So, do you have an idea of the right definition of partial densities? Or do you spot any mistake in my reasoning?
+
+Sadly there's no clue in the article. However 2 articles are cited in connection with partial quantities and mixture theory\footnote{Truesdell 1984 and Morland 1992, at the end of page 1449.}, but I can't read them, since I no longer have access to the uni's network :( 
+\end{document}
