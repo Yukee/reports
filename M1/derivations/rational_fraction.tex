@@ -11,7 +11,7 @@
 
 \section{Intro}
 
-We can deduce the particle paths (pp for short) from the velocity field using the cinematic equations for a particle in the flow:
+We can deduce the particle paths (pp for short) from the velocity field using the kinematic equations for a particle in the flow:
 \[
 \begin{pmatrix}
 	\frac{dx}{dt} \\
@@ -51,7 +51,7 @@ This ODE may seem "easy" to solve, but I can't figure it out, even in the follow
 
 The idea is to deduce the velocity field from the prescribed pp, instead of doing the contrary.
 Our first job is then to build a realistic set of pp. 
-In other words we would like to find a set of $z_a(x)$ where $a$ is parameter classifiying the pp.
+In other words we would like to find a set of $z_a(x)$ where $a$ is parameter classifying the pp.
 Given the shape of the wanted particle paths, it seems to be easier to construct $x_a(z)$ rather than $z_a(x)$.
 First we will define the parameter $a$. $a$ could be the height of the pp infinitely away form the head of the flow: $a = \text{lim}_{x \rightarrow -\infty} z(x) \doteq z_\infty$. We could also decide that $a$ will be the $x$ coordinate of the pp at which it "goes back" (\textit{ie} at the point where $dz/dx = - \infty$). 
 Let's call this point $x_0$.
@@ -68,7 +68,7 @@ Indeed we have
 	z(x_0) = z_0 \\
 \end{matrix}
 \]
-as expected. For now $z$ is a function as 3 parameters, but only one,$a$, is needed.
+as expected. For now $z$ is a function as 3 parameters, but only one, $a$, is needed.
 Let's for example express $z_\infty$ and $z_0$ as functions of $a = x_0$. I choose
 \[
 \begin{matrix}
@@ -88,7 +88,7 @@ This gives us the following pp:
 \end{figure}
 
 Note that $x_0$ varies from $0$ to $-1/\text{arctanh}(1/2)$ when $z_\infty$ goes from $0$ to $1/2$ (or from $1/2$ to $1$).
-Therefore the pp "go back" to $-\infty$ only close to the head, in the finite region of space $[-1/\text{arctanh}(1/2);0]$.
+Therefore the pp "go back" to $x = -\infty$ only close to the head, in the finite region of space $[-1/\text{arctanh}(1/2);0]$.
 I tend to think that the same thing happen with the velocity field of the flume paper, but this is only my feeling!
 
 \section{Velocity field}
@@ -98,8 +98,25 @@ Now our job is to derive the velocity field corresponding to these new pp, and t
 
 We have
 \[
-\frac{dz}{dx} = \frac{-(z_\infty - z_0)\left(1-\text{tanh}^2(-x+x_0)\right)}
+\frac{w}{u} = \frac{dz}{dx} = -\frac{(z_\infty - z_0)\left(1-\text{tanh}^2(-x+x_0)\right)}
 		{2\sqrt{\text{tanh}(-x+x_0)}}
 \]
-
+Note that 
+\[
+\begin{matrix}
+w  \xrightarrow[x \rightarrow -\infty]{} 0 \\
+u  \xrightarrow[x \rightarrow x_0]{} 0
+\end{matrix}
+\]
+as expected.
+$w/u$ does not seem to depend on $z$, but recall that $z_\infty$ and $z_0$ are functions of $x_0 = x_0(x,z)$.
+It is trivial to express $z$ as a function of $x$ and $x_0$, or $x$ as a function of $z$ and $x_0$:
+\[
+\begin{matrix}
+z(x, x_0) = z_0(x_0) + (z_\infty(x_0) - z_0(x_0)) \sqrt {\text{tanh} (-x + x_0)} \\
+x(z, x_0) = x_0 - \text{arctanh} \left[ \left( \frac{z - z_0(x_0)}{z_\infty(x_0) - z_0(x_0)} \right)^2 \right]
+\end{matrix}
+\]
+However, expressing $x_0$ as an explicit function of $x$ and $z$ seem difficult.
+Therefore it seems unlikely that we can have an explicit expression for $u$ and $w$ using these pp.
 \end{document}

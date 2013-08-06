@@ -45,4 +45,27 @@ but $m^s (dn^s + dn^l)/d\tau = \rho$ only if $m^s = m^l$, which is obviously not
 So, do you have an idea of the right definition of partial densities? Or do you spot any mistake in my reasoning?
 
 Sadly there's no clue in the article. However 2 articles are cited in connection with partial quantities and mixture theory\footnote{Truesdell 1984 and Morland 1992, at the end of page 1449.}, but I can't read them, since I no longer have access to the uni's network :( 
+
+\section{Corrections}
+
+Okay, so I was very wrong before. I can't believe I said that
+\[
+\phi^s = \frac{dn^s}{dn^s + dn^l}
+\]
+It is of course only true if the 2 constituents of the mixture have \textit{the same volume}.  But in that case, it's not really a mixture anymore!
+Otherwise,
+\[
+\phi^s = \frac{d\tau^s}{d\tau^s + d\tau^l} = \frac{d\tau^s}{d\tau}
+\]
+where $d\tau^\nu$ is the volume of $d\tau$ occupied by constituent $\nu$. 
+
+And now, if we call $\rho^{*\nu}$ the intrinsic density of constituent $\nu$, and if we neglect the effect of the interstitial fluid (or if we incorporate it into one of the 2 phases),
+\[
+\rho = \frac{d\tau^s \rho^{*s} + d\tau^l \rho^{*l}}{d\tau} = \rho^s + \rho^l
+\]
+thus we have 
+\[
+\rho^\nu = \frac{d\tau^\nu}{d\tau} \rho^{*nu} = \phi^\nu \rho^{*\nu}
+\]
+as in the paper. Yeah! It finally makes sense to me...
 \end{document}

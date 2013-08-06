@@ -4,9 +4,12 @@
 \title{\textbf{Segregation theory}}
 \author{Nicolas}
 \date{}
+\usepackage{amsmath}
 \begin{document}
 
 \chapter{Segregation theory}
+
+\section{Physical context}
 
 In this appendix, I will give a simple derivation of the equation we used to model the segregation process taking place in granular flows.
 
@@ -16,4 +19,74 @@ As usual, we model the granular flow using the tools of continuum mechanics.
 The idea is to see the set of large particles in the material as a matrix through the holes of which small particles can fall. 
 If the material is a still, initially homogeneous mixture of small and large particles, it will partially segregate (FIG: leaving the uppermost layers full of large particles, the lowermost full of small particles.). In this case middle layers are a mixture of small and large particles.
 If the material is a flowing, initially homogeneous mixture of small and large particles, it will completely segregate (FIG). This is because as the material flows down the slope, the local void ratio of the large particles matrix fluctuate, causing small to fall into newly opening gaps. The result is a progressive migration of small particles to the bottom. Because of force imbalance, large particles are pushed upward as small particles go downward. In the end, the material is constituted of a layer of pure large particles topping a layer of pure small particles.
+
+\section{Derivation of the segregation equation}
+
+Let us start by writing down the momentum and force balances for each one of the 2 constituents
+
+\begin{equation} \label{eq:mom_bal}
+	\partial_t \rho^\nu u_i^\nu + \partial_j \rho^\nu u_i^\nu u_j^\nu = -\partial_i p^\nu + \rho^\nu g_i + \beta^\nu_i 
+\end{equation}
+where
+\begin{itemize}
+\item $\rho^\nu$ is the density of the constituent $\nu$, ie the mass of constituent $\nu$ per unit volume:
+
+\[
+\rho^\nu = n^\nu m^\nu
+\]
+where $m^\nu$ is the mass of a particle of the constituent $\nu$ and $n^\nu$ the number of particles of the constituent $\nu$ per unit volume
+Note that if $d\tau$ is a small volume, $d\tau^\nu$ the fraction of this small volume occupied by the constituent $\nu$, and $\rho^{*\nu}$ the intrinsic density of constituent $\nu$, 
+
+\[
+\rho^\nu = \frac{d\tau^\nu}{d\tau} \rho^{*\nu} = \phi^{\nu} \rho^{*\nu}
+\]
+$\phi^\nu$ is called the \textit{volume fraction} of constituent $\nu$. This expression for $\rho^\nu$ will be useful later.
+
+\[
+\rho^s + \rho^l = \frac{d\tau^s + d\tau^l}{d\tau} = \rho
+\]
+
+\item $u^\nu$ is the velocity of constituent $\nu$ averaged on the volume $d\tau$
+
+\item $p^\nu$ is the partial pressure of the constituent $\nu$. For convenience we will define $f^\nu$ as
+\begin{equation}
+p^\nu = f^\nu p
+\end{equation}
+
+\item $\beta^\nu$ is the force exerted by the other constituent on the constituent $\nu$.
+\end{itemize}
+
+We assume that each constituent has the same intrinsic density: $\rho^{*s}=\rho^{*l}=\rho$. This is usually a good approximation for granular materials. In our case, DAT.
+
+We can consider the set of large particles as a matrix inside the holes of which small particles are percolating (flowing downwards).
+It is as if small particles were flowing through a porous medium. In that case, we know that the force exerted by the medium on the particles is 
+\begin{equation}
+\beta^s = p \partial_i f^s - \rho^s c (u^s_i - u_i)
+\end{equation}
+this form for $\beta$ is known as Darcy's law, and is frequently used, for example to model the percolation of water through sand.
+
+Symmetrically, we can consider the set of small particles as a matric inside which large particles are percolation (upwards, this time), and we have
+\begin{equation}
+\beta^l = p \partial_i f^l - \rho^l c (u^l_i - u_i)
+\end{equation}
+
+Segregation is a gravity-induced effect. It will happen in the vertical direction. This means that if $w$ is the velocity component along vertical axis,
+\begin{align} \label{eq:vel_asump}
+u^\nu = u \\
+v^\nu = v \\
+w^\nu \neq w
+\end{align}
+It also follows from this asumption that 
+\begin{align} \label{eq:forces_asump}
+\beta^\nu_x = 0 \\
+\beta^\nu_y = 0 \\
+\beta^\nu_z \neq 0
+\end{align}
+In our case $w$ is not quite along vertical axis, because of the small angle $\theta$ the base of the inclined plan makes with the horizontal direction. 
+However, \cite{eq:vel_asump} and \cite{eq:forces_sump} are still valid to leading order.
+
+Thus, we will know focus on the component along $Oz$ of \cite{eq:mom_bal}:
+\begin{equation}
+	\partial_t \rho^\nu w^\nu + \partial_j \rho^\nu w^\nu u_j^\nu = -\partial_z \left( p f^\nu \right) + \rho^\nu g \cos \theta + \beta^\nu_z 
+\end{equation}
 \end{document}
