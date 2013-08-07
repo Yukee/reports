@@ -83,10 +83,13 @@ It also follows from this asumption that
 \beta^\nu_z \neq 0
 \end{align}
 In our case $w$ is not quite along vertical axis, because of the small angle $\theta$ the base of the inclined plan makes with the horizontal direction. 
-However, \cite{eq:vel_asump} and \cite{eq:forces_sump} are still valid to leading order.
+However, \cite{eq:vel_asump} and \cite{eq:forces_sump} are still valid at first order in $\theta$, so we will assume they still hold.
 
-Thus, we will know focus on the component along $Oz$ of \cite{eq:mom_bal}:
-\begin{equation}
-	\partial_t \rho^\nu w^\nu + \partial_j \rho^\nu w^\nu u_j^\nu = -\partial_z \left( p f^\nu \right) + \rho^\nu g \cos \theta + \beta^\nu_z 
+Thus, we will know focus on the projection along $Oz$ of \cite{eq:mom_bal}:
+\begin{equation} \cite{eq:z_proj}
+	\partial_t \rho^\nu w^\nu + \partial_j \rho^\nu w^\nu u_j^\nu = -\partial_z \left( p f^\nu \right) - \rho^\nu g \cos \theta + \beta^\nu_z 
 \end{equation}
+
+In shallow waters, vertical pressure gradient $ \partial_z p $ is approximately hydrostatic. This follows from the fact that acceleration in the $Oz$ direction is very small compared to vertical pressure gradient. 
+Let us see how it is that, in shallow waters, it is so. For the sake of simplicity we will assume that acceleration in the $Oy$ direction is zero: $ \partial_y v = 0 $. 
 \end{document}
