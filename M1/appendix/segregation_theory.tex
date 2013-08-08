@@ -5,6 +5,7 @@
 \author{Nicolas}
 \date{}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \newcommand{\om}[1]{\ensuremath{ \mathcal{O} \left( {#1} \right) }}
 \begin{document}
 
@@ -14,12 +15,12 @@
 
 In this appendix, I will give a simple derivation of the equation we used to model the segregation process taking place in granular flows.
 
-We consider a granular flow going down a slope (FIG). For the sake of simplicity, I will assume that the granular material is a mixture of small and large particles. This assumption is commonly made, since it simplifies greatly the equations, but still captures the essential physical features of segregation. For a more general theory, see CIT.
+We consider a granular flow going down a slope (FIG). For the sake of simplicity, I will assume that the granular material is a mixture of small and large particles. This assumption is commonly made, since it simplifies greatly the equations, but still captures the essential physical features of segregation. For a more general theory, see CIT. Through this section $s$ and $l$ superscripts will respectively refer to small and large particles. For example the mass of a small particle will be labelled $m^s$.
 As usual, we model the granular flow using the tools of continuum mechanics. 
 
 The idea is to see the set of large particles in the material as a matrix through the holes of which small particles can fall. 
 If the material is a still, initially homogeneous mixture of small and large particles, it will partially segregate (FIG: leaving the uppermost layers full of large particles, the lowermost full of small particles.). In this case middle layers are a mixture of small and large particles.
-If the material is a flowing, initially homogeneous mixture of small and large particles, it will completely segregate (FIG). This is because as the material flows down the slope, the local void ratio of the large particles matrix fluctuate, causing small to fall into newly opening gaps. The result is a progressive migration of small particles to the bottom. Because of force imbalance, large particles are pushed upward as small particles go downward. In the end, the material is constituted of a layer of pure large particles topping a layer of pure small particles.
+If the material is a flowing, initially homogeneous mixture of small and large particles, it will completely segregate (FIG). This is because as the material flows down the slope, the local void ratio of the large particles matrix fluctuate, causing small to fall into newly opening gaps. The result is a progressive migration of small particles to the bottom. Because of force imbalance, large particles are pushed upward as small particles go downward. After some time, the material will be constituted of a layer of large particles topping a layer of small particles.
 
 \section{Derivation of the segregation equation}
 
@@ -30,7 +31,7 @@ Let us start by writing down the momentum and force balances for each one of the
 \end{equation}
 where
 \begin{itemize}
-\item $\rho^\nu$ is the density of the constituent $\nu$, ie the mass of constituent $\nu$ per unit volume:
+\item $\rho^\nu$ is the density of the constituent $\nu$ ($\nu = s,l$), ie the mass of constituent $\nu$ per unit volume:
 
 \[
 \rho^\nu = n^\nu m^\nu
@@ -152,7 +153,7 @@ The pressure gradient is approximately hydrostatic, as announced, and the simpli
 \subsection{Chosing a form for $f^\nu$}
 
 Using \cite{eq:1},  \cite{eq:z_proj} can be rewritten as
-\begin{equation}
+\begin{equation} \label{eq:w}
 	\phi^\nu w^\nu = \phi^\nu w + (f^\nu - \phi^\nu) \frac{g}{c} \cos \theta
 \end{equation}
 We have $w^\nu$ as a function of $w$. We are almost done! We only need to specify the form of $f^\nu$.
@@ -170,4 +171,65 @@ Moreover, we know that if the material is composed only of small particles, or o
 f^\nu(\phi^s = 0, 1) = \phi^\nu
 \end{equation}
 Let us sum up what we know about $f^\nu$ graphically:
+\begin{figure}[htp] \label{fig:1}
+\centering
+\includegraphics[scale=0.9]{f_form.pdf}
+\caption{A possible form for $f^s$ and  $f^l$.}
+\label{}
+\end{figure}
+
+Of course the curves for $f^s$ and $f^l$ can be different. We only require that $f^s + f^l = 1$ and that $f^\nu(\phi^s = 0, 1) = \phi^\nu$. 
+
+The simplest form for the curves would be straight lines:
+\begin{equation}
+	f^\nu = \phi^\nu
+\end{equation}
+But in that case  using \cite{eq:w} we see that
+\begin{equation}
+	w^\nu = w
+\end{equation}
+So if the curves $f^\nu(\phi^s)$ are straight lines, there is no segregation!
+
+We can imagine expand $f^s$  and $f^l$ in powers of $\phi^s$, $\phi^l$.
+\begin{equation} \label{eq:expansion}
+	f^\nu = \underbrace{ \phi^\nu }_{\text{order 1}} + \underbrace{ A^\nu_1\phi^s \phi^l }_{\text{order 2}} + 
+	\underbrace{ A^\nu_{21} \phi^s (\phi^l)^2 + A^\nu_{22} (\phi^s)^2 \phi^l }_{\text{order 3}} + \text{ ... }
+\end{equation}
+We know that at order 1, there is no segregation effect. So we will expand $f$ up to order 2 in order to model segregation:
+\begin{equation}
+	f^\nu = \phi^\nu + A^\nu_1\phi^s \phi^l 
+\end{equation}
+since $f^s + f^l = 1$ we have 
+\begin{equation}
+	A^s_1 + A^l_1 = 0
+\end{equation}
+Let $B = -A^s_1$. We have
+\begin{align} \label{eq:forces_asump}
+f^s(\phi^s) = \phi^s - B \phi^s (1 - \phi^s) \\
+f^l(\phi^s) = 1-\phi^s + B \phi^s (1 - \phi^s) 
+\end{align}
+Using again \cite{eq:w} we obtain the vertical velocities for the small and large particles. They are respectively
+\begin{flalign}
+	w^s = w  - \frac{Bg\cos \theta}{c} (1-\phi^s) \\
+	w^l = w  + \frac{Bg\cos \theta}{c} \phi^s
+\end{flalign}
+Note that $q = Bg\cos \theta/c$ is the mean segregation velocity. The coefficients $B$ and $c$ are unknown, but $q$ can be measured directly experimentally (CIT).
+
+Substituting $w^s$ the mass balance equation for small particles, we obtain the so-called \textit{segregation equation} for small particles:
+\begin{equation}
+	\partial_t \phi^s + \partial_x u \phi^s + \partial_y v \phi^s + \partial_z w \phi^s - \partial_z q \phi^s(1-\phi^s) = 0
+\end{equation}
+Of course, we have a similar equation for large particles:
+\begin{equation}
+	\partial_t \phi^l + \partial_x u \phi^l + \partial_y v \phi^l + \partial_z w \phi^l + \partial_z q \phi^l(1-\phi^l) = 0
+\end{equation}
+\subsection{Additional remarks}
+
+Note that doing the transformation $B \leftarrow -B$ is equivalent to doing $g \leftarrow -g$, ie inverting the gravity. Moreover doing the transformation $\phi^s \leftarrow \phi^l$ is equivalent to exchanging the role of small and large particles. Also notice that
+\begin{equation}
+	f^\nu(\phi^l = 1 - \phi^s; -B) = f^\nu( \phi^s; B)
+\end{equation}
+That means that the "dual" physical system in which the role of large and small particles is exchanged and the gravity inverted behaves exactly as the normal one. Another way to put it is to say that a large particle in a medium of small ones will be subject to the same force as a small particle in a medium of large ones. Only the direction of the force will be changed. It is not clear at all that this symmetry between a system and its dual exists in real life granular media. 
+
+In fact, this symmetry is a special feature on the expansion at order 2 of \cite{eq:expansion}. At order 3, it disappears. Experiments and finite elements simulations (CIT) have shown that there is a slight violation of the symmetry between a system and its dual. A third order  theoretical model is currently developed to account for this effect and test its implications.
 \end{document}
