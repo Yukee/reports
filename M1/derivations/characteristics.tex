@@ -70,8 +70,16 @@ Using chain rule we have
 and since $\hphi$ is lying on the solution surface,
 \begin{flalign}
 \p{x}{s} = u \\
-\p{z}{s} = w - (1- 2 \phi)
+\p{z}{s} = w - (1- 2 \hphi)
 \end{flalign}
+Rather than using a parameter $s$, we can directly express $z$ as a function of $x$, and since 
+\begin{equation}
+	\p{z}{s} = \p{x}{s} \frac{d z}{d x} 
+\end{equation} 
+we have
+\begin{equation}
+	u \frac{d z}{d x} = w - (1- 2 \hphi)
+\end{equation}
 Secondly, conservation laws can easily be solved numerically with great accuracy. Solving numerically the problem gives us a useful insight (\cite{fig:1}).
 \begin{figure}[htp]
 \centering

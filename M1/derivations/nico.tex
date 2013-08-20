@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+%Gummi|061|=)
+\title{\textbf{The flume problem in the centre plane.}}
+\author{Nicolas}
+\date{}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\newcommand{\p}[2]{\ensuremath{\frac{\partial {#1}}{\partial {#2}}}}
+\newcommand{\tot}[2]{\ensuremath{\frac{d {#1}}{d {#2}}}}
+
+\newcommand{\hphi}{\ensuremath{\hat{\phi}}}
+\newcommand{\z}{\ensuremath{\zeta}}
+\newcommand{\x}{\ensuremath{\xi}}
+\newcommand{\zperp}{\ensuremath{\zeta^\perp}}
+\newcommand{\lam}{\ensuremath{\lambda}}
+
+\begin{document}
+
+\maketitle
+
+\section{Goal and idea}
+We want to solve the segregation equation
+\begin{equation} \label{eq:conservative_form}
+	\p{\phi}{t} + \p{u\phi}{x} + \p{v\phi}{y} + \p{w\phi}{z} - \p{\phi(1-\phi)}{z} = 0
+\end{equation}
+
+We are looking for a steady-state solution in the frame travelling at the (constant) speed of the front $u_F$. So by making the change of variable $ x \leftarrow x - u_F t$ we are left with
+
+\begin{equation}
+	\p{u\phi}{x} + \p{v\phi}{y} + \p{w\phi}{z} - \p{\phi(1-\phi)}{z} = 0
+\end{equation}
+We can make use of incompressibility, to take the velocity components out of the partial derivatives:
+\begin{equation}
+	u\p{\phi}{x} + v\p{\phi}{y} + w\p{\phi}{z} - \p{\phi(1-\phi)}{z} = 0
+\end{equation}
+and since $v = 0$ in the centre plane, we have
+\begin{equation} \label{eq:segreg}
+	u\p{\phi}{x} + w\p{\phi}{z} - \p{\phi(1-\phi)}{z} = 0
+\end{equation}
+Our goal is to find a solution of this equation, given the physical setup of the flume problem.
+
+\subsection{Method of the characteristics}
+We can rewrite \cite{eq:segreg} as 
+\begin{equation} \label{eq:carac_form}
+		u\p{\phi}{x} + w\p{\phi}{z} - (1 - 2\phi)\p{\phi}{z} = 0
+\end{equation}
+The steady-state solution is a function of 2 variables: $ \phi = \phi(x, z)$. So the solution can be seen as the surface $ \phi - \phi(x,z) = 0$ of the 3D space $(x, z, \phi)$. 
+Characteristics are curves $\phi = \hphi(x(s),z(s))$ lying on this surface, and verifying
+\begin{equation}
+	\frac{d \hphi}{d s} = 0
+\end{equation}
+Using chain rule we have 
+\begin{equation}
+	\p{x}{s} \p{\hphi}{x} + 
+	\p{z}{s}\p{\hphi}{z} = 0
+\end{equation} 
+and since $\hphi$ is lying on the solution surface,
+\begin{flalign}
+\p{x}{s} = u \\
+\p{z}{s} = w - (1- 2 \hphi)
+\end{flalign}
+Rather than using a parameter $s$, we can directly express $z$ as a function of $x$, and since 
+\begin{equation}
+	\p{z}{s} = \p{x}{s} \frac{d z}{d x} 
+\end{equation} 
+we have
+\begin{equation} \label{eq:charac}
+	u \frac{d z}{d x} = w - (1- 2 \hphi)
+\end{equation}
+
+This characteristic equation is exactly the one we have for a 2D problem\footnote{For example it is equation (2.6) in Thornton and Gray 2008, Breaking size segregation waves and particle recirculation in granular avalanches.}.
+It has proved useful for these 2D problems to remap the $z$ axis so that characteristic curves given by \cite{eq:charac} become straight lines.
+
+In the next section I will sum up how we tried to apply this method to ou 3D problem.
+
+\section{What we tried}
+
+\subsection{Changing the coordinates}
+
+In the 2D case, the idea was to remap the $z$ axis: 
+\begin{equation}
+	z \leftarrow \psi(x,z)
+\end{equation}
+Where $\psi$ is the stream function defined by 
+\begin{equation}
+	\begin{pmatrix}
+	\p{\psi}{x}\\
+	\p{\psi}{z} 
+\end{pmatrix}
+=
+	\begin{pmatrix}
+	-w\\
+	u 
+\end{pmatrix}
+\end{equation}
+
+Using the symmetry of second derivatives we see that the definition of $\psi$ implies
+\begin{equation}
+	\p{u}{x} + \p{w}{z} = 0
+\end{equation}
+which is the incompressibility condition for a 2D flow. Of course in 3D the incompressibility condition is
+\begin{equation}
+	\p{u}{x} + \p{v}{y} + \p{w}{z} = 0
+\end{equation}
+so we cannot define a stream function.
+We need to use another function to remap the $z$ axis.
+
+We notice that for a 2D stationary flow, the lines $\psi(x,z) = 0$ are the particle paths \footnote{Note that for a granular polydisperse flow, what we call "particle paths" are not the paths followed by actual particles. It is rather  the paths of hypothetical particles having their velocity equal to the bulk velocity.}.
+So in the 3D case, rather than remapping the $z$ axis with a stream function, which is impossible, we will just say that our new $z$ coordinate is a -for now- unknown function $\z(x,z)$ which is constant along particle paths.
+
+This property imply that
+\begin{equation}
+	\begin{pmatrix}
+	\p{\z}{x}\\
+	\p{\z}{z} 
+\end{pmatrix}
+\propto
+	\begin{pmatrix}
+	-w\\
+	u 
+\end{pmatrix}
+\end{equation}
+Let us call $\lam(x,z)$ the coefficient of proportionality. Of course if $\lam(x,z) = 1$ we have again
+\begin{equation}
+	\p{u}{x} + \p{w}{z} = 0
+\end{equation}
+so let us assume to begin with that $\lam$ is a function of $\zeta$ only : $\lam(x,z) = \hat{\lam}(\z)$
+
+Expressing the velocity components in terms of derivatives of $\z$ in the 3D incompressibility equation yields
+\begin{equation} \label{eq:lambda}
+	- \underbrace{  \left( u \p{}{x} + w\p{}{z}\right) }_{\equiv D^\perp}  \log \lam(x,z) + \p{v}{y} = 0
+\end{equation}
+The operator $D^\perp$ appearing in the formula above plays a particular role.
+Indeed if we call $\zperp$ the coordinate locally orthogonal to $\zeta$ we can easily see that
+\begin{equation}
+	D^\perp = u \p{}{x} + w\p{}{z} =\p{}{\zperp}
+\end{equation}
+so, if $\lam(x,z) = \hat{\lam}(\z)$ we have $D^\perp \hat \lam(\z) = 0$ and thus again
+\begin{equation}
+	\p{u}{x} + \p{w}{z} = 0
+\end{equation}
+
+Since making $\lam$ dependant or not on $\z$ does not have any impact on  \cite{eq:lambda} I am going to assume for now on that $\lam$ is not a function of $\z$. In the system of coordinates $(x, \z)$ I am going to define $\lam$ as a function of $x$ only : $\lam = \lam(x)$.
+In this system of coordinates, $D^\perp = u \p{}{x}$ and thus
+\begin{equation}
+	-u \tot{}{x} \log \lam + \p{v}{y} = 0
+\end{equation}
+
+Integrating this first order ODE will give us $\lam(x)$ up to an arbitrary integration constant. Knowing $\lam(x)$, we can in turn know $\z(x,z)$, again up to an integration constant, using
+\begin{equation}
+	\begin{pmatrix}
+	\p{\z}{x}\\
+	\p{\z}{z} 
+\end{pmatrix}
+=
+\lam(x)
+	\begin{pmatrix}
+	-w\\
+	u 
+\end{pmatrix}
+\end{equation}
+If we do that, we will have completely defined our change of coordinate $z \leftarrow \z$ and we will know it explicitly.
+But is it useful to do this change of coordinates? Does it make it easier to find the structure of the steady-state solution as in the 2D case? We will see that it is indeed the case in the next section.
+
+\subsection{Applying the change of coordinates to the segregation equation}
+After the change of coordinate, the segregation equation \cite{eq:segreg} becomes
+\begin{equation}
+	\p{\phi}{x} - \lam(x) \p{}{\z} \phi (1 - \phi) = 0
+\end{equation}
+This equation is exactly the one we have in the 2D case, after doing the change of coordinate $z \leftarrow \z(x,z)=\psi(x,z)$, except that in that case $\lam(x) = 1$.
+
+Let $\z = Z(x)$ be a characteristic curve. And let us call $\Phi$ the (constant) value of  $\phi(x,\z)$ along the characteristic curve. We have
+\begin{equation}
+	\tot{Z}{x} = - \lam(x) ( 1 - 2 \Phi)
+\end{equation}
+Because $\lam$ depends on $x$ characteristics are not straight lines, contrary to what happens in the 2D case. 
+At that point, Parmesh suggested that we remap also the $x$ axis : $x \leftarrow \x(x)$. 
+In this new system of coordinates, characteristics will be straight lines iff
+\begin{equation}
+	\tot{\x}{x} = \lam(x)
+\end{equation}
+and the segregation equation becomes
+\begin{equation}
+	\p{\phi}{\x} - \p{}{\z} \phi (1 - \phi) = 0
+\end{equation}
+\end{document}
