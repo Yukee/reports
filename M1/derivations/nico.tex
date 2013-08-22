@@ -41,24 +41,24 @@ and since $v = 0$ in the centre plane, we have
 Our goal is to find a solution of this equation, given the physical setup of the flume problem.
 
 \subsection{Method of the characteristics}
-We can rewrite \cite{eq:segreg} as 
+We can rewrite eq. (\ref{eq:segreg}) as 
 \begin{equation} \label{eq:carac_form}
 		u\p{\phi}{x} + w\p{\phi}{z} - (1 - 2\phi)\p{\phi}{z} = 0
 \end{equation}
 The steady-state solution is a function of 2 variables: $ \phi = \phi(x, z)$. So the solution can be seen as the surface $ \phi - \phi(x,z) = 0$ of the 3D space $(x, z, \phi)$. 
-Characteristics are curves $\phi = \hphi(x(s),z(s))$ lying on this surface, and verifying
+Characteristics are curves defined by $\phi = \Phi(x(s),z(s))$ lying on this surface, and verifying
 \begin{equation}
-	\frac{d \hphi}{d s} = 0
+	\frac{d \Phi}{d s} = 0
 \end{equation}
 Using chain rule we have 
 \begin{equation}
-	\p{x}{s} \p{\hphi}{x} + 
-	\p{z}{s}\p{\hphi}{z} = 0
+	\p{x}{s} \p{\Phi}{x} + 
+	\p{z}{s}\p{\Phi}{z} = 0
 \end{equation} 
-and since $\hphi$ is lying on the solution surface,
+and since $\Phi$ is lying on the solution surface,
 \begin{flalign}
 \p{x}{s} = u \\
-\p{z}{s} = w - (1- 2 \hphi)
+\p{z}{s} = w - (1- 2 \Phi)
 \end{flalign}
 Rather than using a parameter $s$, we can directly express $z$ as a function of $x$, and since 
 \begin{equation}
@@ -66,11 +66,11 @@ Rather than using a parameter $s$, we can directly express $z$ as a function of 
 \end{equation} 
 we have
 \begin{equation} \label{eq:charac}
-	u \frac{d z}{d x} = w - (1- 2 \hphi)
+	u \frac{d z}{d x} = w - (1- 2 \Phi)
 \end{equation}
 
 This characteristic equation is exactly the one we have for a 2D problem\footnote{For example it is equation (2.6) in Thornton and Gray 2008, Breaking size segregation waves and particle recirculation in granular avalanches.}.
-It has proved useful for these 2D problems to remap the $z$ axis so that characteristic curves given by \cite{eq:charac} become straight lines.
+It has proved useful for these 2D problems to remap the $z$ axis so that characteristic curves given by eq. (\ref{eq:charac}) become straight lines.
 
 In the next section I will sum up how we tried to apply this method to ou 3D problem.
 
@@ -106,7 +106,7 @@ which is the incompressibility condition for a 2D flow. Of course in 3D the inco
 so we cannot define a stream function.
 We need to use another function to remap the $z$ axis.
 
-We notice that for a 2D stationary flow, the lines $\psi(x,z) = 0$ are the particle paths \footnote{Note that for a granular polydisperse flow, what we call "particle paths" are not the paths followed by actual particles. It is rather  the paths of hypothetical particles having their velocity equal to the bulk velocity.}.
+We notice that for a 2D stationary flow, the lines $\psi(x,z) = 0$ are the particle paths\footnote{Note that for a granular polydisperse flow, what we call "particle paths" are not the paths followed by actual particles. It is rather  the paths of hypothetical particles having their velocity equal to the bulk velocity.}.
 So in the 3D case, rather than remapping the $z$ axis with a stream function, which is impossible, we will just say that our new $z$ coordinate is a -for now- unknown function $\z(x,z)$ which is constant along particle paths.
 
 This property imply that
@@ -132,7 +132,7 @@ Expressing the velocity components in terms of derivatives of $\z$ in the 3D inc
 	- \underbrace{  \left( u \p{}{x} + w\p{}{z}\right) }_{\equiv D^\perp}  \log \lam(x,z) + \p{v}{y} = 0
 \end{equation}
 The operator $D^\perp$ appearing in the formula above plays a particular role.
-Indeed if we call $\zperp$ the coordinate locally orthogonal to $\zeta$ we can easily see that
+Indeed if we call $\zperp$ a coordinate locally orthogonal to $\zeta$ we can easily see that
 \begin{equation}
 	D^\perp = u \p{}{x} + w\p{}{z} \propto \p{}{\zperp}
 \end{equation}
@@ -141,7 +141,7 @@ so, if $\lam(x,z) = \hat{\lam}(\z)$ we have $D^\perp \hat \lam(\z) = 0$ and thus
 	\p{u}{x} + \p{w}{z} = 0
 \end{equation}
 
-Since making $\lam$ dependant or not on $\z$ does not have any impact on  \cite{eq:lambda} I am going to assume for now on that $\lam$ is not a function of $\z$. In the system of coordinates $(x, \z)$ I am going to define $\lam$ as a function of $x$ only : $\lam = \lam(x)$.
+Since making $\lam$ dependant or not on $\z$ does not have any impact on  eq. (\ref{eq:lambda}) I am going to assume for now on that $\lam$ is not a function of $\z$. In the system of coordinates $(x, \z)$ I am going to define $\lam$ as a function of $x$ only : $\lam = \lam(x)$.
 In this system of coordinates, $D^\perp = u \p{}{x}$ and thus
 \begin{equation}
 	-u \tot{}{x} \log \lam + \p{v}{y} = 0
@@ -165,7 +165,7 @@ But is it useful to do this change of coordinates? Does it make it easier to fin
 
 \subsection{Applying the change of coordinates to the segregation equation}
 
-After the change of coordinate, the segregation equation \cite{eq:segreg} becomes
+After the change of coordinate, the segregation equation (\ref{eq:segreg}) becomes
 \begin{equation}
 	\p{\phi}{x} - \lam(x) \p{}{\z} \phi (1 - \phi) = 0
 \end{equation}
@@ -240,7 +240,7 @@ but this implies finding the particle paths first, ie solving the ODE
 \end{equation}
 which seems equally difficult.
 \item find a simpler velocity field. I think what makes the equations hard to solve is the fact that the flow height is the coexistence of hyperbolic functions of $x$ and linear functions of $z$.
-By replacing the hyperbolic height profile $h(x) = W \sqrt{ \text{tanh}(-x/H)}$ by a linear one $h(x) = - x/ (W - x) $ one can end up with differential equations only involving linear functions of $x$ and $z$, while preserving the spiral structure of the solution (see fig \cite{fig:2}).
+By replacing the hyperbolic height profile $h(x) = W \sqrt{ \text{tanh}(-x/H)}$ by a linear one $h(x) = - x/ (W - x) $ one can end up with differential equations only involving linear functions of $x$ and $z$, while preserving the spiral structure of the solution (see fig (\ref{fig:2})).
 This new profile indeed simplifies the expressions for velocity components a great deal, but I think it is still not possible to find the change a variable.
 \item instead of prescribing the velocity field and try to find the change of variables, or the particle paths, prescribe the particle paths, and deduce the velocity field from that. It is what I will talk about in the next section.
 \end{itemize} 
@@ -282,7 +282,7 @@ This ODE may seem "easy" to solve, but I can't figure it out, even in the simple
  \]
  
  
-\section{Particle paths}
+\subsubsection{Particle paths}
 
 The idea is to deduce the velocity field from the prescribed pp, instead of doing the contrary.
 Our first job is then to build a realistic set of pp. 
@@ -326,7 +326,7 @@ Note that $x_0$ varies from $0$ to $-1/\text{arctanh}(1/2)$ when $z_\infty$ goes
 Therefore the pp "go back" to $x = -\infty$ only close to the head, in the finite region of space $[-1/\text{arctanh}(1/2);0]$.
 I tend to think that the same thing happen with the velocity field of the flume paper, but this is only my feeling!
 
-\section{Velocity field}
+\subsubsection{Velocity field}
 
 These pp seem rather similar to the one given by the velocity field used in the flume paper.
 Now our job is to derive the velocity field corresponding to these new pp, and to inject it into our numerical solver to check if the desired spiralling structure will appear.
@@ -353,16 +353,16 @@ x(z, x_0) = x_0 - \text{arctanh} \left[ \left( \frac{z - z_0(x_0)}{z_\infty(x_0)
 \end{matrix}
 \]
 However, expressing $x_0$ as an explicit function of $x$ and $z$ seem difficult.
-Therefore it seems unlikely that we can have an explicit expression for $u$ and $w$ using these pp. However it is not hard to evaluate numerically $u$ and $w$. So what I would like to do if I had some time would be to do a numerical simulation using the numerically evaluated $u$ and $w$ to seem if we can observe the spiralling structure, as I believe we will. I would also like to try thinking of a simpler expression for the pp, a one simple enough to make it possible to have $u$ and $w$ explicitly. I believe it is not hard to find one. 
+Therefore it seems unlikely that we can have an explicit expression for $u$ and $w$ using these pp. However it is not hard to evaluate numerically $u$ and $w$. So what I would like to do if I have some time would be to do a numerical simulation using the numerically evaluated $u$ and $w$ to seem if we can observe the spiralling structure, as I believe we will. I would also like to try thinking of a simpler expression for the pp, a one simple enough to make it possible to have $u$ and $w$ explicitly. I believe it is not hard to find one. 
 
 \section{Conclusion}
 
 Despite of all of my efforts, I have not succeeded in describing analytically the structure of the steady-state solution for the flume problem in the 3D case. 
 For now, I cannot tell if trying to do this remap is a good idea or not.
 I think we should to take a closer look at the numerical solution.
-I think we need to understand better how to describe this spiral we observe in terms of characteristics, shock waves and rarefaction waves.
+I believe that we need to understand better how to describe this spiral we observe in terms of characteristics, shock waves and rarefaction waves. I also think prescribing directly the particle paths could be a good idea.
 
-I also think prescribing directly the particle paths could be a good idea. I am confident that in the end someone will describe this spiralling structure, because it seems universal. It always appear in the computations I ran, with very different velocity profiles. In my opinion it is sufficient to have $\partial v / \partial y \neq 0$ to observe this structure. I think that "forcing" the flow height to go to $0$ at $x=0$ is not required to observe it, though I have not tried not to do that.
+ I am confident that in the end someone will describe this spiralling structure, because it seems universal. It always appear in the computations I ran, with very different velocity profiles. In my opinion it is sufficient to have $\partial v / \partial y \neq 0$ to observe this structure. I think that "forcing" the flow height to go to $0$ at $x=0$ is not required to observe it, though I have not tried not to do that.
 
 What I would like to do next - if my internship was not over! It is a shame I had not the idea to look at this problem earlier, it really is an interesting one! - would be to try obtaining this spiral with the most simple setup: a constant flow height $H$, $w=v=0$, $ u ( x = 0 ) = - u ( x = H ) $ and $\partial v / \partial y \neq 0$ at some point in the flow, for example around $x = 0$.
 Hopefully we will still have the spiral in that case, and it will be easier to understand what is going on!
