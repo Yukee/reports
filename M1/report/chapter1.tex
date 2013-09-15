@@ -1,0 +1,142 @@
+
+
+\Chapter{General presentation}{What is a granular material?}
+
+\section{Granular materials and granular flows}
+
+\epigraph{In the top of an hourglass, sand is this strange solid. It's at the verge of being a solid, it flows through the middle as something like a liquid, and then it is a solid again.}{H. M. Jaeger}
+
+As exemplified by Jaeger, granular materials such as sand often behave in a liquid-like fashion: they flow, they take the form of their container and they have an horizontal surface. However they are far from being liquids. For example sand falling to the bottom of the hourglass forms a pile, not a flat liquid-like surface.
+This is because a granular material is highly dissipative. When receiving some energy it tends to disperse it rather than conserve it. This is why it takes a significant amount of energy to make a granular material flow like a liquid. Moreover as this energy is constantly dispersed inside the material, one has to continuously bring energy to the material in order to keep it flowing. 
+At low speeds, grains tend to assemble and cause the flow to stop suddenly. This can be seen as a phase transition called the jamming transition.
+These two effects, jamming and dispersion, are consequences of the relatively large size of the grains forming a granular material. Smaller grains would be able to reach thermal equilibrium thus behaving like a liquid or a gas.
+
+In fact, a granular material is by definition composed of grains sufficiently large not to be able to reach thermal equilibrium, or to be subject to brownian motion. Grains are by definition interacting only by friction and collision\footnote{Smaller particles like powders or colloids are subject to other forces, namely Van der Waals forces or brownian motion forces.}.
+This is why the smallest grains have a typical radius of $100$ micrometers.
+There is no upper bound for the grains' radius. Ice floes forming the polar ocean's ice cap ranging from a few metres to several kilometres can be seen as the giant grains of a granular material \cite{ice}.
+
+The most spectacular examples of granular flow are probably debris and pyroclastic flows.
+Debris flows usually occur in mountains, after a forest fire followed by intense rainfall. The soil is then covered in ashes turning into mud because of the addition of rainwater. The muds begin sliding, carrying with it logs, branches, boulders and even entire trees. All these objects can be seen as grains, though they are of very different shapes and sizes. We will see later that the existence of different sizes of grains in a granular material lead to a spectacular effect called segregation.
+Pyroclastic flows occur during or shortly after a volcanic explosive eruption. The mixture of rocks and hot gases ejected by the volcano goes down its flanks at high speeds, reaching the base after a few minutes.
+
+It is not surprising that many examples of granular flows are found in industry. After all, sand is the second most used material by human beings after water. 
+Apart from sand, one can observe granular flows in cereal or powder silos, or in various pharmaceutical production lines.
+
+\section{Modelling a granular flow}
+
+Because a granular material is a highly dissipative system, it will often not be able to explore all of its accessible phase space. Instead of reaching its equilibrium state, it will dwell into a metastable state.
+This make it difficult to describe using the tools of statistical mechanics. For example, doing an ensemble average over all accessible configurations of the system is not possible.
+Since a granular flow resembles a liquid flow, it will be appropriate to use the tools a fluid mechanics to describe it. This it what we will do in this report.
+
+More precisely, we will make use of the \textit{fluid description} used in fluid mechanics. That is, we make the approximation that the discrete collection of grains can be described by continuous quantities such as pressure, velocity, ... 
+To this aim, we define continuous quantities describing the granular flow as a mean over a volume of grains sufficiently small to be considered infinitesimal, but sufficiently large for the quantities to be independent of local random fluctuations. 
+A volume verifying these properties is called a control volume. 
+For example, the velocity of the granular material at point $x$ will be defined as the average grains velocity in a small control volume centred at $x$.
+
+Most experiments on granular flows are concerned on studying the behaviour of the grains while they go down an inclined plane. 
+Such a flow is typically only $20$ or $30$ grains high, so it is questionable that a control volume can be defined for such a system. In most cases,  however, results from computations using a fluid-like description are in good qualitative and quantitative agreement with experiments \cite{midi}.
+
+In fluid mechanics, the evolution of the velocity field is driven by the evolution of the pressure and force fields. It is the same for granular materials. Forces exerted on the grains are gravity and friction forces. Friction forces are of two types: the friction exerted on the grains by the bed the granular material is slipping on, and the friction exerted on the grains by their neighbours. The latter is modelled by a viscosity term.
+Contrary to classical fluids, a granular material will not flow if the base it is lying on is not sufficiently inclined. \cite{pouli2}. 
+
+This is modelled by a \textit{velocity-dependant} viscosity. This classifies granular flows as non-newtonian fluids. For granular flows, there is no general, universally valid theory. The velocity dependency of the viscosity term is devised experimentally. There is good hope, however, that we can use a reasonably general form for the viscosity. See for example \cite{pouli}.
+
+Another special feature of granular flows is segregation. Most of this report will focus on it. The following section is a general presentation of the segregation effect.
+
+\section{Segregation}
+
+\subsection{The effect}
+
+Segregation occurs in granular materials composed of grains of different sizes. What we call segregation is the counter-intuitive effect making the largest grains go to the top of the flow, and the small grains sink to the bottom of the flow. 
+It is sometimes called the "Brazil nut effect" because in a mixture of nuts, the Brazil nuts being the largest "grains", then tend to go at the surface. I personally prefer the appellation "muesli effect" since it is at play in our morning mueslis! We always find the largest "muesli particles" such as nuts or banana slices at the surface of our cereal bowl, and the smallest ones at the bottom. 
+
+We can explain qualitatively this effect in several ways. A natural way of seeing the segregation effect is to consider that the small particles will fall in the gaps opening between the large ones. Gaps open between large particles when some energy is brought to the system, for example when it is shaken, or when it is mixed with a spoon if it is a muesli mixture, or when it is sheered if it is a granular flow.
+
+But this explanation assumes that large particles are in a sufficient number to form a "matrix" through the holes of which the small grains can fall. 
+In a dilute mixture, when the large grains are no longer in a sufficient number to form a matrix, this point of view is not relevant. 
+In that case, the segregation effect can be explained considering that when some energy is brought to the system, small grains will slip between large ones, and so, by force imbalance, large grains will go upward.
+Because of the dissipation constantly occurring in granular media, this process is irreversible, and will progressively make large grains go to the surface.
+
+The net result of segregation is the \textit{advection} of small grains downwards, and the advection of large grains upwards. We will model this effect using an advection equation.
+
+\subsection{The advection equation}
+
+We are interested in modelling the segregation effect using the fewest possible hypotheses on our physical system. We will discuss in more detail the setup of the system we actually studied during my internship, in the next chapter. 
+For now, let us just assume that we have a granular flow, constituted of a mixture of two different grain types: small and large ones. This assumption is commonly made, since it simplifies greatly the equations, but still captures the essential physical features of segregation. For a more general theory, see \cite{3phase}.
+
+The quantity we are interested in modelling is the proportion of small grains $\phi^s(\bfr)$ and the proportion of large grains $\phi^l(\bfr)$ in the neighbourhood of $\bfr$. More precisely, if $d\tau$ is a small volume of granular material centred at position $\bfr$, and if $d\tau^s$ is the fraction of this volume occupied by small particles, and $d\tau^l$ the fraction occupied by large ones, we have
+\begin{align}
+	\phi^s = \frac{d\tau^s}{d\tau^l + d\tau^s} = \frac{d\tau^s}{d\tau }\\
+	\phi^l = \frac{d\tau^l}{d\tau}
+\end{align}
+Note that in this description, we implicitly neglect the effects of an interstitial fluid. We can focus on $\phi^s \equiv \phi$ and completely forget about $\phi^l$ since $\phi^l = 1 - \phi$. $\phi$ is a non-dimensional number but we will call it \textit{concentration of small particles}.
+Since the number of particles is a conserved quantity, so is the concentration $\phi$. Since the concentration of small particles is conserved in any volume $\mathcal{V}$ we have
+
+\begin{equation}
+	\tot{}{t} \int_\mathcal{V} \phi(\bfr) dr = 0
+\end{equation}
+We can transform this integral law into a differential law governing the evolution of $\phi$. This is a well known procedure, and the reader already familiar with it can skip the next section.
+
+Using the transport theorem,
+\begin{equation}
+	\tot{}{t} \int_\mathcal{V} \phi(\bfr) dr = \int_\mathcal{V} \p{}{t} \phi(\bfr) dr + \int_{\partial\mathcal{V}} \phi(\bfr) \mathbf{v}^s(\bfr) \cdot d \mathbf{S}
+\end{equation}
+where $\partial \mathcal{V}$ is the surface bounding the volume $\mathcal{V}$, $d\mathcal{S}$ an infinitesimal element of such a surface, and $\mathbf{v}^s$ the velocity of the small particles.
+Using Stoke's theorem,
+\begin{equation}
+	\int_{\partial\mathcal{V}} \phi(\bfr) \mathbf{v}^s(\bfr) \cdot d \mathbf{S} = \int_\mathcal{V} \nabla \cdot \left( \mathbf{v}^s \phi(r,t) \right) d\tau 
+\end{equation}
+
+Since this is true for any volume $\mathcal{V}$ we have
+\begin{equation}
+	\p{}{t}\phi + \nabla \cdot ( \mathbf{v}^s \phi ) = 0
+\end{equation}
+
+Now, what is $\vs$? We said it was the velocity of the small particles. More precisely, it is the \textit{average} velocity of the small particles enclosed in a small control volume $d\tau$. We can also define a velocity $\mathbf{v}$, which is defined as the averaged velocity of all particles enclosed on the control volume $d\tau$.
+It is sometimes called the bulk velocity.
+What is the relation between $\mathbf{v}$ and $\vs$? If all particles were small particles, of course we would have
+\begin{equation}
+	\mathbf{v} = \vs
+\end{equation}
+and of course no segregation effect will take place.
+If the segregation effect is not strong, we can treat it as a linear perturbation of the case without segregation:
+\begin{equation}
+	\vs = \mathbf{v} + \delta \textbf{v}^s
+\end{equation}
+We know that segregation occurs only in the vertical direction, ie
+\begin{align}
+	\delta v^s_x = 0 \\
+	\delta v^s_y = 0 
+\end{align}
+Moreover, we know that this small term $\delta \textbf{v}^s$ must be $0$ when all particles are small ones, but also that, symmetrically,  $\delta \textbf{v}^l = 0$ when all particles are large ones:
+\begin{align}
+	\delta \textbf{v}^s(\phi = 1) = 0 \\
+	\delta \textbf{v}^l(\phi = 0) = 0
+\end{align}
+So the simplest form for this term would be
+\begin{equation}
+	\delta \textbf{v}^s(\phi) = 
+	\begin{pmatrix}
+	0 \\
+	0 \\
+- q ( 1 - \phi ) \\
+\end{pmatrix}
+\end{equation}
+and for large particles:
+\begin{equation}
+	\delta \textbf{v}^l(\phi) = 
+	\begin{pmatrix}
+	0 \\
+	0 \\
+ q \phi \\
+\end{pmatrix}
+\end{equation}
+where $q$ is the mean segregation rate, measured experimentally.
+We will use this expression, from now on\footnote{For a more rigorous - but longer! - derivation, see appendix \ref{app:segreg}.}.
+
+We can now rewrite the conservation law in terms of $\mathbf{v}$ and $\delta \mathbf{v}^s$:
+\begin{equation}
+	\p{}{t} \phi + \p{}{x} u \phi + \p{}{y} v \phi + \p{}{z} w \phi - q \p{}{z} \phi( 1 - \phi) = 0
+\end{equation}
+This is the equation we will use to model the segregation effect. We will call it the \emph{segregation equation}.
+ 

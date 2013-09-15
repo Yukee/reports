@@ -1,0 +1,22 @@
+
+\Chapter{Conclusion}{}
+
+During this internship, I discovered a domain of physics I new nothing about before. 
+We are only beginning to understand the strange physics of granular materials, and it was exciting to be part of this adventure for a few weeks. I feel like I only scratched the surface of the subject, and yet I learned an enormous amount of physics, mathematical techniques and programming during my internship. 
+I learned about how to describe and model granular flows. I learned about the mathematical difficulties arising from these models\footnote{namely ill-posedness. I chose not to talk about it in this report, as it is not required to understand the segregation equation, which is the central equation studied during my internship.}. I also learned about the strange phenomenon of segregation, and how to model it. It is then that I read about the mathematical theory of hyperbolic partial differential equations, and how to solve this type of equations numerically.
+
+The main goal of my internship was to develop a code to solve the 3D segregation equation. 
+At the end, the code could be used to solve systems of hyperbolic equations
+\begin{equation}
+	\begin{matrix}
+	\p{}{t} u_1 + \sum_{i=1}^n \p{}{x_i} f_{1i}(\mathbf{u}, \mathbf{x}) = 0 \\
+	\vdots \\
+	\p{}{t} u_m + \sum_{i=1}^n \p{}{x_i} f_{mi}(\mathbf{u}, \mathbf{x}) = 0 \\
+\end{matrix}
+\end{equation}
+where $\mathbf u(t, \mathbf x)$ is the unknown $m$-dimensional field living in a $n$-dimensional space (in our case, it is the scalar field $\phi$ living in a 3D space). Since it is very general, one can use this code to solve a lot of different physical problems, and it will be re-used later on.
+
+During the last two weeks of my internship, I took interest in the theoretical side of the problem: namely, how to explain analytically the spiralling structure observed in the simulations and the experiments. Although I did not succeed in doing it, it was really interesting to learn how to solve hyperbolic equations. In particular, I was fascinated by the elegance of the change of coordinates used to solve 2D segregation equations, as detailed in appendix \ref{app:char}. 
+
+It was my job as an intern to do simulations and analytical computations. But I also had the great opportunity to toy with some of the small-scale granular experiments hosted in the University of Manchester. 
+This internship made me understand the fundamental importance of the interplay between experiments, simulations and analytical computations. 

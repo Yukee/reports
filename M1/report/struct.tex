@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, french]{babel} %français
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{listings}
+
+% citations	
+\usepackage{epigraph}
+\setlength\epigraphwidth{12cm}
+
+% subfigure
+\usepackage{caption}
+\usepackage{subcaption} 
+
+% hyperlinks
+%\usepackage{hyperref}
+\usepackage{url}
+
+
+
+%% user-defined commands 
+\newcommand\Chapter[2]{
+  \chapter[#1: {\itshape#2}]{#1\\[2ex]\Large\itshape#2}
+}
+\newcommand{\p}[2]{\ensuremath{\frac{\partial {#1}}{\partial {#2}}}}
+\newcommand{\tot}[2]{\ensuremath{\frac{d {#1}}{d {#2}}}}
+
+\newcommand{\vs}{\ensuremath{\mathbf{v}^s}}
+
+\newcommand{\bfr}{\ensuremath{\mathbf{r}}}
+
+\newcommand{\om}[1]{\ensuremath{ \mathcal{O} \left( {#1} \right) }}
+
+\newcommand{\ttt}[1]{ \texttt{#1} }
+
+\newcommand{\hphi}{\ensuremath{\hat{\phi}}}
+\newcommand{\z}{\ensuremath{\zeta}}
+\newcommand{\x}{\ensuremath{\xi}}
+\newcommand{\zperp}{\ensuremath{\zeta^\perp}}
+\newcommand{\lam}{\ensuremath{\lambda}}
+
+
+\begin{document}
+ 
+\input{title.tex}
+%\maketitle
+\tableofcontents
+ 
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+ 
+\appendix
+\input{appendix/segregation_theory.tex}
+\input{appendix/numerical_scheme.tex}
+\input{appendix/programming.tex}
+\input{appendix/characteristics.tex}
+ 
+% Bibliography:
+\clearpage
+\bibliography{bib/bib.bib}{}
+\bibliographystyle{plain}
+ 
+\end{document}
