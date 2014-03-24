@@ -1,0 +1,68 @@
+
+
+\Chapter{General presentation}{The Lifshitz model}
+
+\section{The Lifshitz action and its main features}
+
+\subsection{The Lifshitz action}
+
+The Lifshitz model aims at describing a number of physical many-body systems. They share a common intriguing feature: having a so called modulated - or stripped - phase. In this phase, the order parameter is spatially periodic in one or several directions of space. The subspace spanned by these direction will from now be labelled $\sslash$. The hyperplan orthogonal to this modulation direction will be labelled $\perp$.
+
+Typically, the phase diagram of such a physical system will resemble this one
+
+(figure to be drawn)
+
+where $\rho_0$ is a tunable parameter whose precise meaning depends on the physical nature of the studied system. We will however take for granted that it is a scalar.
+
+The Lifshitz model is a field theory, describing a vector field $\phi$ whose components will be denoted $\phi_i$. To write the action for the Lifshitz model, we chose a basis $(\mathbf{e_n})_{1 \leq n \leq d}$. We decide that this basis is such that its first $m$ vectors span the $m$ dimensional $\sslash$ subspace, while of course the remaining $d-m$ base vector span the $\perp$ subspace. In this basis, the Lifshitz action is
+\begin{equation}
+S = \int_x \sum_{i=1}^N \left( \frac{1}{2} \left(\sum_{n_\perp=m+1}^{d}\frac{\partial \phi_i}{\partial x_{n_\perp}} \mathbf{e_{n_\perp}}\right)^2 + \frac{\rho_0}{2} \left(\sum_{n_\sslash=1}^{m}\frac{\partial \phi_i}{\partial x_{n_\sslash}} \mathbf{e_{n_\sslash}}\right)^2 + \frac{\sigma_0}{2} \left(\sum_{n_\sslash=1}^{m} \frac{\partial^2 \phi_i}{\partial x_{n_\sslash}^2} \mathbf{e_{n_\sslash}}\right)^2 \right) + U(\phi)
+\end{equation}
+where $U$ is an almost completely arbitrary potential. We only ask for him to have the $O(N)$ symmetry, ie to be a function of
+\begin{equation}
+\rho \define \frac{\phi_i \phi_i}{2}
+\end{equation}
+From now on we will use the self-explanatory shorthand notation
+\begin{equation}
+S = \int_x \left( \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash} \phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho) \right)
+\end{equation}
+
+We see that this action closely ressemble the well known action of the $O(N)$ model
+\begin{equation}
+S_{O(N)} = \int_x \left( \frac{1}{2}(\partial \phi)^2 + U(\rho) \right)
+\end{equation}
+Namely, we recover it if we set $\rho_0 = 1$ and $\sigma_0 = 0$. We see that what differentiate the Lifshitz and $O(N)$ action is on one hand the presence a non trivial (\textit{ie} different from 1) $\rho_0$, breaking the $O(N)$ invariance, and on the other hand the presence of an extra term involving a laplacian squared. Clearly, these two modifications must be responsible for the appearance of spatially modulated structures, but why exactly? 
+We can gain a useful intuition of why a spatially modulated structure is closely linked to the existence of a laplacian squared term in the action by looking at a lattice version of our model. 
+
+\subsection{A discrete counterpart: the anisotropic Ising model}
+
+Strocto sensu the discrete counterpart of the Lifshitz model would be an anisotropic Heisenberg model, but to simplify things - without changing the essence of the argumentation - we consider an anisotropic Ising model instead.
+
+First, let us consider a chain of Ising spins with the Hamiltonian
+\begin{equation}
+H_{\text{chain}} = - J \sum_i S_i S_{i+1}
+\end{equation}
+We know that if $J$ is positive, the interaction is ferromagnetic, whereas is $J$ is negative, the interaction is antiferromegnetic. 
+The antiferromagnetic order already shows some kind of spatial modulation, but it only exists at zero temperature! 
+The idea to make a spatially modulated order survive at non zero temperatures is to consider a second neighbours \textit{antiferromagnetic} interaction, together with a first neighbours \textit{ferromagnetic} interaction:
+\begin{equation}
+H_{\text{chain}} = - J_1 \sum_i S_i S_{i+1} - J_2 \sum_i S_i S_{i+2}
+\end{equation}
+ The competition between ferromagnetic and antiferromagnetic interactions may well produce a spatial modulation of the spins at non zero temperatures, at least for some values of the interaction strenghts ratio $J_2/J_1$. However, for a long range order to exist at finite temperature, we need to work in two dimensions or more, \textit{ie} to trade our spin chain for a spin lattice:
+ \begin{equation}
+ H_{\text{lattice}} = - \sum_i \left( J_0 \sum_{\delta_\perp} S_i S_{i+\delta_\perp} + J_1 \sum_{\delta_\sslash} S_i S_{i+\delta_\sslash} + J_2 \sum_{\delta_\sslash} S_i S_{i+2 \delta_\sslash} \right)
+ \end{equation}
+ The existence of a stripped phase is a well known feature of this model \cite{ANNNI}, called the ANNNI (axial next-nearest neighbour Ising) model.
+ 
+ Now, what is the link between this discrete spin lattice hamiltonian, and our continuous action?
+First, note that a sum on nearest neighbours can be rewriten in terms of a discrete laplacian on the lattice, while a sum on next-nearest neighbours involves a discrete laplacian squared:
+\begin{equation}
+H_{\text{lattice}} = -\sum_i \left( \kappa S_i^2 + J_0 S_i \Delta_\perp S_i + (J_1 + 4 J_2) S_i \Delta_\sslash S_i - J_2 S_i \Delta_\sslash^2 S_i \right)
+\end{equation}
+with
+\begin{align}
+\Delta_\sslash S_i = \sum_{\delta_\sslash} S_{i-\delta_\sslash} - 2 S_i + S_{i+\delta_\sslash} \\
+\Delta_\sslash^2 S_i = \sum_{\delta_\sslash} -S_{i-2\delta_\sslash} +  4 S_{i-\delta_\sslash} - 4 S_i + 4S_{i+\delta_\sslash} - S_{i+2\delta_\sslash}
+\end{align}
+\section{Physical applications of the model}
+
