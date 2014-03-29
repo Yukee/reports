@@ -2,23 +2,66 @@
 
 \Chapter{General presentation}{The Lifshitz model}
 
-\section{The Lifshitz action and its main features}
+\section{The Lifshitz model and its main features}
 
-\subsection{The Lifshitz action}
+\subsection{The Lifshitz model}
 
-The Lifshitz model aims at describing a number of physical many-body systems. They share a common intriguing feature: having a so called modulated - or stripped - phase. In this phase, the order parameter is spatially periodic in one or several directions of space. The subspace spanned by these direction will from now be labelled $\sslash$. The hyperplan orthogonal to this modulation direction will be labelled $\perp$.
+\subsubsection{The modulated phase and the Lifshitz phase diagram.}
 
-Typically, the phase diagram of such a physical system will resemble this one
+\begin{figure}[htp]
+\centering
+\begin{subfigure}{.33\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/chap1/sol_Lif_t20.png}
+	\caption{}
+	\label{}
+	\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/chap1/sol_Lif_t60.png}
+	\caption{}
+	\label{}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/chap1/sol_Lif_t400.png}
+	\caption{}
+	\label{}
+\end{subfigure}
+\caption{Time evolution of a field obeying the equation of movement derived from the (time dependant) Lifshitz action. We see that the field evolves toward a modulated steady state.}
+\label{fig:evol_strip}
+\end{figure}
 
-(figure to be drawn)
+The Lifshitz model aims at describing a number of physical many-body systems. They share a common intriguing feature: having a so called modulated - or stripped - phase (fig. \ref{fig:evol_strip}). In this phase, the order parameter is spatially periodic in one or several directions of space. The subspace spanned by these direction will from now be labelled $\sslash$. The hyperplan orthogonal to this modulation subspace will be labelled $\perp$.
 
-where $\rho_0$ is a tunable parameter whose precise meaning depends on the physical nature of the studied system. We will however take for granted that it is a scalar.
+Typically, the phase diagram of such a physical system will resemble the one presented in fig. \ref{fig:phase_diagram}.
 
-The Lifshitz model is a field theory, describing a vector field $\phi$ whose components will be denoted $\phi_i$. To write the action for the Lifshitz model, we chose a basis $(\mathbf{e_n})_{1 \leq n \leq d}$. We decide that this basis is such that its first $m$ vectors span the $m$ dimensional $\sslash$ subspace, while of course the remaining $d-m$ base vector span the $\perp$ subspace. In this basis, the Lifshitz action is
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[scale=1]{img/chap1/phase_diagram_2.pdf}
+\caption{Typical phase diagram of a system described by the Lifshitz model. The Lifshitz point is labelled $L$. ``Para'', ``Ferro'' and ``Mod'' are the abreviations for `Paramagnetic'', ``Ferromagnetic'' and ``Modulated'' respectively. Temperature varies along the vertical axis while the horizontal axis accounts for the variation of an extra parameter $\rho_0$ whose precise meaning depends on the physical nature of the studied system.}
+\label{fig:phase_diagram}
+\end{center}
+\end{figure}
+
+A crucial feature of this phase diagram is the critical point ($L$ in fig. \ref{fig:phase_diagram}), called the Lifshitz point. 
+QUESTION : J'ai envie de dire que c'est l'un des rares exemples de point critique du second ordre qu'on trouve dans la nature, mais est-ce vrai ?
+The Lifshitz point is at the intersection of two \textit{second order} phase transition lines. This is very seldomly encountered in nature. Therefore, the study of this critical point, and more precisely the determinantion of the critical exponents at this point is of particular interest.
+
+Historically, the manganese phosphite (MnP) magnetic cristal was one of the first systems in which a Lifshitz point could be detected. Moreover, the entire phase diagram around the Lifshitz point of the MnP cristal could be inferred with high precision from experimental measurements \cite{MnP}.
+In the case of the MnP magnetic cristal, the $\rho_0$ tunable parameter is an external magnetic field applied to the cristal, while the order parameter  is the local magnetization of the atoms. In the modulated phase, it is the angle between the direction of the local magnetization and a direction of reference that is spatially modulated.
+
+Experiments also provide evidence of Lifshitz point existence in ferroelectrics and liquid cristals.
+
+\subsubsection{The Lifshitz model}
+
+The Lifshitz model is a field theory, describing a vector field $\phi$ whose components will be denoted $\phi_i$.
+If we like to think in terms of magnetic systems, like the MnP cristal, we can say that $\phi$ is the local magnetization.
+ To write the action for the Lifshitz model, we chose a basis $(\mathbf{e_n})_{1 \leq n \leq d}$. We decide that this basis is such that its first $m$ vectors span the $m$ dimensional $\sslash$ subspace, while of course the remaining $d-m$ base vector span the $\perp$ subspace. In this basis, the Lifshitz action is
 \begin{equation}
 S = \int_x \sum_{i=1}^N \left( \frac{1}{2} \left(\sum_{n_\perp=m+1}^{d}\frac{\partial \phi_i}{\partial x_{n_\perp}} \mathbf{e_{n_\perp}}\right)^2 + \frac{\rho_0}{2} \left(\sum_{n_\sslash=1}^{m}\frac{\partial \phi_i}{\partial x_{n_\sslash}} \mathbf{e_{n_\sslash}}\right)^2 + \frac{\sigma_0}{2} \left(\sum_{n_\sslash=1}^{m} \frac{\partial^2 \phi_i}{\partial x_{n_\sslash}^2} \mathbf{e_{n_\sslash}}\right)^2 \right) + U(\phi)
 \end{equation}
-where $U$ is an almost completely arbitrary potential. We only ask for him to have the $O(N)$ symmetry, ie to be a function of
+As we want to model the broadest possible class of physical systems, we will say that $U$ is an almost completely arbitrary potential. We only ask for it to have the $O(N)$ symmetry, ie to be a function of
 \begin{equation}
 \rho \define \frac{\phi_i \phi_i}{2}
 \end{equation}
@@ -32,15 +75,15 @@ We see that this action closely ressemble the well known action of the $O(N)$ mo
 S_{O(N)} = \int_x \left( \frac{1}{2}(\partial \phi)^2 + U(\rho) \right)
 \end{equation}
 Namely, we recover it if we set $\rho_0 = 1$ and $\sigma_0 = 0$. We see that what differentiate the Lifshitz and $O(N)$ action is on one hand the presence a non trivial (\textit{ie} different from 1) $\rho_0$, breaking the $O(N)$ invariance, and on the other hand the presence of an extra term involving a laplacian squared. Clearly, these two modifications must be responsible for the appearance of spatially modulated structures, but why exactly? 
-We can gain a useful intuition of why a spatially modulated structure is closely linked to the existence of a laplacian squared term in the action by looking at a lattice version of our model. 
+We can gain a useful intuition of why a spatially modulated structure is closely linked to the existence of a laplacian squared term in the action by looking at a microscopic version of our model. 
 
 \subsection{A discrete counterpart: the anisotropic Ising model}
 
-Strocto sensu the discrete counterpart of the Lifshitz model would be an anisotropic Heisenberg model, but to simplify things - without changing the essence of the argumentation - we consider an anisotropic Ising model instead.
+Stricto sensu the discrete counterpart of the Lifshitz model would be an anisotropic Heisenberg model, but to simplify things - without changing the essence of the argumentation - we consider an anisotropic Ising model instead.
 
 First, let us consider a chain of Ising spins with the Hamiltonian
 \begin{equation}
-H_{\text{chain}} = - J \sum_i S_i S_{i+1}
+H_{\text{chain}} \define - J \sum_i S_i S_{i+1}
 \end{equation}
 We know that if $J$ is positive, the interaction is ferromagnetic, whereas is $J$ is negative, the interaction is antiferromegnetic. 
 The antiferromagnetic order already shows some kind of spatial modulation, but it only exists at zero temperature! 
@@ -48,9 +91,9 @@ The idea to make a spatially modulated order survive at non zero temperatures is
 \begin{equation}
 H_{\text{chain}} = - J_1 \sum_i S_i S_{i+1} - J_2 \sum_i S_i S_{i+2}
 \end{equation}
- The competition between ferromagnetic and antiferromagnetic interactions may well produce a spatial modulation of the spins at non zero temperatures, at least for some values of the interaction strenghts ratio $J_2/J_1$. However, for a long range order to exist at finite temperature, we need to work in two dimensions or more, \textit{ie} to trade our spin chain for a spin lattice:
+ The competition between ferromagnetic and antiferromagnetic interactions will produce a spatial modulation of the spins at non zero temperatures, at least for some values of the interaction strenghts ratio $J_2/J_1$. However, for a long range order to exist at finite temperature, we need to work in two dimensions or more, \textit{ie} to trade our spin chain for a spin lattice:
  \begin{equation}
- H_{\text{lattice}} = - \sum_i \left( J_0 \sum_{\delta_\perp} S_i S_{i+\delta_\perp} + J_1 \sum_{\delta_\sslash} S_i S_{i+\delta_\sslash} + J_2 \sum_{\delta_\sslash} S_i S_{i+2 \delta_\sslash} \right)
+ H_{\text{lattice}} \define - \sum_i \left( J_0 \sum_{\delta_\perp} S_i S_{i+\delta_\perp} + J_1 \sum_{\delta_\sslash} S_i S_{i+\delta_\sslash} + J_2 \sum_{\delta_\sslash} S_i S_{i+2 \delta_\sslash} \right)
  \end{equation}
  The existence of a stripped phase is a well known feature of this model \cite{ANNNI}, called the ANNNI (axial next-nearest neighbour Ising) model.
  
@@ -59,10 +102,13 @@ First, note that a sum on nearest neighbours can be rewriten in terms of a discr
 \begin{equation}
 H_{\text{lattice}} = -\sum_i \left( \kappa S_i^2 + J_0 S_i \Delta_\perp S_i + (J_1 + 4 J_2) S_i \Delta_\sslash S_i - J_2 S_i \Delta_\sslash^2 S_i \right)
 \end{equation}
-with
+where we introduced the differencial operators on the lattice:
 \begin{align}
 \Delta_\sslash S_i = \sum_{\delta_\sslash} S_{i-\delta_\sslash} - 2 S_i + S_{i+\delta_\sslash} \\
 \Delta_\sslash^2 S_i = \sum_{\delta_\sslash} -S_{i-2\delta_\sslash} +  4 S_{i-\delta_\sslash} - 4 S_i + 4S_{i+\delta_\sslash} - S_{i+2\delta_\sslash}
 \end{align}
-\section{Physical applications of the model}
+This rewriting in terms of discrete differential operators makes it clear that this Hamiltonian is the discrete -microscopic- counterpart of the Lifshitz action. We now understand -at least intuitively- the origin of the spatially periodic structures (shown in fig. \ref{fig:evol_strip}) the Lifshitz field exhibit. They exist because of the competition bewtween \textit{nearest neightbours ferromagnetic interactions} (giving rise to the $\Delta_\sslash$ term in the Lifshitz action), and \textit{next-nearest neightbours antiferromagnetic interactions} (giving rise to the $\Delta_\sslash^2$ term in the Lifshitz action).
 
+At this point a question arises: why work with a Lifshitz coarse-grained field theory, since we have a better physical understanding of an underlying microscopic model? What is more, in passing to a continuous theory, we lose informations about the microscopic underlying lattice. 
+This is actually not a problem since the statistical quantities we are interested in computing -namely the critical exponents of the phase transition- are universal; they do not depend on the specific microscopic model. Actually, passing to a field theory is even advantageous as it frees us of the irrelevant microscopic details. 
+Even more crucial is the fact that field theories are the objects of choice for application of the powerful methods of the renormalization group, which we will now desribe.

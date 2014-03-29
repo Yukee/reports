@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{stmaryrd} % parallel symbol
+\usepackage{mathrsfs} % curly D symbol
 
 \usepackage{eso-pic}
 \newcommand\BackgroundPic{
@@ -50,9 +51,15 @@ keepaspectratio]{img/cover/cover_img.png}%
 \newcommand{\p}[1]{\partial_{#1}}
 \newcommand{\derivh}[2]{\ensuremath{\frac{d^{#2}}{d #1^{#2}}}}
 \newcommand{\deriv}[1]{\ensuremath{\frac{d}{d #1}}}
+\newcommand{\gam}{\ensuremath{\Gamma}} % shortcut for the uppercase gamma letter used everywhere
+\newcommand{\gamleg}{\ensuremath{\Gamma_k^{\text{Leg}}}} % Legendre effective action at scale k
+\newcommand{\gamlegtwo}{\ensuremath{\Gamma_k^{\text{Leg }(2)}}}
 
 % the triple equal sign I use to define something
 \newcommand{\define}{\ensuremath{ \overset{\text{def}}{=} }}
+
+% curly functional measure sign
+\newcommand{\D}{\ensuremath{ \mathscr{D} }}
 
 \begin{document}
  
@@ -61,12 +68,12 @@ keepaspectratio]{img/cover/cover_img.png}%
 \tableofcontents
  
 \input{chapter1.tex}
-%\input{chapter2.tex}
+\input{chapter2.tex}
 %\input{chapter3.tex}
 %\input{chapter4.tex}
  
 \appendix
-%\input{appendix/segregation_theory.tex}
+\input{appendix1_wetterich_equation.tex}
 %\input{appendix/numerical_scheme.tex}
 %\input{appendix/programming.tex}
 %\input{appendix/characteristics.tex}

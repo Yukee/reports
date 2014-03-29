@@ -1,0 +1,116 @@
+\chapter{Derivation of the Wetterich equation}
+
+We want to arrive at the formula,
+\begin{equation}
+\p{k} \gam_k = \frac{1}{2} \int_{x,y} R_k(x,y) \left( \gam^{(2)}_k(x,y) + R_k(x,y) \right)^{-1}
+\end{equation}
+
+\section{Some useful relations}
+We recall that if $W_k$ is a function of $h$ (the external field), then we can define its Legendre transform $\gamleg$, a function of $\phi$ (the background field), by 
+\begin{equation}
+\gamleg[\phi] = h \cdot \phi - W_k[h]
+\end{equation}
+
+or equivalently,
+\begin{align}
+\label{eq:legendre1}
+	\phi = \frac{\delta W_k[h]}{\delta h} \\
+	\label{eq:legendre2}
+	h = \frac{\delta \gamleg[\phi]}{\delta \phi}
+\end{align}
+We see that we can \textit{either} consider $\phi$ as being a function of $h$, \textit{or} the reverse. That is,
+\begin{equation}
+	\frac{\delta \phi}{\delta h} = \left( \frac{\delta h}{\delta \phi} \right)^{-1}
+\end{equation}
+Using (\ref{eq:legendre1}) and (\ref{eq:legendre2}), we deduce that
+\begin{equation}
+	\gamlegtwo(x,y) = W_k^{(2)}(x,y)^{-1}
+\end{equation}
+But we also know that the free energy $W_k$ is the generating function of the connected $n$ points correlation functions. In particular, we have thus 
+\begin{equation}
+\label{eq:gam_corr}
+	\gamlegtwo(x,y) = G_c^{2}(x,y)^{-1}
+\end{equation}
+This result will be useful later.
+
+We also recall that we defined the effective action at scale $k$ as
+\begin{equation}
+\gam_k[\phi] = \gamleg[\phi] - \Delta H_k[\phi]
+\end{equation}
+with
+\begin{equation}
+\Delta H_k[\phi] = \frac{1}{2} \phi \cdot R_k \cdot \phi
+\end{equation}
+
+\section{The derivation}
+On one hand we have
+\begin{equation}
+\p{k} e^{W_k[h]} = e^{W_k[h]} \p{k} W_k[h] = Z_k[\varphi] W_k[h]
+\end{equation}
+while, on the other hand we alse have
+\begin{equation}
+\p{k} e^{W_k[h]} = \p{k} Z_k[\varphi] = - \frac{1}{2} \int_{x,y} \p{k} R_k(x,y) \underbrace{ \int \D \varphi \varphi(x) \varphi(y) e^{-H_k[\varphi] - \Delta H_k[\varphi] + h \cdot \varphi} }_{=Z_k[\varphi] \langle \varphi(x) \varphi(y) \rangle_k}
+\end{equation}
+putting these two expressions together we deduce that
+\begin{equation}
+\p{k} W_k[h] = -\frac{1}{2} \int_{x,y} \p{k} R_k(x,y) \langle \varphi(x) \varphi(y) \rangle_k
+\end{equation}
+
+We already almost have the Wetterich equation! Actually all that remains to be done is reexpressing the left and right hand sides of the previous expression in terms of the scale-dependant effective action $\gam_k$.
+
+\subsection{The left hand side}
+We start from $W_k = h \cdot \phi - \gamleg $, and we deduce that
+\begin{equation}
+\p{k} W_k = h \cdot \p{k} \phi - \p{k} \gamleg
+\end{equation}
+Moreover 
+\begin{equation}
+\p{k} \gamleg[\phi] = \p{k} \left( \gam_k[\phi] + \frac{1}{2} \phi \cdot R_k \cdot \phi \right) 
+\end{equation}
+Now, we must be careful not to forget that $\gam_k[\phi]$ depends explicitely on $k$, but also implicitely through $\phi$!
+so we can write, somehow abusively,
+\begin{equation}
+\p{k} \gam_k[\phi] = \p{k} \gam_k[\phi] + \p{k} \phi \cdot \frac{\delta \gam_k[\phi]}{\delta \phi}
+\end{equation}
+We conclude that
+\begin{equation}
+\p{k} \gamleg[\phi] = \p{k}\gam_k[\phi] + p{k} \phi \cdot h + \frac{1}{2} \phi \cdot \p{k} R_k \cdot \phi
+\end{equation}
+and therefore that
+\begin{equation}
+\label{eq:lhs}
+\p{k} W_k[\phi] = - \p{k} \gam_k[\phi] - \frac{1}{2}\phi \cdot \p{k} R_k \cdot \phi
+\end{equation}
+
+\subsection{The right hand side}
+To transform the right hand side, we simply note that the connected two points correlation function is
+\begin{equation}
+G_{c,k}^{2}(x,y) = \langle \varphi(x) \varphi(y) \rangle_k - \langle \varphi(x) \rangle_k \langle \varphi(y) \rangle_k
+\end{equation}
+so that
+\begin{equation}
+\label{eq:rhs}
+\p{k} W_k[\phi] = -\frac{1}{2} \int_{x,y} \p{k} R_k(x,y) \langle \varphi(x) \varphi(y) \rangle_k = -\frac{1}{2} \int_{x,y} \p{k} R_k(x,y) G_{c,k}^2(x,y) - \frac{1}{2} R_k \cdot \phi \cdot \phi
+\end{equation}
+
+\subsection{Conclusion}
+Putting equations \ref{eq:lhs} and \ref{eq:rhs} together, we finally have
+\begin{equation}
+\p{k} \gam_k[\phi] = \frac{1}{2} \int_{x,y} \p{k} R_k(x,y) G_{c,k}^2(x,y)
+\end{equation}
+Remembering eq. \ref{eq:gam_corr}, we conclude that
+\begin{equation}
+\p{k} \gam_k[\phi] = \frac{1}{2} \int_{x,y} \p{k} R_k(x,y) \left( \gam_k^{(2)}(x,y) + R_k(x,y) \right)^{-1}
+\end{equation}
+This is the Wetterich equation for a scalar field $\phi$.
+
+Passing to the Wetterich equation for a vector field $\phi_i$ is very simple, as soon as we realize that all we have to do is to perform the following replacements:
+\begin{align}
+\phi \rightarrow \phi_i \\
+\gam_k^{(2)}(x,y) \rightarrow \gam_k^{(2)}(x,y)_{i,j} \\
+R_k(x,y) \rightarrow R_k(x,y)_{i,j}
+\end{align}
+The Wetterich equation is thus transformed into
+\begin{equation}
+\p{k} \gam_k[\phi] = \frac{1}{2} \int_{x,y} \p{k} R_k(x,y)_{i,j} \left( \gam_k^{(2)}(x,y) + R_k(x,y) \right)^{-1}_{i,j}
+\end{equation}

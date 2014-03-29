@@ -11,3 +11,19 @@ doi = "http://dx.doi.org/10.1016/0370-1573(88)90140-8",
 url = "http://www.sciencedirect.com/science/article/pii/0370157388901408",
 author = "Walter Selke"
 }
+
+@article{Mnp,
+  title = {Phase diagram, susceptibility, and magnetostriction of MnP: Evidence for a Lifshitz point},
+  author = {Shapira, Y. and Becerra, C. C. and Oliveira, N. F. and Chang, T. S.},
+  journal = {Phys. Rev. B},
+  volume = {24},
+  issue = {5},
+  pages = {2780--2806},
+  numpages = {0},
+  year = {1981},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.24.2780},
+  url = {http://link.aps.org/doi/10.1103/PhysRevB.24.2780}
+}
+
