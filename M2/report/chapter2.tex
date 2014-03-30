@@ -73,6 +73,7 @@ Schematically what we do is group spins by blocks of size $a S$ (fig. \ref{renor
 
 Now we replace the microscopic Hamiltonian by an effective Hamiltonian for the block spin field $\tilde{\phi}$:
 \begin{equation}
+\label{eq:effective_ham}
 H[\phi] \rightarrow \tilde{H}[\tilde{\phi}] \text{ such that } e^{-\tilde{H}[\tilde{\phi}]} = \sum_{\text{conf } \phi} \prod_{b} \delta \left( \tilde{\phi}(b) - \frac{1}{S^d} \sum_{i \in B(b)} \phi(i) \right) e^{-H[\phi]}
 \end{equation}
 this Hamiltonian is designed such that
@@ -186,3 +187,105 @@ d = d_c^> - \epsilon,
 where $\epsilon$ is a supposedly small parameter. When $d=3$, $\epsilon = 1.5$, which is not so small. So we expect the results from perturbation theory to be rather imprecise. To better tackle this problem, it would be great to have a method that is not perturbative in the dimension. This is what the nonperturbative renormalization group method provides, as we will now see.
 
 \section{The nonperturbative renormalization group}
+
+Starting from the microscopic Hamiltonian $H$, and applying successive transformations of the renormalization group, we construct a hierarchy of effective Hamiltonian describind the system at greater and greater distances. This process come to an end when we describe the system at the macroscopic distance. We then obtain the effective action $\Gamma$.
+\begin{equation}
+H \rightarrow H' \rightarrow H'' \rightarrow ... \rightarrow \Gamma
+\end{equation}
+Now writing primes is cumbersome, so we devise a better notation system. We call $H_k$ the effective Hamiltonian describing the system at lengthscale $1/k$. Then our previous hierarchy reads
+\begin{equation}
+H_\Lambda \rightarrow H_{\Lambda - \delta k} \rightarrow H_{\Lambda - 2 \delta k} \rightarrow ... \rightarrow H_0
+\end{equation}
+
+The idea of the nonperturbative renormalization group is to consider $H_k$ \textit{as a function of $k$}. We already know the boundary values $H_\Lambda$ and $H_0$. If we could find a differential equation on $H_k$, it would be entirely determined!
+
+Many exact differential equations can be derived from this starting point. They lead to different version of the nonperturbative renormalization group. We shall discuss here the so-called Wetterich, or Wegner-Wetterich equation.
+
+\subsection{The scale-dependant effective action}
+
+Let us try to build $H_k$ explicitely. This Hamiltonian has to describe the system at (momentum) scale $k$, so we can build it from the microscopic Hamiltonian $H$, integrated over fluctuations of momentum $k \leq p \leq \Lambda$. To this end let us define 
+\begin{equation}
+\Delta H_k[\varphi] = \frac{1}{2} \varphi \cdot R_k \cdot \varphi = \frac{1}{2} \int_{x,y} \varphi(x) R_k(x,y) \varphi(y)
+\end{equation}
+or, in momentum space
+\begin{equation}
+\Delta H_k[\varphi] = \frac{1}{2} \int_{q,q'} \varphi(q) R_k(q,-q') \varphi(q')
+\end{equation}
+and
+\begin{equation}
+H_k[\varphi] = H[\varphi] + \Delta H_k[\varphi]
+\end{equation}
+We see that the $\Delta H_k$ term is a quadratic form on the field. Thus $R_k(q,q')$ acts as a scale-dependant and momentum-dependant mass term. Most of the time it is taken translation invariant
+\begin{equation}
+R_k(x,y) = R_k(x-y)
+\end{equation}
+, and therefore diagonal in momentum space
+\begin{equation}
+R_k(q,-q') = R_k(q) \delta(q+q')
+\end{equation}
+
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[scale=1]{img/chap2/regulator.pdf}
+\caption{Typical shape of the regulator function in momentum space $R_k(q)$.}
+\label{fig:regulator}
+\end{center}
+\end{figure}
+
+Fig. \ref{fig:regulator} give the typical shape of this regulator. Its role is to give a mass of order $k^2$ to the ``slow'' modes of momentum smaller than the scale $k$, while leaving ``rapid'' modes of momentum larger than $k$ untouched. Qualitatively, in  
+\begin{equation}
+\int \D \varphi e^{-H[\varphi] - \Delta H_k[\varphi]}
+\end{equation}
+slow modes (ie spatial variations of the microscopic field on large scales) are protected from integration by the extra mass they gain from the regulator, while rapid modes (ie spatial variations of the field on small scales) are integrated. We see - at least qualitatively - that this regulator effectively implements the ideas of the renormalization group of integration. Following the idea of equation \ref{eq:effective_ham} we define
+\begin{equation}
+e^{-H_k[\varphi]} = \int \D \varphi e^{-H[\varphi] - \Delta H_k[\varphi]}
+\end{equation}
+
+This completely explicitely defines the Hamiltonian at scale $k$, and we could try to derive a differential equation for this object. However, as we shall see it is better to derive an equation for the scale dependant effective action instead.
+
+We start by defining the scale dependant Legendre transform of the free energy,
+\begin{equation}
+\label{eq:gamleg}
+\gamleg[\phi] \define - W_k[h] + h \cdot \phi
+\end{equation}
+where the free energy is defined as $W_k[h] = \log(Z_k[h])$, and $Z_k[\varphi] = \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi}$.
+We note in passing that eq. \ref{eq:gamleg} implies 
+\begin{equation}
+\phi(x) = \frac{\delta W_k[h]}{\delta h(x)} = \frac{1}{Z_k[\varphi]} \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi} \varphi \define \langle \varphi(x) \rangle_k
+\end{equation}
+This tells us that $\phi$ is the background field (at scale $k$), \textit{ie} the mean value of the field $\varphi$ (at scale $k$). 
+
+We define the scale-dependant effective action as
+\begin{equation}
+\gam_k[\phi] \define \gamleg[\phi] - \Delta H_k[\phi]
+\end{equation}
+This object has the right properties to be the effective action at scale $k$. To begin with, it verifies
+\begin{equation}
+\gam_0 = \Gamma
+\end{equation}
+as it should. This property follows trivially from the definition. Less trivially, we also have
+\begin{equation}
+\gam_\Lambda = H
+\end{equation}
+again, as we should. This property is show is appendix ??? (to be written!).
+
+Finally, the scale-dependant effective action verifies the differential equation
+\begin{equation}
+\p{k} \gam_k[\phi] = \frac{1}{2} \int_{x,y} \p{k}\left(R_k(x,y)\right) \left( \Gamma^{(2)}_k(x,y) + R_k(x,y) \right)^{-1}
+\end{equation}
+The demonstration can be found in appendix \ref{app:wett}. We can use the fact that $R_k$ is invariant by translation, to write the right hand side of this integro-differential equation as a single integral over momentum $q$:
+\begin{equation}
+\p{k} \gam_k[\phi] = \frac{1}{2} \int_{q} \p{k}\left(R_k(q)\right) \left( \Gamma^{(2)}_k(q,-q) + R_k(q) \right)^{-1}
+\end{equation}
+Moreover, we shall make the change of variable $k \rightarrow t = \log(k/\Lambda)$, to take advantage of the additive properties of $t$\footnote{As we have seen before, $t$ can be regarded as a time parametrizing the renormalization group trajectory in the coucpling constants space.}. In order to simplify further the Wetterich equation, we define an operator $\hat{\p{t}}$ as the differenciation with respect to $t$ acting only on $R_t$. That is,
+\begin{equation}
+ \hat{\p{t}} \define \frac{\partial R_t(\fdot)}{\partial t} \frac{\partial}{\partial R_t(\fdot)}
+\end{equation}
+where $R_t(\fdot)$ is a shorthand notation for the function $q \mapsto R_t(q)$. 
+ We have then
+\begin{equation}
+\label{eq:wett}
+\p{t} \gam_k[\phi] = \frac{1}{2} \hat{\p{t}} \tr{ \log\left( \Gamma^{(2)}_t(q,-q) + R_t(q) \right) }\footnote{Here we have used the formula for the trace on continuous indices in Fourier space: $\tr{A} = \int_{x} A(x,x) = \int_q A(q,-q)$.}
+\end{equation}
+This is the form of the Wetterich equation we will use from now on. 
+Even if the field is vectorial, eq. \ref{eq:wett} is still valid, provided that the trace acts on the vector space of the field as well\footnote{we refer to appendix \ref{app:wett} for a sketch of proof}.

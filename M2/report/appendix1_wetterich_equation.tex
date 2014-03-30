@@ -1,4 +1,5 @@
 \chapter{Derivation of the Wetterich equation}
+\label{app:wett}
 
 We want to arrive at the formula,
 \begin{equation}
@@ -67,14 +68,17 @@ Moreover
 \begin{equation}
 \p{k} \gamleg[\phi] = \p{k} \left( \gam_k[\phi] + \frac{1}{2} \phi \cdot R_k \cdot \phi \right) 
 \end{equation}
-Now, we must be careful not to forget that $\gam_k[\phi]$ depends explicitely on $k$, but also implicitely through $\phi$!
-so we can write, somehow abusively,
+Now, we must be careful not to forget that $\gam_k[\phi]$ depends explicitely on $k$, but also implicitely through $\phi$! We have
 \begin{equation}
-\p{k} \gam_k[\phi] = \p{k} \gam_k[\phi] + \p{k} \phi \cdot \frac{\delta \gam_k[\phi]}{\delta \phi}
+\partial_{k} = \partial_{k\text{, $\phi$ fixed}} + \p{k} \phi \cdot \frac{\delta}{\delta \phi}
 \end{equation}
-We conclude that
+so that
 \begin{equation}
-\p{k} \gamleg[\phi] = \p{k}\gam_k[\phi] + p{k} \phi \cdot h + \frac{1}{2} \phi \cdot \p{k} R_k \cdot \phi
+\p{k} \gam_k[\phi] = \partial_{k\text{, $\phi$ fixed}} \gam_k[\phi] + \partial_k \phi \cdot \frac{\delta \gam_k[\phi]}{\delta \phi}
+\end{equation}
+Dropping the ``$\phi$ fixed'' labels, we conclude that
+\begin{equation}
+\p{k} \gamleg[\phi] = \p{k}\gam_k[\phi] + \p{k} \phi \cdot h + \frac{1}{2} \phi \cdot \p{k} R_k \cdot \phi
 \end{equation}
 and therefore that
 \begin{equation}
