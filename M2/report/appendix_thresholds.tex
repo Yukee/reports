@@ -1,0 +1,47 @@
+\label{app:thresholds}
+\chapter{Threshold functions}
+
+\subsection{The $l$ function}
+We define
+\begin{equation}
+l_n^{(d,m)}(\omega, \bar{\rho_0}) = -\frac{n+\delta_{n,0}}{4} \int_0^{\infty} dq_\sslash \int_0^{\infty} dq_\perp y_\sslash^{m/2+1} y_\perp^{(d-m)/2-1} \frac{\theta \eta_\sslash r + 2 \theta y_\sslash r^{(1,0)}+ 2 y_\perp r^{(0,1)}}{\left[y_\sslash^2(1+r) + y_\perp + \bar{\rho_0} y_\sslash + \omega\right]^{n+1}}
+\end{equation}
+
+For $n>0$, we see that we have
+\begin{equation}
+-\hat{\p{t}} \int \frac{dq_\sslash^{m} dq_\perp^{d-m}}{(2\pi)^d} \frac{1}{\left[ Z_\sslash q_\sslash^4 + Z_\perp q_\perp^2 + \rho_0 q_\sslash^2 + R + m^2 \right]^{n}} = 16 v_m v_{d-m} Z_\sslash^{-n} k^{d_m-4\theta n} l_n^{d}(\bar{m}^2)
+\end{equation}
+and for $n=0$
+\begin{equation}
+\hat{\p{t}} \int \frac{dq_\sslash^{m} dq_\perp^{d-m}}{(2\pi)^d} \log{ \left( Z_\sslash q_\sslash^4 + Z_\perp q_\perp^2 + \rho_0 q_\sslash^2 + R + m^2 \right) } = 16 v_m v_{d-m} k^{d_m} l_0^{d}(\bar{m}^2)
+\end{equation}
+
+\subsection{The $n$ function}
+Dimensionful:
+\begin{equation}
+N_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \deriv{q_\sslash^2} P G_a(q)^a G_r(q)^b
+\end{equation}
+adimensionning and spherical integration:
+\begin{equation}
+N_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 2 \theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \deriv{y_\sslash} \bar{P} \bar{G}_a(y)^a \bar{G}_r(y)^b
+\end{equation}
+
+\subsection{The $m$ function}
+Dimensionful:
+\begin{equation}
+M_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \left(\deriv{q_\sslash^2} P\right)^2 G_a(q)^a G_r(q)^b
+\end{equation}
+adimensionning and spherical integration:
+\begin{equation}
+M_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 4\theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \left(\deriv{y_\sslash} \bar{P}\right)^2 \bar{G}_a(y)^a \bar{G}_r(y)^b
+\end{equation}
+
+\subsection{The $k$ function}
+Dimensionful:
+\begin{equation}
+K_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \left(\derivh{(q_\sslash^2)}{2} P\right) G_a(q)^a G_r(q)^b
+\end{equation}
+adimensionning and spherical integration:
+\begin{equation}
+K_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 4\theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \left(\derivh{y_\sslash}{2} \bar{P}\right) \bar{G}_a(y)^a \bar{G}_r(y)^b
+\end{equation}

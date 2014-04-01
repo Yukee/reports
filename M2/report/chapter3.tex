@@ -1,0 +1,175 @@
+\chapter{The Lifshitz model}
+
+As we have seen, the Wetterich equation governs the flow of the scale-dependant effective action $\Gamma_t$. Solving directly this differential equation to find $\Gamma_t$, though in theory possible, is in practice very difficult. Inded the $\Gamma_t$ depends on the (background) field $\phi$, a function of the momentum. Determining completely $\Gamma_t$ requieres knowing its value for all functions $\phi$. 
+
+So, instead of solving directly the Wetterich equation, we start from a reasonable functional form for $\Gamma_t$ with unknown coefficients, we plug it in the Wetterich equation to get flow equations for this coefficients, and we solve these equations.
+
+If we assume that it is analytic in the potential, the effective action can be written as the infinite sum
+\begin{equation}
+\Gamma_t[\phi] = \int_{x} \left( m_0 (\partial \phi(x))^2 + m_1 (\partial \phi(x)^2)^2 + ... + n_0 (\partial^2 \phi(x))^2 + ... + l_0 \phi(x)^2 + l_1 \phi(x)^3 +... \right)
+\end{equation}
+
+This expression can be further simplified if the system under study has some invariance properties. The simplest model having such an invariance is the Ising one, whose microscopic Hamiltonian is invariant under the action of the $\mathds{Z}_2$ symmetry group. If we chose a regulator that preserves this symmetry, it is clear that the effective action $\Gamma_t$ must also be invariant under $\mathds{Z}_2$. The most general expression for $\Gamma_t$ that preserves this symmetry is
+\begin{equation}
+\label{eq:ising_anzatz}
+\Gamma_t^{\text{Ising}}[\phi] = \int_{x} \sum_{i,j \in \mathds{N}} Z_{t,ij} (\partial \phi(x))^{2i} \phi(x)^{2 j}
+\end{equation}
+The strategy is now simple:
+\begin{itemize}
+\item Compute $\Gamma_t^{(2)}(x,y)$ from \ref{eq:ising_anzatz}
+\item Plug the result in the right hand side of the Wetterich equation
+\item Deduce the flow equation for $Z_{t,ij}$: $\p{t} Z_{t,ij} = F_{i,j}\left( {Z_{t,kl}} \right)$
+\end{itemize}
+Following this procedure we went from a functional differential equation to a set of simple differential equations. Solving this set of flow equations give us a complete knowledge of the model. In particular solving the fixed point equations $0 = F_{i,j}\left( {Z^*_{t,kl}} \right)$ will give us access to the critical properties of the Ising model: critical exponents, critical potential,... Note that for the moment no approximations have been made!
+
+In practice however we know that the lowest degree terms in $\partial \phi$ and $\phi$ will have the most significant contribution to the flow. Therefore we can make the approximation of cutting the developement at some order. This has the great practical advantage of reducing the number of flow equations to solve to a finite number. Note that other approximation schemes are possible (development in powers of the field, BMW scheme...). We will not talk about these.
+
+Now, let us apply this approximation scheme to the Lifshitz model.
+
+\section{An Anzatz for the Lifshitz scale-dependant effective action}
+We recall that the Lifshitz microscopic Hamiltonian is
+
+\begin{equation}
+H[\phi] = \int_x \left( \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash} \phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + V(\rho) \right)
+\end{equation}
+where $\rho = \phi_i \phi_i/2$. 
+The Lifshitz Hamiltonian has the $O(n)$ symmetry\footnote{Meaning that a rotation of the $n$-dimensional field $\phi$ leaves the Hamiltonian invariant: $H[\mathcal{R}(n)\phi] = H[\phi]$ if $\mathcal{R}$ is an orthogonal $n \times n$ matrix.}, therefore the scale-deendant effective action should also have this symmetry. Moreover the kinetik term in the Lifshitz Hamiltonian decomposes into two parts:
+\begin{itemize}
+\item $\int_{x} \frac{\rho_0}{2}(\p{\sslash} \phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2$, invariant under $\left(x_\sslash,x_\perp \right) \rightarrow \left(\mathcal{R}(m) x_\sslash, x_\perp\right)$
+\item $\int_{x} \frac{1}{2}(\p{\perp} \phi)^2$, invariant under $\left(x_\sslash,x_\perp \right) \rightarrow \left(x_\sslash, \mathcal{R}(d-m) x_\perp\right)$
+\end{itemize}
+Since the scale-dependant effective action must satisfy these symmetry properties, its most general form is
+\begin{equation}
+\Gamma_k[\phi] = \int_{x} U(\rho) + \left( \frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2 + \frac{1}{4} Y_\perp(\rho) (\partial_\perp \rho)^2 + ... \right) + \left( \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 + ... \right) + \left( \frac{1}{2} Z_\sslash(\rho) (\partial_\sslash^2 \phi)^2 + ... \right)
+\end{equation}
+It turns out to be a very good approximation to cut the derivative expansion to first order \footnote{To compute critical exponents, one does not need to take into account the full momentum dependence of the theory. However for computing correlation function the momentum dependence is essential. Were we to compute these quantities, we will probably have to go further in the derivative expansion}. That is to say, we make the approximation
+\begin{eqnarray}
+\frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2 + \frac{1}{4} Y_\perp(\rho) (\partial_\perp \rho)^2 + ...  \simeq  \frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2  \\
+ \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 + ...  \simeq  \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 \\
+\frac{1}{2} Z_\sslash(\rho) \partial_\sslash^2 \phi)^2 + ... \simeq \frac{1}{2} Z_\sslash(\rho) \partial_\sslash^2 \phi)^2
+\end{eqnarray}
+Moreover, we make the approximation that the field renormalizations $Z_\perp(\rho)$, $\rho_0(\rho)$ and $Z_\sslash(\rho)$ do not depend on the field. So, the definitive form of the Anzatz we chose for $\Gamma_t$ is
+\begin{equation}
+\label{eq:gamlif}
+\Gamma_t[\phi_i] = \int_x \left ( \frac{Z_\perp}{2} (\partial_\perp \phi)^2 + \frac{\rho_0}{2} (\partial_\sslash \phi)^2 + \frac{Z_\sslash}{2} (\partial_\sslash^2 \phi)^2 + U(\rho) \right )
+\end{equation}
+This is the form of the Lifshitz scale-dependent effective action we have worked on during this internship.
+Though this does not appear explicitly, the field renormalizations and the effective potential $U$ depend on the renormalization time $t$. We will now make use of the Wetterich equation to know how this quantities change through the renormalization process. Then we will use this knowledge to derive the critical exponents.
+
+\section{The Lifshitz renormalization flows}
+
+\subsection{Dimension-driven versus fluctuations-driven flows}
+We recall that looking at the mean field version of a theory consists in neglecting all fluctuations of the field. Therefore, in the case of a mean field theory, the renormalization procedure - average on fluctuations up to a certain scale, definition of an effective Hamiltonian and rescaling - only requires rescaling. 
+The conclusion is that the renormalization flows of mean field theories' coupling constants are only due to their dimension.
+
+If we wish to go beyond the mean field approximation, we have to take into account the fluctuations of the field.
+They are often small compared to the mean value of the field, meaning that their contribution to the flows will be small compared to the contribution coming from the mean field theory. In other words, the fluctuation-driven part of a renormalization flow is generally small compared to its dimension-driven part. 
+Wishing to concentrate on the small non-trivial part of the flow: the fluctuation-driven part, we define \textit{dimensionless coupling constants}, that are by construction subject to a fluctuation-driven flow only.\footnote{Numerically, if we want to track the contribution to the flow of fluctuations $10^{12}$ weaker than the mean field contribution, we must achieve at least $12$ digits precision, which is often rendered impossible by rounding errors. In this context using dimensionless coupling constant indeed seems an excellent idea!}
+
+With these ideas in mind, we define the following dimensionless quantities 
+\begin{align}
+ y_\sslash = \frac{q_\sslash^2}{k^{2\theta}} \\
+q_\perp^2 = \frac{Z_\sslash}{Z_\perp} k^{4\theta} y_\perp \\
+R(q_\perp^2,q_\sslash^2) = Z_\sslash k^{4\theta} y_\sslash^2 r(y_\perp, y_\sslash) \\
+\rho_0 = Z_\sslash k^{2\theta} \bar \rho_0 \\
+m^2 = Z_\sslash k^{4\theta} \bar{m}^2 \\
+U(\rho) = Z_\sslash k^{d_m} u(\bar{\rho}) \\
+\rho = Z_\sslash^{-1} k^{-4\theta + d_m} \bar{\rho}
+\end{align}
+
+Note that given the relation
+\begin{equation}
+\theta = \frac{2-\eta_\perp}{4-\eta_\sslash}
+\end{equation}
+we have a certain liberty relative to the adimensionning of the physical quantities. For example we can define $\rho_0 = Z_\sslash k^{2\theta} \bar{\rho_0}$ or $\rho_0 = Z_\perp^{1/2}Z_\sslash^{1/2}k\bar{\rho_0}$. These two definitions lead to two different $\bar{\rho_0}$ functions, but the two functions have \textit{the same dimensional flow}.. Here we chose the adimensionning such that $Z_\sslash$ simplifies everywhere in the propagators. 
+
+\subsection{Flow of the potential}
+From the shape of the potential, we can tell in which phase we are. Therefore knowing how the potential changes with $t$ is of paramount importance. We shall thus start with the derivation of the flow equation for the potential.
+
+We see that 
+\begin{equation}
+U(\rho_0) = \delta(0)^{-1} \Gamma_t[ \phi] |_{\phi(x) = \phi_0}
+\end{equation}
+where $\phi_0$ is some uniform (in direct space) configuration of the field, and where $\rho_0 = \phi_{0i} \phi_{0i}/2$. Note that if we were to work on a finite-size system, the $\delta(0)^{-1}$ term would be replaced by the volume of the system. Therefore it plays the role of the system volume for the infinite size system we consider here.
+
+We take a derivative with respect to $t$ to get an expression for the flow of the potential, and we plug in the Wetterich equation on the right hand side:
+\begin{equation}
+ \partial_t U(\rho_0) = \delta(0)^{-1} \partial_t \Gamma = \frac{1}{2 \delta(0)} \hat \partial_t \tr{\log\left( \Gamma_t^{(2)} + R_t  \right)}
+\end{equation}
+This is the flow equation for the potential!\footnote{It should be noted that we only derived the flow equation of the potential for a constant field configuration. This is of no importance as we do not need the \textit{functional} dependence of the potential, $(x \mapsto \rho(x)) \mapsto U(\rho(x))$ but only its ``digital'' dependence $\rho_0 \mapsto U(\rho_0)$ to characterize it completely.}
+
+From eq. \ref{eq:gamlif} we compute the first functional derivative of the Lifshitz effective action:
+\begin{equation}
+\frac{\delta \Gamma_t}{\delta \phi_i(x)}[\phi] = - Z_\perp \Delta_\perp \phi_i(x) - \rho_0 \Delta_\perp \phi_i(x) + Z_\sslash \Delta_\sslash^2 \phi_i(x) + U'(\rho) \phi_i(x)
+\end{equation}
+taking a second functional derivative with respect to the field:
+\begin{equation}
+\frac{\delta^2 \Gamma_t}{\delta \phi_i(x) \delta \phi_j(y)}[\phi] =\left(   \delta_{ij} \left( - Z_\perp \Delta_\perp - \rho_0 \Delta_\perp + Z_\sslash \Delta_\sslash^2  + U'(\rho) \right) + U''(\rho) \phi_i(x) \phi_j(y) \right) \delta(x-y)
+\end{equation}
+and passing to Fourier space:
+\begin{equation}
+\frac{\delta^2 \Gamma_t}{\delta \phi_i(p) \delta \phi_j(q)}[\phi] \define \Gamma^{(2)}_{ij}(p,q) = 
+\left( \delta_{ij} \left(Z_\perp p_{\perp}^2 +\rho_0 p_{\sslash}^2 +Z_\sslash (p_\sslash^2)^2 + U'(\rho (x))\right)+\phi_i(p) \phi_j(q) U''(\rho (x)) \right) \delta(p+q)
+\end{equation}
+We can decompose the two-points 1-particle irreducible function $\Gamma^{(2)}_{ij}$ on a orthogonal projectors along the direction of the field and orthogonal to it:
+\begin{align}
+\Pi^a_{i,j} = \delta_{ij} - \frac{\phi_i \phi_j}{2 \rho} \\
+\Pi^r_{i,j} = \frac{\phi_i \phi_j}{2 \rho}
+\end{align}
+thus allowing us to easily write the regularized propagator appearing in the Wetterich equation:
+\begin{equation}
+\left( \Gamma^{(2)}_{ij}(p,q) + R_t(p,q) \right)^{-1} = \left( G_a(q) \Pi^a_{ij} + G_r(q) \Pi^r_{ij} \right) \delta(p+q)
+\end{equation}
+where we used the radial and angular propagators:
+\begin{align}
+G_r(q)_{i,j} \define \frac{1}{Z_\sslash q_\sslash^4 + Z_\perp q_\perp^2 + \rho_0 q_\sslash^2 + R_t(q)  + U'(x) + 2 \rho U^{(2)}(\rho)} \\
+G_a(q)_{i,j} \define \frac{1}{Z_\sslash q_\sslash^4 + Z_\perp q_\perp^2 + \rho_0 q_\sslash^2 + R_t(q) + U'(\rho)}
+\end{align}
+and chosen the regulator to be diagonal:  $R_{t,ij}(q) = R_t(q) \delta_{ij}$.
+We can now rewrite in a more explicit way the Wetterich equation:
+\begin{equation}
+\p{t} \Gamma_t = \frac{1}{2} \int_q \left(  G_a(q) \Pi^a_{ij} + G_r(p) \Pi^r_{ij} \right) \p{t} R_{t,ij}(q)  = \frac{1}{2} \int_q \left(  G_a(q) + (n-1)G_r(p) \right) \p{t} R_{t}(q) 
+\end{equation}
+Note that the radial (massive) propagator appears once whereas the angular (massless) propagator appears $n-1$ times in the flow equation. This is of course because as soon as we choose a direction for the field $\phi$, the  $O(n)$ invariance is no longer explicit (though the equation is of course still $O(n)$ invariant). Therefore, a massive Goldstone mode and $n-1$ massless modes appear, in accordance with Goldstone's theorem.
+
+Imposing now that the field is constant, we have for the flow of the potential
+\begin{equation}
+\p{t} U(\phi_0) = \frac{1}{2} \int_q \left( G_r(q)\atpt{unif} + (n-1)G_a(q)\atpt{unif} \right) \p{t} R_t(q)
+\end{equation}
+This is as far as we can get without giving explicitly a form to the regulator. 
+At this point, it is a customary procedure to introduce standard functions called \textit{threshold functions} in order to lighten the notations.
+
+The flow of the potential can be expressed in terms of the $l$ threshold function:\footnote{Definitions of the threshold functions used here can be found in appendix \ref{app:thresholds}.}
+\begin{equation}
+\p{t}U = 8 v_m v_{d-m} k^{d_m} \left( l_0^{dm}\left(u'(\bar{\rho}) + 2 \bar{\rho} u''(\bar{\rho}) \right) + (N-1)l_0^{dm}\left(u'(\bar{\rho})\right) \right)
+\end{equation}
+
+Recall that $u(\bar{\rho}) = k^{-d_m} U(\rho)$ and $\bar{\rho} = Z_\sslash k^{4\theta - d_m} \rho$, so that
+\begin{equation}
+d_t u(\bar{\rho}) = -d_m u(\bar{\rho}) +(\theta \eta_\sslash + d_m - 4 \theta) \bar{\rho} u'(\bar{\rho}) + \p{t} u(\bar{\rho})
+\end{equation}
+Dropping the bars everywhere, we have for the dimensionless potential,
+\begin{equation}
+d_t u(\rho) = -d_m u(\rho) +(\theta \eta_\sslash + d_m - 4 \theta) \rho u'(\rho) + 8 v_m v_{d-m} \left( l_0^{dm}\left(u'(\rho) + 2 \rho u''(\rho) \right) + (n-1)l_0^{dm}\left(u'(\rho)\right) \right)
+\end{equation}
+
+The fixed point potential therefore verifies
+\begin{equation}
+0 = u(\rho) - a(d_m, \theta, \eta_\sslash) \rho u'(\rho) - b(d, m) 
+\left( l_0^{dm}\left( u'(\rho) + 2 \rho u''(\rho) \right) + (n-1)l_0^{dm}\left( u'(\rho) \right) \right) 
+\end{equation}
+where 
+\begin{align}
+a = \frac{\theta \eta_\sslash + d_m - 4 \theta}{d_m} \\
+b = \frac{8 v_m v_{d-m}}{d_m}
+\end{align}
+
+Numerically, the the fixed point potential equation is not nice because it is an implicit differential equation
+$0 = F(\rho ; u, u', u'')$.
+However we can put it the form
+$u(\rho) = f(\rho; u', u'')$.
+This indicates that, by differentiation with respect to $\rho$, we can produce an \textit{explicit} equation on $v(\rho) \define u'(\rho)$:
+\begin{equation}
+0 = (1-a) v - a \rho v' + b \left( l_1\left(v+2\rho v'\right)\left(3v'+2\rho v''\right) + (N-1)l_1\left(v\right)v' \right)
+\end{equation}
+a second order, explicit differential equation on the derivative of the potential.

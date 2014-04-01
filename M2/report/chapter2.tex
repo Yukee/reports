@@ -215,7 +215,7 @@ and
 \begin{equation}
 H_k[\varphi] = H[\varphi] + \Delta H_k[\varphi]
 \end{equation}
-We see that the $\Delta H_k$ term is a quadratic form on the field. Thus $R_k(q,q')$ acts as a scale-dependant and momentum-dependant mass term. Most of the time it is taken translation invariant
+We see that the $\Delta H_k$ term is a quadratic form on the field. Thus $R_k(q,q')$ acts as a scale-dependant and momentum-dependant squared mass term. Most of the time it is taken translation invariant
 \begin{equation}
 R_k(x,y) = R_k(x-y)
 \end{equation}
@@ -232,13 +232,17 @@ R_k(q,-q') = R_k(q) \delta(q+q')
 \end{center}
 \end{figure}
 
-Fig. \ref{fig:regulator} give the typical shape of this regulator. Its role is to give a mass of order $k^2$ to the ``slow'' modes of momentum smaller than the scale $k$, while leaving ``rapid'' modes of momentum larger than $k$ untouched. Qualitatively, in  
+Fig. \ref{fig:regulator} give the typical shape of this regulator. This regulator is required to vanish at $k \rightarrow 0$ at to diverge for $k \rightarrow \infty$ (or $k \rightarrow \Lambda$), at fixed $q^2$. This can for example be achived by
+\begin{equation}
+R_k(q) = \frac{q^2}{e^{q^2/k^2} - 1}
+\end{equation}
+ Its role is to give a squared mass of order $k^2$ to the ``slow'' modes of momentum smaller than the scale $k$, while leaving ``rapid'' modes of momentum larger than $k$ untouched. Qualitatively, in  
 \begin{equation}
 \int \D \varphi e^{-H[\varphi] - \Delta H_k[\varphi]}
 \end{equation}
-slow modes (ie spatial variations of the microscopic field on large scales) are protected from integration by the extra mass they gain from the regulator, while rapid modes (ie spatial variations of the field on small scales) are integrated. We see - at least qualitatively - that this regulator effectively implements the ideas of the renormalization group of integration. Following the idea of equation \ref{eq:effective_ham} we define
+slow modes (ie spatial variations of the microscopic field on large scales) are protected from integration by the extra mass they gain from the regulator, while rapid modes (ie spatial variations of the field on small scales) are integrated. We see that this regulator effectively implements the ideas of the renormalization group of integration. Following the idea of equation \ref{eq:effective_ham} we define teh scale dependant partition function
 \begin{equation}
-e^{-H_k[\varphi]} = \int \D \varphi e^{-H[\varphi] - \Delta H_k[\varphi]}
+Z_k[h] = \int \D \varphi e^{-H[\varphi] - \Delta H_k[\varphi] + h \cdot \varphi}
 \end{equation}
 
 This completely explicitely defines the Hamiltonian at scale $k$, and we could try to derive a differential equation for this object. However, as we shall see it is better to derive an equation for the scale dependant effective action instead.
@@ -248,7 +252,7 @@ We start by defining the scale dependant Legendre transform of the free energy,
 \label{eq:gamleg}
 \gamleg[\phi] \define - W_k[h] + h \cdot \phi
 \end{equation}
-where the free energy is defined as $W_k[h] = \log(Z_k[h])$, and $Z_k[\varphi] = \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi}$.
+where the free energy is defined as $W_k[h] = \log(Z_k[h])$.
 We note in passing that eq. \ref{eq:gamleg} implies 
 \begin{equation}
 \phi(x) = \frac{\delta W_k[h]}{\delta h(x)} = \frac{1}{Z_k[\varphi]} \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi} \varphi \define \langle \varphi(x) \rangle_k
@@ -289,3 +293,7 @@ where $R_t(\fdot)$ is a shorthand notation for the function $q \mapsto R_t(q)$.
 \end{equation}
 This is the form of the Wetterich equation we will use from now on. 
 Even if the field is vectorial, eq. \ref{eq:wett} is still valid, provided that the trace acts on the vector space of the field as well\footnote{we refer to appendix \ref{app:wett} for a sketch of proof}.
+
+Note that no approximations were made in the course of deriving the Wetterich equation. It is thus an exact equation describing the (renormlization group) time dependance of the scale-dependant effective action $\Gamma_t$, interpolating between $\Gamma_\Lambda = H$ and $ \Gamma_0 = \Gamma$.
+
+We we can use the Wetterich equation as a starting point for finding the critical properties of the Lifshitz model.
