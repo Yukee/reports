@@ -58,18 +58,19 @@
 
 \end{titlepage}
 
-\pagebreak 
-\selectlanguage{english}
-\begin{abstract}
-Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-
-\selectlanguage{french}
-\begin{center}
-\textbf{Résumé}
-\end{center}
-Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-\end{abstract}
-
+%\pagebreak 
+%\selectlanguage{english}
+%\begin{abstract}
+%Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+%
+%\selectlanguage{french}
+%\begin{center}
+%\textbf{Résumé}
+%\end{center}
+%Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+%\end{abstract}
+%
+%\selectlanguage{english}
 \selectlanguage{english}
 
 \pagebreak
@@ -81,9 +82,26 @@ Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
 
 \section*{\Huge{Introduction}}
 
-The first chapter of the internship report is thus a very general introduction to granular materials and granular flows. At the end of this chapter, we give qualitative ideas about the segregation effect, ideas which are developed more rigorously in the appendix.
+The Lifshitz model, is used to describe a wide range of materials including magnetic crystals, supraconductors, liquid crystals and ferroelectic materials. 
+They share a common intriguing feature: having a so called modulated -or stripped- phase. In this phase the order parameter is periodic in one direction of space, and constant in the other directions. 
 
-The second chapter will focus more specifically on the experiment we seek to model and understand, and on the approach we took to model it.
+Though the Lifshitz model was proposed .. years ago, the value of the critical exponents of the critical point between the modulated, ferromagnetic and antiferromagnetic phases is still a matter of debate. During this internship we computed this critical exponents using the tools of the nonperturbative renormalization group. Though this has been done before \cite{MouhannaLif} \cite{BervillierLif} our approach is new, and is thought to be more flexible. In particular it could be improved to compute the exponents with unpreceeding accuracy.
 
-The third chapter give our results and discuss them.
+The first chapter of this report is a very general introduction to the physics of the Lifshitz model. 
+After an introduction to the ideas of renormalization, the second chapter focuses on the tool we used to compute the critical exponents of the model: the nonperturbative renormalization group. 
+Finally, the third chapter gives our results and discuss them.
+
+
+
+\section*{Useful notations}
+Through this report the following shorthand notations have been used:
+
+\begin{center}
+\begin{tabular}{ccc}
+$\int_x$ & $\leftrightarrow$ &  $\int_{\mathds{R}} dx$ \\ 
+$\int_q$ & $\leftrightarrow$ &  $\int_{\mathds{R}} \frac{dq}{(2\pi)^d}$ \\ 
+$\Gamma^{(N)}(x_1,...x_N)$ & $\leftrightarrow$ &  $\frac{\delta^N }{\delta \phi(x_1) ... \delta \phi(x_N)} \Gamma[\phi]$ \\ 
+$f \cdot g$ & $\leftrightarrow$ &  $\int_x f(x) g(x)$ \\ 
+\end{tabular} 
+\end{center}
 
