@@ -1,6 +1,6 @@
 \chapter{The Lifshitz model}
 
-As we have seen, the Wetterich equation governs the flow of the scale-dependant effective action $\Gamma_t$. Solving directly this differential equation to find $\Gamma_t$, though in theory possible, is in practice very difficult. Inded the $\Gamma_t$ depends on the (background) field $\phi$, a function of the momentum. Determining completely $\Gamma_t$ requieres knowing its value for all functions $\phi$. 
+As we have seen, the Wetterich equation governs the flow of the scale-dependent effective action $\Gamma_t$. Solving directly this differential equation to find $\Gamma_t$, though in theory possible, is in practice very difficult. Inded the $\Gamma_t$ depends on the (background) field $\phi$, a function of the momentum. Determining completely $\Gamma_t$ requires knowing its value for all functions $\phi$. 
 
 So, instead of solving directly the Wetterich equation, we start from a reasonable functional form for $\Gamma_t$ with unknown coefficients, we plug it in the Wetterich equation to get flow equations for this coefficients, and we solve these equations.
 
@@ -22,7 +22,7 @@ The strategy is now simple:
 \end{itemize}
 Following this procedure we went from a functional differential equation to a set of simple differential equations. Solving this set of flow equations give us a complete knowledge of the model. In particular solving the fixed point equations $0 = F_{i,j}\left( {Z^*_{t,kl}} \right)$ will give us access to the critical properties of the Ising model: critical exponents, critical potential,... Note that for the moment no approximations have been made!
 
-In practice however we know that the lowest degree terms in $\partial \phi$ and $\phi$ will have the most significant contribution to the flow. Therefore we can make the approximation of cutting the developement at some order. This has the great practical advantage of reducing the number of flow equations to solve to a finite number. Note that other approximation schemes are possible (development in powers of the field, BMW scheme...). We will not talk about these.
+In practice however we know that the lowest degree terms in $\partial \phi$ and $\phi$ will have the most significant contribution to the flow. Therefore we can make the approximation of cutting the development at some order. This has the great practical advantage of reducing the number of flow equations to solve to a finite number. Note that other approximation schemes are possible (development in powers of the field, BMW scheme...). We will not talk about these.
 
 Now, let us apply this approximation scheme to the Lifshitz model.
 
@@ -55,7 +55,10 @@ Moreover, we make the approximation that the field renormalizations $Z_\perp(\rh
 \Gamma_t[\phi_i] = \int_x \left ( \frac{Z_\perp}{2} (\partial_\perp \phi)^2 + \frac{\rho_0}{2} (\partial_\sslash \phi)^2 + \frac{Z_\sslash}{2} (\partial_\sslash^2 \phi)^2 + U(\rho) \right )
 \end{equation}
 This is the form of the Lifshitz scale-dependent effective action we have worked on during this internship.
-Though this does not appear explicitly, the field renormalizations and the effective potential $U$ depend on the renormalization time $t$. We will now make use of the Wetterich equation to know how this quantities change through the renormalization process. Then we will use this knowledge to derive the critical exponents.
+Though this does not appear explicitly, the field renormalizations and the effective potential $U$ depend on the renormalization time $t$. As we are going to see, the $t$ dependence of $Z_\perp$ and $Z_\sslash$ gives rise to non trivial anomalous dimensions. The anomalous dimensions are expected to act as a small correction to the value of the critical exponents. At first order, we can thus assume trivial anomalous dimensions. This amounts to forgetting the $t$ dependence of $Z_\sslash$ and $Z_\perp$ in the effective action. This approximation is called the \textit{local potential approximation}.
+
+
+ We will now make use of the Wetterich equation to know how this quantities change through the renormalization process. Then we will use this knowledge to derive the critical exponents.
 
 \section{The Lifshitz renormalization flows}
 
@@ -68,15 +71,17 @@ They are often small compared to the mean value of the field, meaning that their
 Wishing to concentrate on the small non-trivial part of the flow: the fluctuation-driven part, we define \textit{dimensionless coupling constants}, that are by construction subject to a fluctuation-driven flow only.\footnote{Numerically, if we want to track the contribution to the flow of fluctuations $10^{12}$ weaker than the mean field contribution, we must achieve at least $12$ digits precision, which is often rendered impossible by rounding errors. In this context using dimensionless coupling constant indeed seems an excellent idea!}
 
 With these ideas in mind, we define the following dimensionless quantities 
-\begin{align}
- y_\sslash = \frac{q_\sslash^2}{k^{2\theta}} \\
-q_\perp^2 = \frac{Z_\sslash}{Z_\perp} k^{4\theta} y_\perp \\
-R(q_\perp^2,q_\sslash^2) = Z_\sslash k^{4\theta} y_\sslash^2 r(y_\perp, y_\sslash) \\
-\rho_0 = Z_\sslash k^{2\theta} \bar \rho_0 \\
-m^2 = Z_\sslash k^{4\theta} \bar{m}^2 \\
-U(\rho) = Z_\sslash k^{d_m} u(\bar{\rho}) \\
-\rho = Z_\sslash^{-1} k^{-4\theta + d_m} \bar{\rho}
-\end{align}
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$q_\sslash^2 = k^{2 \theta} y_\sslash$ & $q_\perp^2 = Z_\sslash Z_\perp^{-1} k^{4\theta} y_\perp$ & $\rho_0 = Z_\sslash k^{2\theta} \bar \rho_0$\\ 
+\hline 
+$R(q_\perp^2,q_\sslash^2) = Z_\sslash k^{4\theta} y_\sslash^2 r(y_\perp, y_\sslash)$ & $U(\rho) = Z_\sslash k^{d_m} u(\bar{\rho})$ & $\rho = Z_\sslash^{-1} k^{-4\theta + d_m} \bar{\rho}$ \\ 
+\hline 
+\end{tabular}
+\end{center}
 
 Note that given the relation
 \begin{equation}
