@@ -16,32 +16,17 @@ and for $n=0$
 \hat{\p{t}} \int \frac{dq_\sslash^{m} dq_\perp^{d-m}}{(2\pi)^d} \log{ \left( Z_\sslash q_\sslash^4 + Z_\perp q_\perp^2 + \rho_0 q_\sslash^2 + R + m^2 \right) } = 16 v_m v_{d-m} k^{d_m} l_0^{d}(\bar{m}^2)
 \end{equation}
 
-\subsection{The $n$ function}
-Dimensionful:
-\begin{equation}
-N_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \deriv{q_\sslash^2} P G_a(q)^a G_r(q)^b
-\end{equation}
-adimensionning and spherical integration:
-\begin{equation}
-N_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 2 \theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \deriv{y_\sslash} \bar{P} \bar{G}_a(y)^a \bar{G}_r(y)^b
-\end{equation}
+This allows us to easily identify our expression for the flow of the potential with the $l_0$ threshold function.
 
 \subsection{The $m$ function}
-Dimensionful:
+The $m$ threshold function was defined as
 \begin{equation}
-M_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \left(\deriv{q_\sslash^2} P\right)^2 G_a(q)^a G_r(q)^b
+Z_\sslash^{1-a-b+\alpha/2} Z_\perp^{-\alpha/2} k^{d_m + 4\theta(1-a-b+\alpha/2+\beta/4)} m_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \left(\deriv{q_\sslash^2} P\right)^2 G_a(q)^a G_r(q)^b
 \end{equation}
-adimensionning and spherical integration:
-\begin{equation}
-M_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 4\theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \left(\deriv{y_\sslash} \bar{P}\right)^2 \bar{G}_a(y)^a \bar{G}_r(y)^b
-\end{equation}
+where $P$ is the inverse of the full propagator.
+%adimensionning and spherical integration:
+%\begin{equation}
+%m_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b+\alpha/2} Z_\perp^{-\alpha/2} k^{d_m + 4\theta(1-a-b+\alpha/2+\beta/4)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \left(\deriv{y_\sslash} \bar{P}\right)^2 \bar{G}_a(y)^a \bar{G}_r(y)^b
+%\end{equation}
 
-\subsection{The $k$ function}
-Dimensionful:
-\begin{equation}
-K_{1,ab\alpha \beta} = -\frac{1}{16 v_m v_{d-m}} \hat{\p{t}} \int_q q_\perp^\alpha q_\sslash^\beta \left(\derivh{(q_\sslash^2)}{2} P\right) G_a(q)^a G_r(q)^b
-\end{equation}
-adimensionning and spherical integration:
-\begin{equation}
-K_{1,ab00} = -\frac{1}{4} Z_\sslash^{1-a-b} k^{d_m - 4\theta + 4\theta(1-a-b)} \hat{\p{t}} \int dy_\sslash dy_\perp y_\sslash^{m/2-1} y_\perp^{(d-m)/2-1} \left(\derivh{y_\sslash}{2} \bar{P}\right) \bar{G}_a(y)^a \bar{G}_r(y)^b
-\end{equation}
+The other functions appearing in the expression of $\eta_\sslash$ are defined in a similar fashion. We do not explicitly give their definition here, as we do not need them.

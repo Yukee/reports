@@ -12,6 +12,21 @@ url = "http://www.sciencedirect.com/science/article/pii/0370157388901408",
 author = "Walter Selke"
 }
 
+@article{Wetterich,
+title = "Exact evolution equation for the effective potential ",
+journal = "Physics Letters B ",
+volume = "301",
+number = "1",
+pages = "90 - 94",
+year = "1993",
+note = "",
+issn = "0370-2693",
+doi = "http://dx.doi.org/10.1016/0370-2693(93)90726-X",
+url = "http://www.sciencedirect.com/science/article/pii/037026939390726X",
+author = "Christof Wetterich"
+}
+
+
 @article{MnP,
   title = {Phase diagram, susceptibility, and magnetostriction of MnP: Evidence for a Lifshitz point},
   author = {Shapira, Y. and Becerra, C. C. and Oliveira, N. F. and Chang, T. S.},
@@ -64,4 +79,21 @@ author = "Walter Selke"
   url={http://stacks.iop.org/0295-5075/98/i=5/a=51002},
   year={2012},
   abstract={The behaviour of a d -dimensional vectorial N =3 model at a m -axial Lifshitz critical point is investigated by means of a nonperturbative renormalization group approach that is free of the huge technical difficulties that plague the perturbative approaches and limit their computations to the lowest orders. In particular being systematically improvable, our approach allows us to control the convergence of successive approximations and thus to get reliable physical quantities in d =3.}
+}
+
+@article{BervillierLif,
+title = "Exact renormalization group equation for the Lifshitz critical point ",
+journal = "Physics Letters A ",
+volume = "331",
+number = "1–2",
+pages = "110 - 116",
+year = "2004",
+note = "",
+issn = "0375-9601",
+doi = "http://dx.doi.org/10.1016/j.physleta.2004.07.069",
+url = "http://www.sciencedirect.com/science/article/pii/S0375960104010990",
+author = "C. Bervillier",
+keywords = "Exact renormalization group",
+keywords = "Derivative expansion",
+keywords = "Lifshitz critical point "
 }

@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="phase_diagram.svg">
+   sodipodi:docname="phase_diagram_2.svg">
   <defs
      id="defs4">
     <marker
@@ -152,8 +152,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="385.39286"
+     inkscape:zoom="1.9002963"
+     inkscape:cx="372.04724"
      inkscape:cy="654.11509"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -243,35 +243,35 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#946741;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-       x="181"
-       y="376.86218"
+       x="171.5"
+       y="385.36218"
        id="text3828"><tspan
          sodipodi:role="line"
          id="tspan3830"
-         x="181"
-         y="376.86218">Ferro</tspan></text>
+         x="171.5"
+         y="385.36218">Ferromagnetic</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#946741;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;font-stretch:normal;font-variant:normal"
-       x="240"
-       y="273.36218"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#946741;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="247.5"
+       y="273.86218"
        id="text3832"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3834"
-         x="240"
-         y="273.36218">Para</tspan></text>
+         x="247.5"
+         y="273.86218">Paramagnetic</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#946741;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-       x="367"
-       y="362.86218"
+       x="357"
+       y="363.36218"
        id="text3836"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3838"
-         x="367"
-         y="362.86218">Mod</tspan></text>
+         x="357"
+         y="363.36218">Modulated</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00336a;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
@@ -283,5 +283,14 @@
          id="tspan3846"
          x="231.5"
          y="314.11218">L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="437.49997"
+       y="428.36221"
+       id="text3021"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3023"></tspan></text>
   </g>
 </svg>

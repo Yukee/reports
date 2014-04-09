@@ -10,12 +10,12 @@
 \vspace{1.3cm}
 {M2 ICFP, parcours physique théorique}\\
 \vspace{0.8cm}
-{\Large{Internship from the 6th of January to the 6th of March, 2014}\\at the LPTMC, UPMC.}\\ 
+{\Large{Internship from the 13th of January to the 7th of March, 2014}\\at the LPTMC, UPMC.}\\ 
 \end{center}
 \vspace{1.5cm}
 \begin{center}
 \rule{\textwidth}{1mm}
-\Huge{\Huge \textbf{Nonpertubative renormalization group study of the Lifshitz critical point}} 
+\Huge{\Huge \textbf{Nonperturbative renormalization group study of the Lifshitz critical point}} 
 \rule[0.3cm]{\textwidth}{1mm}\\
 \end{center}
 
@@ -82,14 +82,14 @@
 
 \section*{\Huge{Introduction}}
 
-The Lifshitz model, is used to describe a wide range of materials including magnetic crystals, supraconductors, liquid crystals and ferroelectic materials. 
+The Lifshitz model, is used to describe a wide range of materials including magnetic crystals, supraconductors, liquid crystals and ferroelectics. 
 They share a common intriguing feature: having a so called modulated -or stripped- phase. In this phase the order parameter is periodic in one direction of space, and constant in the other directions. 
 
-Though the Lifshitz model was proposed .. years ago, the value of the critical exponents of the critical point between the modulated, ferromagnetic and antiferromagnetic phases is still a matter of debate. During this internship we computed this critical exponents using the tools of the nonperturbative renormalization group. Though this has been done before \cite{MouhannaLif} \cite{BervillierLif} our approach is new, and is thought to be more flexible. In particular it could be improved to compute the exponents with unpreceeding accuracy.
+Though the Lifshitz model was proposed .. years ago, the value at the critical exponents of the critical point between the modulated, ferromagnetic and antiferromagnetic phases is still a matter of debate. During this internship we have computed this critical exponents using the tools of the nonperturbative renormalization group. Though this has been done before \cite{MouhannaLif} \cite{BervillierLif} our approach is new, and is thought to be more flexible. In particular it could be improved to compute the exponents with unpreceeding accuracy.
 
 The first chapter of this report is a very general introduction to the physics of the Lifshitz model. 
 After an introduction to the ideas of renormalization, the second chapter focuses on the tool we used to compute the critical exponents of the model: the nonperturbative renormalization group. 
-Finally, the third chapter gives our results and discuss them.
+Finally, the third chapter gives our results and discusses them.
 
 
 
@@ -101,7 +101,13 @@ Through this report the following shorthand notations have been used:
 $\int_x$ & $\leftrightarrow$ &  $\int_{\mathds{R}} dx$ \\ 
 $\int_q$ & $\leftrightarrow$ &  $\int_{\mathds{R}} \frac{dq}{(2\pi)^d}$ \\ 
 $\Gamma^{(N)}(x_1,...x_N)$ & $\leftrightarrow$ &  $\frac{\delta^N }{\delta \phi(x_1) ... \delta \phi(x_N)} \Gamma[\phi]$ \\ 
-$f \cdot g$ & $\leftrightarrow$ &  $\int_x f(x) g(x)$ \\ 
+$f \cdot g$ & $\leftrightarrow$ &  $\int_x f(x) g(x)$ \\
 \end{tabular} 
 \end{center}
 
+The summation over repeated indices convention will be used.
+
+We also define the following quantity, linked to the volume of the $d$ dimensional sphere:
+\begin{equation}
+v_d = \frac{1}{2^{1+d} \pi^{d/2} \Gamma\left(d/2\right)}
+\end{equation}

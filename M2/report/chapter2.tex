@@ -1,6 +1,6 @@
 \chapter{Introduction to the nonperturbative renormalization techniques}
 
-At the so-called Lifshitz critical point, three phases intersect. This is rather unsual, so we expect the physics of the vicinity of this point to be of special interest. To investigate it, we would like to compute the critical exponents associated to this transition point. To this end, we used the powerful machinery of the renormalization group, and more precisely of one particular implementation of the renormalization ideas: the nonpertubative renormalization group.
+At the so-called Lifshitz critical point, three phases intersect. This is rather unusual, so we expect the physics of the vicinity of this point to be of special interest. To investigate it, we would like to compute the critical exponents associated to this transition point. To this end, we used the powerful machinery of the renormalization group, and more precisely of one particular implementation of the renormalization ideas: the nonpertubative renormalization group.
 
 In this chapter we propose first a very general introduction to the ideas and concepts of renormalization. Then we focus on the nonperturbative renormalization group techniques.
 
@@ -8,38 +8,20 @@ In this chapter we propose first a very general introduction to the ideas and co
 
 \subsection{The renormalization procedure}
 
-The idea of renormlization is to consider a given many-body system at different length scales. At a given length scale $S$ the system is described by an effective Hamiltonian $H_S$. 
-For a many-body system, two length scales play a special role: 
-\begin{itemize}
-\item The microscopic length scale, $a$, which is for example for a cristal the typical distance between two neighbouring atoms.
-It is convenient to define the scale in the units of the microscopic lenghtscale $a$, and this is what we are going to do. So, for example, the system at $S=3$ will mean the system at lengthscale $3 a$.
-\item The macroscopic length scale $L$, which is the size of the system. 
-\end{itemize}
-
-The Hamiltonian at the microscopic length scale is simply the microscopic Hamiltonian, \textit{ie}
-\begin{equation}
-H_1 = H
-\end{equation}
- while the Hamiltonian at the macroscopic length scale is called to effective action (and sometimes the Gibbs free energy) and is denoted $\Gamma$:
-\begin{equation}
-  H_{L/a} = \Gamma
-\end{equation} 
-
-For the moment what we mean by ``the Hamiltonian at a length scale $S$'' is rather vague. To be more precise, let us imagine that we want to describe a magnetic cristal. The microscopic Hamiltonian will be in general a discrete sum of local observables $O_\alpha$, depending on the value of the magnetization at site $i$, $\phi(i)$:
+The idea of renormalization is to reduce the number of degrees of freedom of a given many-body correlated system.
+To achieve that, an \textit{effective Hamiltonian at length scale $S$} is built. 
+To be more precise, let us imagine that we want to describe a magnetic crystal. The microscopic Hamiltonian will be in general a discrete sum of local observables $O_\alpha$, depending on the value of the magnetization at site $i$, $\phi(i)$:
 \begin{equation}
 H[\phi] = \sum_i \sum_\alpha \kappa_\alpha O_\alpha[\phi(i), \nabla \phi(i), ...]
 \end{equation}
-where $\kappa_\alpha$ is the coupling constant associated to the observable $O_\alpha$. The partition function will be simply the sum over all possible configurations of the $\phi(i)$ of the Boltzmann weight associated to a given configuration:
-\begin{equation}
-Z = \sum_{\text{conf } \phi} e^{-H[\phi]}
-\end{equation}
-These equations describe the system at the microscopic scale $S=1$. Now, if we want to describe it at a scale $S \geq 1$, surely we are no longer interested in knowing the fluctuations of the field over regions of size smaller than $a S$\footnote{Experimentally, we can imagine that looking at the system at scale $S$ means probing it with devices having a spatial resolution of $a S$. Any measurement operation with such devices can be described mathematically by the convolution of an observable by an error function having a spatial support of diameter $a S$. This operation is roughtly equivalement to averaging the observables (and therefore the field) on blocks of size $a S$.}. All we need is thus the average over regions of size $a S$ of the field:
+where $\kappa_\alpha$ is the coupling constant associated to the observable $O_\alpha$. 
+This Hamiltonian describe the system at the microscopic scale $S=1$. Now, if we want to describe it at a scale $S \geq 1$, surely we are no longer interested in knowing the fluctuations of the field over regions of size smaller than $a S$\footnote{Experimentally, we can imagine that looking at the system at scale $S$ means probing it with devices having a spatial resolution of $a S$. Any measurement operation with such devices can be described mathematically by the convolution of an observable by an error function having a spatial support of diameter $a S$. This operation is roughly equivalent to averaging the observables (and therefore the field) on blocks of size $a S$.}. All we need is thus the average over regions of size $a S$ of the field:
 \begin{equation}
 \tilde{\phi}(b) = \frac{1}{(aS)^d} \sum_{i \in B(b)} \phi(i)
 \end{equation}
 where $d$ is the dimension of space, and $B(b)$ is the set of sites $i$ belonging to the block $b$.
 
-Schematically what we do is group spins by blocks of size $a S$ (fig. \ref{renorm_1}), and average over these blocks.
+Schematically what we do is group spins by blocks of size $a S$ (fig. \eqref{renorm_1}), and average over these blocks.
 
 \begin{figure}[htp]
 \centering
@@ -71,17 +53,9 @@ Schematically what we do is group spins by blocks of size $a S$ (fig. \ref{renor
 \label{fig:renorm_proc}
 \end{figure}
 
-Now we replace the microscopic Hamiltonian by an effective Hamiltonian for the block spin field $\tilde{\phi}$:
-\begin{equation}
-\label{eq:effective_ham}
-H[\phi] \rightarrow \tilde{H}[\tilde{\phi}] \text{ such that } e^{-\tilde{H}[\tilde{\phi}]} = \sum_{\text{conf } \phi} \prod_{b} \delta \left( \tilde{\phi}(b) - \frac{1}{S^d} \sum_{i \in B(b)} \phi(i) \right) e^{-H[\phi]}
-\end{equation}
-this Hamiltonian is designed such that
-\begin{equation}
-\sum_{\text{conf } \tilde{\phi}} e^{-\tilde{H}[\tilde{\phi}]} = Z
-\end{equation}
-This Hamiltonian describe the new system depicted in fig. \ref{renorm_2}. 
-We are not done yet! To make the new Hamiltonian ressemble as much as possible the one we started from, we rescale all lengths (fig. \ref{renorm_3}). We also rescale the field. Formally it means that we perform the change of variables
+Now we replace the microscopic Hamiltonian by an effective Hamiltonian for the block spin field $\tilde{\phi}$.
+This Hamiltonian describe the new system depicted in fig. \eqref{renorm_2}. 
+We are not done yet! To make the new system look as much as possible like the one we started from, we rescale all lengths (fig. \eqref{renorm_3}). We also rescale the field. Formally it means that we perform the change of variables
 \begin{eqnarray}
 x' = x/S  \\
 \phi' = S^\Delta \tilde{\phi}
@@ -89,25 +63,26 @@ x' = x/S  \\
 where $x$ could be any length appearing in the Hamiltonian.
 
 The Hamiltonian in the new variables $H'[\phi'] = \tilde{H}[\tilde{\phi}]$ is the effective Hamiltonian after the renormalization operation.  
-It could seem strange that we rescaled the field as well as the lenghts. We do that in order for the new Hamiltonian to ressemble the old one as closely as possible. We are going to see on the example of the Lifshitz mean field theory how we can chose $\Delta$ for that purpose.
+It could seem strange that we had to rescale the field as well as the lengths. We do that in order for the new Hamiltonian to resemble the old one as closely as possible. We are going to see on the example of the Lifshitz mean field theory how we can choose $\Delta$ for that purpose.
 
 To conclude, the key ideas of the renormalization procedure are the averaging over block spins, and the rescaling of lengths and fields. We have described here the case of a discrete Hamiltonian, because it seemed more intuitive. But of course the ideas of renormalization are general and can as easily be applied to a continuous Hamiltonians.
 
 \subsection{The renormalization group}
 
-If the structure of the Hamiltonian is kept unchanged by the renormalization group procedure, \textit{ie} if
+The Hamiltonian after the renormalization procedures writes
 \begin{equation}
 H'[\phi'] = \sum_{i'} \sum_\alpha \kappa_\alpha' O_\alpha[\phi'(i'), \nabla' \phi'(i'), ...]
 \end{equation}
-then the renormalization group action is a group action\footnote{Actually, invertibility cannot be guaranteed so it rather is a semigroup action, but the distinction is of no importance for us.}. The group renormalization group is completely described by its action on the coupling contants:
+Couplings $\kappa$ are sent to new couplings $\kappa'$\footnote{It may also be that new couplings --even infinitely many!-- are generated by the renormalization procedure. In that case, the structure of the Hamiltonian is not stable under renormalization, unless we already take into account these couplings at the microscopic scale, or we neglect them, thus making the renormalization procedure approximate.}, therefore we can define a \textit{group action} $g$, transforming the coupling constants at scale $1$ in the coupling constant at scale $S$:
 \begin{equation}
+\label{eq:rg_tranf}
 \kappa_\alpha \rightarrow \kappa_\alpha' \define g(\kappa_\alpha, S)
 \end{equation}
 The renormalization group is a multiplicative, one parameter group:
 \begin{equation}
 g( g(\kappa_\alpha, S_1), S_2) = g(\kappa_\alpha, S_1 S_2)
 \end{equation}
-These transformations are assumed to be continuous in the coupling constant. It is also very often possible to consider the scale $S$ as a continuous parameter. Then the successive application of infintesimally close renormalization group transformations generates a continuous tranjectory in the space of coupling constants. This trajectory can be parametrized by $t \define \log(S)$, an additive parameter playing the role of a time. It is often referred to as ``the renormalization group time''.
+These transformations are assumed to be continuous in the coupling constant. It is also very often possible to consider the scale $S$ as a continuous parameter. Then the successive application of infinitesimally close renormalization group transformations generates a continuous trajectory in the space of coupling constants. This trajectory can be parametrized by $t \define \log(S)$, an additive parameter playing the role of a time. It is often referred to as ``the renormalization group time''.
 
 Near a phase transition or critical point, fluctuations occur at all length scales, and thus one should expect the Hamiltonian to be scale invariant. 
 In terms of the renormalization group action, scale invariance simply means that
@@ -116,17 +91,28 @@ g(\kappa_\alpha, S) = \kappa_\alpha
 \end{equation}
 The fact that scale invariance has such a simple meaning in the renormalization group framework is an extremely good sign. It is a hint that renormalization group is a powerful tool to look for critical points.
 
-To illustrate that, in appendix ??? (yet to be written!), we derive from very simple renormalization group arguments some useful formulas relating critical exponents.
+As an application of these ideas, imagine that we are close to a critical point. Then eq. \eqref{eq:rg_tranf} can be linearized:
+\begin{equation}
+\frac{d \log g(\kappa_\alpha, S)}{d \log S} = \lambda_\alpha
+\end{equation}
+If $\lambda_\alpha$ is positive, then the fixed point is repulsive in direction $\alpha$, and the coupling is said to be \textit{relevant}. On the other hand if $\lambda_\alpha$ is positive, the fixed point is attractive in this direction and the coupling is \textit{irrelevant}.
+
+Let us imagine that we are at a point $g_0$ in the space of coupling constants, very close to a fixed point. If we do a small change in scale, taking us from $g_0$ to $g(S)$, then, because we are close to a fixed point, we have moved at first order in the direction of the most relevant coupling, let us say it is direction $\alpha = 0$. Then we have $ g(S) = g_0 S^{\lambda_0}$.
+Under the same infinitesimal change in scale, the correlation length $\xi$ is transformed according to $\xi_{g_0} = S \xi_{g(S)} \propto S^{-1/\lambda}$. Usually, and also in the case of the Lifshitz model, the most relevant direction is that of temperature. Then the $\nu$ critical exponent is given by $\xi_{g_0} \propto |T - T_c|^{-\nu}$. 
+By simple comparison with our result from the renormalization group, we have thus obtained the very important result
+\begin{equation}
+\nu = \frac{1}{\lambda_0}
+\end{equation}
+relating $\nu$, the critical exponent of the correlation length, to $\lambda_0$, the most relevant direction around a given fixed point.
 
 \subsection{Renormalization procedure applied to the mean field Lifshitz theory}
 
-As we have just seen, an operation from the renormalization group transforms our microscopic Hamiltonian $H$ into an effective Hamiltonian at scale $S$, $H_g(S)$. We hope that this operation will not change the structure of our Hamiltonian, so that we can use the tools of the renormalization group. 
+As we have just seen, an operation from the renormalization group transforms our microscopic Hamiltonian $H$ into an effective Hamiltonian at scale $S$, $H_{S}$.%This 
 Since our Hamiltonian is not isotropic (it distinguishes between the direction of the modulation $\sslash$, and the orthogonal direction $\perp$), we expect an operation of the renormalization group to change lengthscales by two different amounts in the two unequivalent directions. 
-Scales in the parallel direction will be changed by a factor $S_\sslash$
- : $x_\sslash' = (S_\sslash)^{-1} x_\sslash$
-, while scales on the orthogonal direction will be changed by a factor $S_\perp$ : $x_\perp' = (S_\perp)^{-1} x_\perp$.
+Scales in the parallel direction will be changed by a factor $S_\sslash$: $x_\sslash' = (S_\sslash)^{-1} x_\sslash$
+, while scales on the orthogonal direction will be changed by a factor $S_\perp$: $x_\perp' = (S_\perp)^{-1} x_\perp$.
 
-To simplify things we can keep a single scale $S = S_\perp$, and define $\theta$ such that $S_\sslash = S^\theta$.Note that this is equivalent to changing the \textit{units} in the parallel direction: if we say that lengths in the orthogonal direction are measured in meters, then lengths in the parallel direction are measured in $(\text{meters})^\theta$.
+To simplify things we can keep a single scale $S = S_\perp$, and define $\theta$ such that $S_\sslash = S^\theta$. Note that this is equivalent to changing the \textit{units} in the parallel direction: if we say that lengths in the orthogonal direction are measured in meters, then lengths in the parallel direction are measured in $(\text{meters})^\theta$.
 A volume, which is normally measured in $(\text{meters})^d$ will in our new units system be measured in $(\text{meters})^{(d-m) + \theta m}$. It is as if $d$ had been replaced by
 \begin{equation}
 d_m = d+ m(\theta -1)
@@ -145,7 +131,7 @@ But we also know that
 \langle \phi(p_\perp) \phi(0) \rangle_{g^*} \propto |p_\perp|^{2\Delta} 
 \end{align}
 where $\Delta$ is the renormalization of the field : $\phi_{g(1)}(x) = S^{-\Delta} \phi_{g(S)}(Sx)$. 
-Identifying these expressions for the renormalization of the correlation function with the previous ones, we can express $\Delta$ in two unequivalent ways, thus yielding a relation between $\eta_\sslash$ and $\eta_\perp$ :
+Identifying these expressions for the renormalization of the correlation function with the previous ones, we can express $\Delta$ in two unequivalent ways, thus yielding a relation between $\eta_\sslash$ and $\eta_\perp$:
 \begin{equation}
 \theta = \frac{2- \eta_\perp}{4- \eta_\sslash}
 \end{equation}
@@ -157,15 +143,13 @@ We recall that the Lifshitz Hamiltonian is
 H = \int_x \left( \frac{1}{2}(\partial_\perp \phi)^2 + \frac{\rho_0}{2} (\partial_\sslash \phi)^2 + \frac{\sigma_0}{2} (\partial_\sslash^2 \phi)^2 + U(\rho) \right)
 \end{equation}
 
-The mean field approximation consist in neglecting the fluctuations of the field. Therefore, the integration over the fluctuations performed during a renormalization group operation is trivial, and we can directly write the transformed Hamiltonian after a renormalization group operation $g(S)$ :
+The mean field approximation consists in neglecting the fluctuations of the field. Therefore, the integration over the fluctuations performed during a renormalization group operation is trivial, and we can directly write the transformed Hamiltonian after a renormalization group operation $g(S)$ :
 \begin{equation}
 H'[\phi'] = \int_{x'} S^{d_m} \left( S^{-2\Delta -2} (\partial_\perp' \phi')^2 + \sigma_0 S^{-2\Delta - 4 \theta} (\partial_\sslash'^2 \phi)^2 + \rho_0 S^{-2\Delta -2 \theta} (\partial_\sslash' \phi')^2 U'(\phi') \right)
 \end{equation}
-This Hamiltonian must indentify with the previous one, so
-\begin{equation}
-\Delta = \frac{d_m -2}{2}
-\end{equation}
-The Lifschitz point involves a non-trivial $\sigma_0 (\partial_\sslash^2 \phi)^2$, therefore at this critical point, $\sigma_0$ must not renormalize away, which is only possible if
+This Hamiltonian must identify with the previous one, and because we have chosen the normalization of the field, so we must have $S^{d_m-2\Delta -2} =1$. This sets the renormalization of the field at the mean field level.
+
+As we have seen --at least qualitatively, stripped pattern appear because of a nontrivial Laplacian squared term. Therefore at the Lifshitz point $\sigma_0$ must be nontrivial, and in particular must not renormalize away, which is only possible if
 \begin{equation}
 \theta = \frac{1}{2}
 \end{equation}
@@ -180,7 +164,7 @@ d_c^> = 4 + \frac{m}{2}
 \end{equation}
 around the Lifschitz point.
 
-In nature, the most common case is $m=1$ (when in the modulated phase, the field is periodic in one direction of space). In that case the upper critical dimension is $d_c^> = 4.5$. When doing perturbation theory, one usually expand around the upper critical dimension, writing
+In Nature, the most common case is $m=1$ (when in the modulated phase, the field is periodic in one direction of space). In that case the upper critical dimension is $d_c^> = 4.5$. When doing perturbation theory, one usually expand around the upper critical dimension, writing
 \begin{equation}
 d = d_c^> - \epsilon,
 \end{equation} 
@@ -188,18 +172,9 @@ where $\epsilon$ is a supposedly small parameter. When $d=3$, $\epsilon = 1.5$, 
 
 \section{The nonperturbative renormalization group}
 
-Starting from the microscopic Hamiltonian $H$, and applying successive transformations of the renormalization group, we construct a hierarchy of effective Hamiltonian describind the system at greater and greater distances. This process come to an end when we describe the system at the macroscopic distance. We then obtain the effective action $\Gamma$.
-\begin{equation}
-H \rightarrow H' \rightarrow H'' \rightarrow ... \rightarrow \Gamma
-\end{equation}
-Writing primes is cumbersome, so we devise a better notation system. We call $H_k$ the effective Hamiltonian describing the system at lengthscale $1/k$. Then our previous hierarchy reads
-\begin{equation}
-H_\Lambda \rightarrow H_{\Lambda - \delta k} \rightarrow H_{\Lambda - 2 \delta k} \rightarrow ... \rightarrow H_0
-\end{equation}
+The idea of the nonperturbative renormalization group is to find an exact evolution equation of a scale-dependent object, which could possibly be the microscopic Hamiltonian, or the free energy, or the Legendre transform of the free energy: the effective action. 
 
-The idea of the nonperturbative renormalization group is to consider $H_k$ \textit{as a function of $k$}. We already know the boundary values $H_\Lambda$ and $H_0$. If we could find a differential equation on $H_k$, it would be entirely determined!
-
-Many exact differential equations can be derived from this starting point. They lead to different version of the nonperturbative renormalization group. We shall discuss here the so-called Wetterich, or Wegner-Wetterich equation, whose object of study is not the scale-dependent Hamiltonian but the scale dependent \textit{effective action} at scale $k$,  $\Gamma_k$. The effective action $\Gamma$ takes into account fluctuations on all length scales (ie on all momentum scales), while $\Gamma_k$ only takes into account fluctuations of momentum between $k$ and $\Lambda$.
+We shall discuss here the so-called Wetterich equation \cite{Wetterich}, whose object of study is the scale dependent \textit{effective action} at scale $k$,  $\Gamma_k$. The effective action $\Gamma$ takes into account fluctuations on all length scales (\textit{i.e.} on all momentum scales), while $\Gamma_k$ only takes into account fluctuations of momentum (\textit{i.e.} inverse length scale) between $k$ and $\Lambda$.
 
 \subsection{The scale-dependent effective action}
 
@@ -211,8 +186,8 @@ Many exact differential equations can be derived from this starting point. They 
 \end{center}
 \end{figure}
 
-Let us try to build $\Gamma_k$ explicitely.  To this end let us define the \textit{regulator} $R_k(x,y) = R(x) \delta(x-y)$, whose role is to give a mass to the modes of momentum smaller than $k$, while leaving the other modes untouched.
-The typical shape of the regulator in momentum space is given by fig. \ref{fig:regulator}. Moreover, the regulator is required to vanish at $k \rightarrow 0$ and to diverge for $k \rightarrow \infty$ (or $k \rightarrow \Lambda$), at fixed $q^2$. This can for example be achieved by
+Let us build $\Gamma_k$ explicitly.  To this end let us define the \textit{regulator} $R_k(x,y) = R(x) \delta(x-y)$, whose role is to give a mass to the modes of momentum smaller than $k$, while leaving the other modes untouched.
+The typical shape of the regulator in momentum space is given by fig. \eqref{fig:regulator}. Moreover, the regulator is required to vanish at $k \rightarrow 0$ and to diverge for $k \rightarrow \infty$ (or $k \rightarrow \Lambda$), at fixed $q^2$. This can for example be achieved by
 \begin{equation}
 R_k(q) = \frac{q^2}{e^{q^2/k^2} - 1}
 \end{equation}
@@ -230,12 +205,12 @@ We can now define the Legendre transform of the scale dependent free energy,
 \gamleg[\phi] \define - W_k[h] + h \cdot \phi
 \end{equation}
 where the free energy is defined as $W_k[h] = \log Z_k$, and $Z_k = \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi} $.
-Qualitatively, since the slow modes are given a mass in $W_k$, the Legendre transform only acts on the rapid mode, and we understand that  $\gamleg[\phi]$ indeed has the property of taking into accounts only rapid modes.\footnote{We note in passing that eq. \ref{eq:gamleg} implies 
+Qualitatively, since the slow modes are given a mass in $W_k$, the Legendre transform only acts on the rapid mode, and we understand that  $\gamleg[\phi]$ indeed has the property of taking into accounts only rapid modes.\footnote{We note in passing that eq. \eqref{eq:gamleg} implies 
 \begin{equation}
 \phi(x) = \frac{\delta W_k[h]}{
 \delta h(x)} = \frac{1}{Z_k[\varphi]} \int \D \varphi e^{-H_k[\varphi] + h \cdot \varphi} \varphi \define \langle \varphi(x) \rangle_k
 \end{equation}
-This tells us that $\phi$ is the background field (at scale $k$), \textit{ie} the mean value of the field $\varphi$ (at scale $k$). }
+This tells us that $\phi$ is the background field (at scale $k$), \textit{i.e.} the mean value of the field $\varphi$ (at scale $k$). }
 
 Finally, we introduce the scale-dependent effective action:
 \begin{equation}
@@ -249,11 +224,11 @@ Finally, the scale-dependent effective action verifies the differential equation
 \p{k} \gam_k[\phi] = \frac{1}{2} \int_{x,y} \p{k}\left(R_k(x,y)\right) \left( \Gamma^{(2)}_k(x,y) + R_k(x,y) \right)^{-1}
 \end{equation}
 This equation is often called the Wetterich equation. 
-The demonstration can be found in appendix \ref{app:wett}. We can use the fact that $R_k$ is invariant by translation, to write the right hand side of this integro-differential equation as a single integral over momentum $q$:
+The demonstration can be found in appendix \eqref{app:wett}. We can use the fact that $R_k$ is invariant by translation, to write the right hand side of this integro-differential equation as a single integral over momentum $q$:
 \begin{equation}
 \p{k} \gam_k[\phi] = \frac{1}{2} \int_{q} \p{k}\left(R_k(q)\right) \left( \Gamma^{(2)}_k(q,-q) + R_k(q) \right)^{-1}
 \end{equation}
-Moreover, we shall make the change of variable $k \rightarrow t = \log(k/\Lambda)$, to take advantage of the additive properties of $t$\footnote{As we have seen before, $t$ can be regarded as a time parameterizing the renormalization group trajectory in the coupling constants space.}. In order to simplify further the Wetterich equation, we define an operator $\hat{\p{t}}$ as the differenciation with respect to $t$ acting only on $R_t$. That is,
+Moreover, we shall make the change of variable $k \rightarrow t = \log(k/\Lambda)$, to take advantage of the additive properties of $t$\footnote{As we have seen before, $t$ can be regarded as a time parameterizing the renormalization group trajectory in the coupling constants space.}. In order to simplify further the Wetterich equation, we define an operator $\hat{\p{t}}$ as the differentiation with respect to $t$ acting only on $R_t$. That is,
 \begin{equation}
  \hat{\p{t}} \define \frac{\partial R_t(\fdot)}{\partial t} \frac{\partial}{\partial R_t(\fdot)}
 \end{equation}
@@ -264,8 +239,8 @@ where $R_t(\fdot)$ is a shorthand notation for the function $q \mapsto R_t(q)$.
 \p{t} \gam_k[\phi] = \frac{1}{2} \hat{\p{t}} \tr{ \log\left( \Gamma^{(2)}_t(q,-q) + R_t(q) \right) }\footnote{Here we have used the formula for the trace on continuous indices in Fourier space: $\tr{A} = \int_{x} A(x,x) = \int_q A(q,-q)$.}
 \end{equation}
 This is the form of the Wetterich equation we will use from now on. 
-Even if the field is vectorial, eq. \ref{eq:wett} is still valid, provided that the trace acts on the vector space of the field as well\footnote{we refer to appendix \ref{app:wett} for a sketch of proof}.
+Even if the field is vectorial, eq. \eqref{eq:wett} is still valid, provided that the trace acts on the vector space of the field as well\footnote{We refer to appendix \eqref{app:wett} for a sketch of proof.}.
 
-Note that no approximations were made in the course of deriving the Wetterich equation. It is thus an exact equation describing the (renormlization group) time dependance of the scale-dependant effective action $\Gamma_t$, interpolating between $\Gamma_\Lambda = H$ and $ \Gamma_0 = \Gamma$.
+Note that no approximations were made in the course of deriving the Wetterich equation. It is thus an exact equation describing the (renormalization group) time dependence of the scale-dependent effective action $\Gamma_t$, interpolating between $\Gamma_\Lambda = H$ and $ \Gamma_0 = \Gamma$.
 
 We we can use the Wetterich equation as a starting point for finding the critical properties of the Lifshitz model.

@@ -11,6 +11,7 @@
 \usepackage{stmaryrd} % parallel symbol
 \usepackage{mathrsfs} % curly D symbol
 \usepackage{dsfont} % hollow Z, R, N symbols
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black]{hyperref} % hyperlinks
 
 \usepackage{eso-pic}
 \newcommand\BackgroundPic{
@@ -72,17 +73,17 @@ keepaspectratio]{img/cover/cover_img.png}%
 \input{chapter1.tex}
 \input{chapter2.tex}
 \input{chapter3.tex}
-\input{chapter4.tex}
+%\input{chapter4.tex}
  
 \appendix
 \input{appendix1_wetterich_equation.tex}
 \input{appendix_thresholds.tex}
 \input{appendix_approx.tex}
-%\input{appendix/characteristics.tex}
+\input{appendix_mathematica.tex}
  
 % Bibliography:
 \clearpage
 \bibliography{bib/bib.bib}{}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
  
 \end{document}
