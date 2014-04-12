@@ -1,3 +1,18 @@
+@article{PhysRevLett.35.1678,
+  title = {Critical Behavior at the Onset of $k$-Space Instability on the $\lambda$ Line},
+  author = {Hornreich, R. M. and Luban, Marshall and Shtrikman, S.},
+  journal = {Phys. Rev. Lett.},
+  volume = {35},
+  issue = {25},
+  pages = {1678--1681},
+  numpages = {0},
+  year = {1975},
+  month = {Dec},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.35.1678},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.35.1678}
+}
+
 @article{ANNNI,
 title = "The ANNNI model — Theoretical analysis and experimental application ",
 journal = "Physics Reports ",
@@ -25,7 +40,6 @@ doi = "http://dx.doi.org/10.1016/0370-2693(93)90726-X",
 url = "http://www.sciencedirect.com/science/article/pii/037026939390726X",
 author = "Christof Wetterich"
 }
-
 
 @article{MnP,
   title = {Phase diagram, susceptibility, and magnetostriction of MnP: Evidence for a Lifshitz point},
