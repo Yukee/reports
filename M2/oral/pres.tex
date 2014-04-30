@@ -35,11 +35,11 @@
 \newcommand{\zperp}{\ensuremath{\zeta^\perp}}
 \newcommand{\lam}{\ensuremath{\lambda}}
 
-\title[Étude du point de Lifshitz par le groupe de renormalisation.]{}
+\title[Étude du point de Lifshitz par le groupe de renormalisation.]{Étude du point de Lifshitz par le groupe de renormalisation.}
 \date{Stage du 13 janvier au 7 mars 2014 au \\ 
-\huge{Laboratoire de physique théorique de la matière condensée} \\ 
+Laboratoire de physique théorique de la matière condensée (LPTMC) \\ 
 \small{UMPC}}
-\author{Nicolas Macé\\ 
+\author{Nicolas Macé \\
 \textbf{Responsable de stage :} Dominique Mouhanna}
 
 \begin{document}
@@ -56,14 +56,14 @@
 \subsection{L'idée de la renormalisation}
 \begin{frame}
 
-\begin{columns}[t]
-
 \only<1>{
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.35]{img/renorm_step0.pdf}
 \label{}
 \end{figure}
+\[H[\phi(x_i)]\]
+\[\phantom{\tilde{\phi}_B = \frac{1}{Sa} \sum_{i \in B} \phi_i}\]
 }
 
 \only<2>{
@@ -72,6 +72,8 @@
 \includegraphics[scale=0.35]{img/renorm_step1.pdf}
 \label{}
 \end{figure}
+\[H[\phi(x_i)]\]
+\[\tilde{\phi}(x_b) = \frac{1}{Sa} \sum_{i \in b} \phi(x_i)\]
 }
 
 \only<3>{
@@ -80,6 +82,8 @@
 \includegraphics[scale=0.35]{img/renorm_step2.pdf}
 \label{}
 \end{figure}
+\[H[\phi(x_i)] \rightarrow \tilde{H}[\tilde{\phi}(x_b)]\]
+\[\phantom{\tilde{\phi}_b = \frac{1}{Sa} \sum_{i \in b} \phi_i}\]
 }
 
 \only<4>{
@@ -88,10 +92,17 @@
 \includegraphics[scale=0.35]{img/renorm_step3.pdf}
 \label{}
 \end{figure}
+\[
+ \left.\begin{aligned}
+        x' = x/S \\
+        \phi' = S^\Delta \phi
+       \end{aligned}
+ \right\}
+  \rightarrow H_S[\phi'(x'_i)]
+\]
+Comparer $H$ et $H_S$ $\rightarrow$ renormalisation des constantes de couplage.
 }
   
-\end{columns}
-
 \end{frame}
 
 \subsection{Application au modèle de Lifshitz en champ moyen}
