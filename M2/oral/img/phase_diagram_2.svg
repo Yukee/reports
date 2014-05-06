@@ -25,10 +25,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.6874248"
-     inkscape:cx="258.25696"
+     inkscape:cx="259.00117"
      inkscape:cy="702.9386"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1015"
@@ -297,7 +297,7 @@
          y="385.36218"
          x="171.5"
          id="tspan3830"
-         sodipodi:role="line">Ferromagnetic</tspan></text>
+         sodipodi:role="line">Ferromagnétique</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3832"
@@ -308,7 +308,7 @@
          y="273.86218"
          x="247.5"
          id="tspan3834"
-         sodipodi:role="line">Paramagnetic</tspan></text>
+         sodipodi:role="line">Paramagnétique</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3836"
@@ -319,7 +319,7 @@
          y="363.36218"
          x="357"
          id="tspan3838"
-         sodipodi:role="line">Modulated</tspan></text>
+         sodipodi:role="line">Modulée</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3844"

@@ -1,0 +1,556 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     20899,        547]
+NotebookOptionsPosition[     19750,        503]
+NotebookOutlinePosition[     20086,        518]
+CellTagsIndexPosition[     20043,        515]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nbdir", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"exptdir", "=", 
+  RowBox[{"StringDrop", "[", 
+   RowBox[{"nbdir", ",", 
+    RowBox[{"-", 
+     RowBox[{"StringLength", "[", "\"\<generating/\>\"", "]"}]}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.60822192102951*^9, 3.6082219689566517`*^9}}],
+
+Cell[BoxData["\<\"/home/nicolas/git/reports/M2/oral/img/\"\>"], "Output",
+ CellChangeTimes->{3.6082220084858303`*^9, 3.60822267532053*^9, 
+  3.608375163108959*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Print", " ", "default", " ", "RGB", " ", "color", " ", "of", " ", 
+    "Mathematica", " ", "plots"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"blue", "=", 
+   RowBox[{"ColorData", "[", 
+    RowBox[{"1", ",", "1"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.608219717007086*^9, 3.608219746832479*^9}}],
+
+Cell[BoxData[
+ RowBox[{"RGBColor", "[", 
+  RowBox[{"0.24720000000000014`", ",", "0.24`", ",", "0.6`"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{{3.608219737541264*^9, 3.6082197476173286`*^9}, 
+   3.6082226754513073`*^9, 3.608375163242593*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Rectangle", " ", "of", " ", "adjustable", " ", "thickness", " ", "and", 
+    " ", "color"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"rect", "[", 
+    RowBox[{
+    "coordslow_", ",", "coordsup_", ",", "color_", ",", "thickness_"}], "]"}],
+    ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"FaceForm", "[", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Opacity", "[", "0", "]"}]}], "}"}], "]"}], ",", 
+     RowBox[{"EdgeForm", "[", 
+      RowBox[{"{", 
+       RowBox[{"thickness", ",", "color"}], "}"}], "]"}], ",", 
+     RowBox[{"Rectangle", "[", 
+      RowBox[{"coordslow", ",", "coordsup", ",", 
+       RowBox[{"RoundingRadius", "\[Rule]", ".02"}]}], "]"}]}], 
+    "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.6050718184793253`*^9, 3.605071839938252*^9}, {
+  3.605071895067649*^9, 3.605071949089925*^9}, {3.605072067498519*^9, 
+  3.605072081737937*^9}, {3.608221572880012*^9, 3.608221573549778*^9}, {
+  3.608222030782378*^9, 3.6082220479443207`*^9}, {3.608375225577592*^9, 
+  3.608375225878366*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"See", "!"}], " ", "Just", " ", "what", " ", "I", " ", "told", 
+    " ", 
+    RowBox[{"ya", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{"rect", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1"}], "}"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"r", ",", "g", ",", "b"}], "]"}], ",", 
+       RowBox[{"Thickness", "[", "u", "]"}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"u", ",", "0.01", ",", "0.2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"g", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "0", ",", "1"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.605072083755106*^9, 3.605072138102992*^9}, {
+  3.605072255873342*^9, 3.605072279787792*^9}, {3.608222058533849*^9, 
+  3.608222074519837*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 0, $CellContext`g$$ = 
+    0, $CellContext`r$$ = 0, $CellContext`u$$ = 0.01, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`u$$], 0.01, 0.2}, {
+      Hold[$CellContext`r$$], 0, 1}, {
+      Hold[$CellContext`g$$], 0, 1}, {
+      Hold[$CellContext`b$$], 0, 1}}, Typeset`size$$ = {360., {177., 182.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`u$348$$ = 0, $CellContext`r$349$$ = 
+    0, $CellContext`g$350$$ = 0, $CellContext`b$351$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0, $CellContext`g$$ = 
+        0, $CellContext`r$$ = 0, $CellContext`u$$ = 0.01}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`u$$, $CellContext`u$348$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$349$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$350$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$351$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[
+        $CellContext`rect[{0, 0}, {1, 1}, 
+         RGBColor[$CellContext`r$$, $CellContext`g$$, $CellContext`b$$], 
+         Thickness[$CellContext`u$$]]], 
+      "Specifications" :> {{$CellContext`u$$, 0.01, 0.2}, {$CellContext`r$$, 
+         0, 1}, {$CellContext`g$$, 0, 1}, {$CellContext`b$$, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {259., 266.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.608219593938827*^9, 3.6082226755017223`*^9, 
+  3.608375163316185*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"delta", "=", ".1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Theta]", "=", 
+   RowBox[{"1", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"g1", "=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"rect", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"delta", ",", "delta"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"delta", "+", "\[Theta]"}], ",", 
+        RowBox[{"delta", "+", "1"}]}], "}"}], ",", "blue", ",", "Thick"}], 
+     "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"Ticks", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"1", "+", "delta"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"delta", "+", "1"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Log \!\(\*SubscriptBox[\(x\), \(//\)]\)\>\"", ",", 
+       "\"\<Log \!\(\*SubscriptBox[\(x\), \(\[UpTee]\)]\)\>\""}], "}"}]}], 
+    ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"exptdir", "<>", "\"\<blockspin_no_theta.pdf\>\""}], ",", "%"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.608219538594761*^9, 3.608219564295013*^9}, {
+   3.608219756038672*^9, 3.608219812694353*^9}, {3.608219880630598*^9, 
+   3.608219895822095*^9}, {3.608220854278893*^9, 3.60822090965093*^9}, {
+   3.6082209550728807`*^9, 3.608221061501767*^9}, {3.608221466153008*^9, 
+   3.608221621921721*^9}, {3.60822182962151*^9, 3.6082219148009367`*^9}, {
+   3.608222131279293*^9, 3.608222159998907*^9}, {3.608222318499847*^9, 
+   3.608222351481186*^9}, {3.6082223822078447`*^9, 3.608222422358594*^9}, {
+   3.6082225215607643`*^9, 3.6082225708101587`*^9}, {3.608222679884317*^9, 
+   3.608222684920464*^9}, {3.608223276528215*^9, 3.608223278736464*^9}, {
+   3.6083751873560266`*^9, 3.608375206516245*^9}, 3.608375248327635*^9, {
+   3.6083753564854517`*^9, 3.6083754074265347`*^9}, {3.6083754405869513`*^9, 
+   3.608375524251395*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[Large]}], 
+   FaceForm[{GrayLevel[0], Opacity[0]}], RectangleBox[{0.1, 0.1}, {0.6, 1.1},
+    RoundingRadius->0.02]},
+  AspectRatio->1,
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(//\\)]\\)\"", TraditionalForm], 
+    FormBox[
+    "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+     TraditionalForm]},
+  ImageSize->500,
+  PlotRange->{{0, 1.1}, {0, 1.1}},
+  Ticks->Automatic]], "Output",
+ CellChangeTimes->{{3.60821955927919*^9, 3.608219564948964*^9}, {
+   3.608219756834476*^9, 3.608219813371221*^9}, {3.608220884578518*^9, 
+   3.608220910524259*^9}, {3.608220963019169*^9, 3.6082210617088203`*^9}, {
+   3.608221467292568*^9, 3.60822157768962*^9}, {3.6082218562926693`*^9, 
+   3.608221871993351*^9}, 3.6082221630366697`*^9, {3.608222414650332*^9, 
+   3.608222422933714*^9}, {3.6082225225363398`*^9, 3.608222584018742*^9}, {
+   3.60822267572952*^9, 3.608222685557541*^9}, 3.608223280697318*^9, {
+   3.608375163347493*^9, 3.608375248956582*^9}, {3.6083753537881193`*^9, 
+   3.608375408030514*^9}, {3.608375441711549*^9, 3.608375524680543*^9}}],
+
+Cell[BoxData["\<\"/home/nicolas/git/reports/M2/oral/img/blockspin_no_theta.\
+pdf\"\>"], "Output",
+ CellChangeTimes->{{3.60821955927919*^9, 3.608219564948964*^9}, {
+   3.608219756834476*^9, 3.608219813371221*^9}, {3.608220884578518*^9, 
+   3.608220910524259*^9}, {3.608220963019169*^9, 3.6082210617088203`*^9}, {
+   3.608221467292568*^9, 3.60822157768962*^9}, {3.6082218562926693`*^9, 
+   3.608221871993351*^9}, 3.6082221630366697`*^9, {3.608222414650332*^9, 
+   3.608222422933714*^9}, {3.6082225225363398`*^9, 3.608222584018742*^9}, {
+   3.60822267572952*^9, 3.608222685557541*^9}, 3.608223280697318*^9, {
+   3.608375163347493*^9, 3.608375248956582*^9}, {3.6083753537881193`*^9, 
+   3.608375408030514*^9}, {3.608375441711549*^9, 3.608375524769515*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"g2", "=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"rect", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"delta", ",", "delta"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"delta", "+", "\[Theta]"}], ",", 
+        RowBox[{"delta", "+", "1"}]}], "}"}], ",", "blue", ",", "Thick"}], 
+     "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"Ticks", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"1", "+", "delta"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"delta", "+", "1"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Log \!\(\*SuperscriptBox[SubscriptBox[\(x\), \(//\)], \
+\(\[Theta]\)]\)\>\"", ",", 
+       "\"\<Log \!\(\*SubscriptBox[\(x\), \(\[UpTee]\)]\)\>\""}], "}"}]}], 
+    ",", 
+    RowBox[{"AspectRatio", "\[Rule]", 
+     RowBox[{"1", "/", "2"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"exptdir", "<>", "\"\<blockspin_theta.pdf\>\""}], ",", "%"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.608219538594761*^9, 3.608219564295013*^9}, {
+  3.608219756038672*^9, 3.608219812694353*^9}, {3.608219880630598*^9, 
+  3.608219895822095*^9}, {3.608220854278893*^9, 3.60822090965093*^9}, {
+  3.6082209550728807`*^9, 3.608221061501767*^9}, {3.608221466153008*^9, 
+  3.608221621921721*^9}, {3.60822182962151*^9, 3.6082219148009367`*^9}, {
+  3.608222131279293*^9, 3.608222221227561*^9}, {3.608222455904014*^9, 
+  3.6082225038383007`*^9}, {3.60822268854422*^9, 3.608222693515422*^9}, {
+  3.608222906343136*^9, 3.608222950781457*^9}, {3.608223141074595*^9, 
+  3.608223160221381*^9}, {3.6082232007407513`*^9, 3.608223245595104*^9}, {
+  3.608223283649694*^9, 3.608223288782988*^9}, {3.608375174675212*^9, 
+  3.608375175838176*^9}, {3.608375267643445*^9, 3.608375318367504*^9}, {
+  3.6083755340011*^9, 3.60837553419952*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[Large]}], 
+   FaceForm[{GrayLevel[0], Opacity[0]}], RectangleBox[{0.1, 0.1}, {0.6, 1.1},
+    RoundingRadius->0.02]},
+  AspectRatio->NCache[
+    Rational[1, 2], 0.5],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"Log \\!\\(\\*SuperscriptBox[SubscriptBox[\\(x\\), \\(//\\)], \\(\
+\[Theta]\\)]\\)\"", TraditionalForm], 
+    FormBox[
+    "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+     TraditionalForm]},
+  ImageSize->{344., Automatic},
+  PlotRange->{{0, 1.1}, {0, 1.1}},
+  Ticks->Automatic]], "Output",
+ CellChangeTimes->{
+  3.6082222217911863`*^9, {3.608222460691571*^9, 3.6082225050990677`*^9}, 
+   3.608222596630856*^9, {3.60822267636441*^9, 3.608222693855817*^9}, {
+   3.608222916799477*^9, 3.608222951103801*^9}, {3.6082231445060453`*^9, 
+   3.608223160962598*^9}, 3.6082232047572803`*^9, {3.60822323513518*^9, 
+   3.6082232462161303`*^9}, 3.608223289326301*^9, {3.608375163962583*^9, 
+   3.608375176110654*^9}, {3.60837529158365*^9, 3.60837531865233*^9}, 
+   3.6083755345240107`*^9}],
+
+Cell[BoxData["\<\"/home/nicolas/git/reports/M2/oral/img/blockspin_theta.pdf\"\
+\>"], "Output",
+ CellChangeTimes->{
+  3.6082222217911863`*^9, {3.608222460691571*^9, 3.6082225050990677`*^9}, 
+   3.608222596630856*^9, {3.60822267636441*^9, 3.608222693855817*^9}, {
+   3.608222916799477*^9, 3.608222951103801*^9}, {3.6082231445060453`*^9, 
+   3.608223160962598*^9}, 3.6082232047572803`*^9, {3.60822323513518*^9, 
+   3.6082232462161303`*^9}, 3.608223289326301*^9, {3.608375163962583*^9, 
+   3.608375176110654*^9}, {3.60837529158365*^9, 3.60837531865233*^9}, 
+   3.608375534654201*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{"{", 
+   RowBox[{"g1", ",", "g2"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.608222696301588*^9, 3.608222703819016*^9}, {
+  3.60822274592288*^9, 3.608222749615308*^9}, {3.60822279505482*^9, 
+  3.608222806234498*^9}, {3.608222837188245*^9, 3.608222847709312*^9}, {
+  3.6082229010165157`*^9, 3.60822290119272*^9}, {3.608222958165044*^9, 
+  3.608222999826695*^9}, {3.608223037020186*^9, 3.608223046093295*^9}, {
+  3.6082231678666553`*^9, 3.608223170413886*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1}, {0.6, 1.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(//\\)]\\)\"", 
+         TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {192., -189.}, ImageScaled[{0.5, 0.5}], {360., 360.}], 
+    InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SuperscriptBox[SubscriptBox[\\(x\\), \\(//\\)], \\(\
+\[Theta]\\)]\\)\"", TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {576., -189.}, 
+     ImageScaled[{0.5, 0.5}], {360., 360.}]}, {}},
+  ContentSelectable->True,
+  ImageSize->{438.6666666666667, 222.},
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{
+  3.608222750009426*^9, {3.608222800162942*^9, 3.6082228066167603`*^9}, 
+   3.608222848050542*^9, 3.6082229019392767`*^9, {3.608222968435225*^9, 
+   3.60822300022091*^9}, {3.608223037478712*^9, 3.6082230463588047`*^9}, 
+   3.608223171034865*^9, 3.608223253818055*^9, 3.6083751640904627`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1}, {0.6, 1.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(//\\)]\\)\"", 
+         TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {192., -189.}, ImageScaled[{0.5, 0.5}], {360., 360.}], 
+    InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SuperscriptBox[SubscriptBox[\\(x\\), \\(//\\)], \\(\
+\[Theta]\\)]\\)\"", TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {576., -189.}, 
+     ImageScaled[{0.5, 0.5}], {360., 360.}]}, {}},
+  ContentSelectable->True,
+  ImageSize->{438.6666666666667, 222.},
+  PlotRangePadding->{6, 5}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"exptdir", "<>", "\"\<blockspin_theta.pdf\>\""}], ",", "%"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.6083755834878187`*^9, 3.608375612129607*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1}, {0.6, 1.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(//\\)]\\)\"", 
+         TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {192., -189.}, ImageScaled[{0.5, 0.5}], {360., 360.}], 
+    InsetBox[
+     GraphicsBox[
+      {EdgeForm[{RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[
+       Large]}], FaceForm[{GrayLevel[0], Opacity[0]}], 
+       RectangleBox[{0.1, 0.1},
+        RoundingRadius->0.05]},
+      Axes->True,
+      AxesLabel->{
+        FormBox[
+        "\"Log \\!\\(\\*SuperscriptBox[SubscriptBox[\\(x\\), \\(//\\)], \\(\
+\[Theta]\\)]\\)\"", TraditionalForm], 
+        FormBox[
+        "\"Log \\!\\(\\*SubscriptBox[\\(x\\), \\(\[UpTee]\\)]\\)\"", 
+         TraditionalForm]},
+      PlotRange->{{0, 1.1}, {0, 1.1}},
+      Ticks->None], {576., -189.}, 
+     ImageScaled[{0.5, 0.5}], {360., 360.}]}, {}},
+  ContentSelectable->True,
+  ImageSize->{438.6666666666667, 222.},
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{3.608375612831945*^9}],
+
+Cell[BoxData["\<\"/home/nicolas/git/reports/M2/oral/img/blockspin_theta.pdf\"\
+\>"], "Output",
+ CellChangeTimes->{3.608375612937345*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1015},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 385, 10, 55, "Input"],
+Cell[967, 34, 163, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1167, 41, 370, 9, 55, "Input"],
+Cell[1540, 52, 242, 5, 32, "Output"]
+}, Open  ]],
+Cell[1797, 60, 1106, 28, 55, "Input"],
+Cell[CellGroupData[{
+Cell[2928, 92, 1079, 29, 55, "Input"],
+Cell[4010, 123, 2300, 46, 542, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6347, 174, 2195, 51, 99, "Input"],
+Cell[8545, 227, 1191, 24, 490, "Output"],
+Cell[9739, 253, 752, 10, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10528, 268, 2077, 48, 57, "Input"],
+Cell[12608, 318, 1102, 25, 191, "Output"],
+Cell[13713, 345, 579, 9, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14329, 359, 517, 9, 32, "Input"],
+Cell[14849, 370, 1692, 41, 237, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16578, 416, 1592, 41, 276, "Input"],
+Cell[18173, 459, 1422, 37, 237, "Output"],
+Cell[19598, 498, 136, 2, 88, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

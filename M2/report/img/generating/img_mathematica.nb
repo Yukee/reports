@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    149907,       2921]
-NotebookOptionsPosition[    146800,       2813]
-NotebookOutlinePosition[    147137,       2828]
-CellTagsIndexPosition[    147094,       2825]
+NotebookDataLength[    150150,       2926]
+NotebookOptionsPosition[    147043,       2818]
+NotebookOutlinePosition[    147380,       2833]
+CellTagsIndexPosition[    147337,       2830]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2426,7 +2426,7 @@ Cell[BoxData[{
 
 Cell[BoxData["\<\"/home/nicolas/git/reports/M2/report/img/chap2/\"\>"], \
 "Output",
- CellChangeTimes->{3.6051753176494617`*^9}]
+ CellChangeTimes->{3.6051753176494617`*^9, 3.608378970372012*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -2468,7 +2468,7 @@ Cell[BoxData[{
      RowBox[{"Text", "[", 
       RowBox[{"\"\<\!\(\*SuperscriptBox[\(k\), \(2\)]\)\>\"", ",", 
        RowBox[{"{", 
-        RowBox[{"0.08", ",", "1.9"}], "}"}]}], "]"}]}], "}"}]}], 
+        RowBox[{"0.1", ",", "1.8"}], "}"}]}], "]"}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Plot", "[", 
   RowBox[{
@@ -2484,10 +2484,11 @@ Cell[BoxData[{
    RowBox[{"Ticks", "\[Rule]", "None"}], ",", 
    RowBox[{"Epilog", "\[Rule]", 
     RowBox[{"{", 
-     RowBox[{"ptk", ",", "ptk2"}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+     RowBox[{"ptk", ",", "ptk2"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"Export", "[", 
   RowBox[{
-   RowBox[{"exptdir", "<>", "\"\<regulator.pdf\>\""}], ",", "%"}], 
+   RowBox[{"exptdir", "<>", "\"\<regulator2.pdf\>\""}], ",", "%"}], 
   "]"}]}], "Input",
  CellChangeTimes->{{3.605174124757371*^9, 3.6051741303253*^9}, {
   3.605174164786092*^9, 3.605174188816024*^9}, {3.6051742771717157`*^9, 
@@ -2495,7 +2496,8 @@ Cell[BoxData[{
   3.6051748630541773`*^9, 3.605174870262103*^9}, {3.60517490327038*^9, 
   3.605174905032468*^9}, {3.605175022403097*^9, 3.605175216866171*^9}, {
   3.6051752477593603`*^9, 3.605175255546417*^9}, {3.605175321374281*^9, 
-  3.605175356548832*^9}, {3.605175403395574*^9, 3.605175425905507*^9}}],
+  3.605175356548832*^9}, {3.605175403395574*^9, 3.605175425905507*^9}, {
+  3.608378979075727*^9, 3.608379026198225*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
@@ -2784,7 +2786,8 @@ yhY9hYv/t3G6EEFF3hTrv/z/+plthYjejIvmhmskj6YJCRF55jECgpv/H49/
      InsetBox[
       FormBox[
       "\"\\!\\(\\*SuperscriptBox[\\(k\\), \\(2\\)]\\)\"", TraditionalForm], {
-      0.08, 1.9}]}},
+      0.1, 1.8}]}},
+  ImageSize->200,
   Method->{},
   PlotRange->{{0, 2}, {0., 1.9999999958776895`}},
   PlotRangeClipping->True,
@@ -2797,16 +2800,18 @@ yhY9hYv/t3G6EEFF3hTrv/z/+plthYjejIvmhmskj6YJCRF55jECgpv/H49/
    3.6051743442080383`*^9}, 3.6051748706155024`*^9, 3.605175060202993*^9, {
    3.6051751003619423`*^9, 3.605175117747102*^9}, {3.605175160637321*^9, 
    3.605175217321745*^9}, {3.605175251276486*^9, 3.605175256272614*^9}, 
-   3.6051753572675123`*^9, {3.605175404300562*^9, 3.605175426323803*^9}}],
+   3.6051753572675123`*^9, {3.605175404300562*^9, 3.605175426323803*^9}, {
+   3.608378993205776*^9, 3.6083790265961227`*^9}}],
 
-Cell[BoxData["\<\"/home/nicolas/git/reports/M2/report/img/chap2/regulator.pdf\
-\"\>"], "Output",
+Cell[BoxData["\<\"/home/nicolas/git/reports/M2/report/img/chap2/regulator2.\
+pdf\"\>"], "Output",
  CellChangeTimes->{{3.605174125822775*^9, 3.605174130451219*^9}, {
    3.605174168181882*^9, 3.605174189584243*^9}, {3.605174256231749*^9, 
    3.6051743442080383`*^9}, 3.6051748706155024`*^9, 3.605175060202993*^9, {
    3.6051751003619423`*^9, 3.605175117747102*^9}, {3.605175160637321*^9, 
    3.605175217321745*^9}, {3.605175251276486*^9, 3.605175256272614*^9}, 
-   3.6051753572675123`*^9, {3.605175404300562*^9, 3.605175426427409*^9}}]
+   3.6051753572675123`*^9, {3.605175404300562*^9, 3.605175426323803*^9}, {
+   3.608378993205776*^9, 3.6083790266811047`*^9}}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -2910,16 +2915,16 @@ Cell[125399, 2397, 261, 4, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[125721, 2408, 97, 1, 45, "Subsection"],
+Cell[125721, 2408, 97, 1, 44, "Subsection"],
 Cell[CellGroupData[{
 Cell[125843, 2413, 427, 11, 55, "Input"],
-Cell[126273, 2426, 127, 2, 32, "Output"]
+Cell[126273, 2426, 149, 2, 32, "Output"]
 }, Open  ]],
-Cell[126415, 2431, 336, 10, 32, "Input"],
+Cell[126437, 2431, 336, 10, 32, "Input"],
 Cell[CellGroupData[{
-Cell[126776, 2445, 1985, 52, 102, "Input"],
-Cell[128764, 2499, 17461, 300, 246, "Output"],
-Cell[146228, 2801, 532, 7, 88, "Output"]
+Cell[126798, 2445, 2084, 54, 124, "Input"],
+Cell[128885, 2501, 17530, 302, 147, "Output"],
+Cell[146418, 2805, 585, 8, 88, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
