@@ -13,6 +13,14 @@
 \usepackage{xspace} %symboles extensifs
 \usepackage{stmaryrd} % parallel symbol
 
+% subfigure
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false} % to prevent compatibility error
+
+%\usepackage[caption=false]{subfig}
+
+
 \setbeamercovered{dynamic} %prevent losing position when using dynamic
 
 \usetheme{Darmstadt}
@@ -42,6 +50,9 @@ Laboratoire de physique théorique de la matière condensée (LPTMC) \\
 
 
 \section{Le modèle de Lishitz}
+
+\subsection{Présentation du modèle de Lifshitz}
+
 \begin{frame}
 
 \only<1>{
@@ -72,6 +83,33 @@ Laboratoire de physique théorique de la matière condensée (LPTMC) \\
 \end{figure} 
 }
 
+\only<1-4>{
+Modèle de Lifshitz : champ $\phi(x)$ à $n$ composantes, anisotrope. \\
+Phase de Lifshitz : $\phi(x)$ périodique dans $m$ directions de l'espace de dimension $d$.
+}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{columns}
+
+\begin{column}{5cm}
+\begin{block}{Intérêt expérimental}
+
+Description de nombreux systèmes : cristaux magnétiques, ferroélectriques, mélanges binaires...
+
+\end{block}
+\end{column}
+
+\begin{column}{5cm}
+\begin{block}{Intérêt théorique}
+Un exemple de système anisotropique ``fort'' : les exposants critiques dépendent de la direction.
+\end{block}
+\end{column}
+
+\end{columns}
+
 \end{frame}
 
 \begin{frame}
@@ -84,62 +122,50 @@ Laboratoire de physique théorique de la matière condensée (LPTMC) \\
 
 \begin{block}{Hamiltonien de Lifshitz}
 \centering
-$ H[\boldsymbol{\phi}] = \int_x  \frac{1}{2}(\p{\perp} \boldsymbol{\phi})^2 + \frac{\rho_0}{2}(\p{\sslash} \boldsymbol{\phi})^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \boldsymbol{\phi})^2 + U(\rho) \text{,~} \rho \define \frac{\boldsymbol{\phi}^2}{2}$
+$ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash}\phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho) \text{,~} \rho \define \frac{\phi^2}{2}$
 \end{block}
 
 \end{frame}
 
 \section{Le groupe de renormalisation non perturbatif}
 \subsection{L'idée de la renormalisation}
+
+
 \begin{frame}
 
-\only<1>{
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=0.35]{img/renorm_step0.pdf}
-\label{}
+\begin{subfigure}{.25\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/renorm_step0.pdf}
+	\caption{Réseau initial}
+	\end{subfigure}%
+\begin{subfigure}{.25\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/renorm_step1.pdf}
+	\caption{Blocs de spin}
+\end{subfigure}%
+\begin{subfigure}{.25\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/renorm_step2.pdf}
+	\caption{Moyennage}
+\end{subfigure}%
+\begin{subfigure}{.25\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{img/renorm_step3.pdf}
+	\caption{Rescaling}
+\end{subfigure}
+%\caption{The renormalization procedure illustrated. Here we have chosen $S = 3$.}
+\label{fig:renorm_proc}
 \end{figure}
-\[H[\phi(x_i)]\]
-\[\phantom{\tilde{\phi}_B = \frac{1}{Sa} \sum_{i \in B} \phi_i}\]
-}
 
-\only<2>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.35]{img/renorm_step1.pdf}
-\label{}
-\end{figure}
-\[H[\phi(x_i)]\]
-\[\tilde{\phi}(x_b) = \frac{1}{Sa} \sum_{i \in b} \phi(x_i)\]
-}
-
-\only<3>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.35]{img/renorm_step2.pdf}
-\label{}
-\end{figure}
-\[H[\phi(x_i)] \rightarrow \tilde{H}[\tilde{\phi}(x_b)]\]
-\[\phantom{\tilde{\phi}_b = \frac{1}{Sa} \sum_{i \in b} \phi_i}\]
-}
-
-\only<4>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.35]{img/renorm_step3.pdf}
-\label{}
-\end{figure}
-\[
- \left.\begin{aligned}
+\[H[\phi(x_i)] \rightarrow \tilde{H}[\tilde{\phi}(x_b)]  \rightarrow \left.\begin{aligned}
         x' = x/S \\
         \phi' = S^\Delta \phi
        \end{aligned}
  \right\}
-  \rightarrow H_S[\phi'(x'_i)]
-\]
-Comparer $H$ et $H_S$ $\rightarrow$ renormalisation des constantes de couplage.
-}
-  
+  H_S[\phi'(x'_i)]\]
+
 \end{frame}
 
 \begin{frame}
@@ -151,8 +177,10 @@ Comparer $H$ et $H_S$ $\rightarrow$ renormalisation des constantes de couplage.
 \label{}
 \end{figure}
 
+\centering
+Représentation schématique des flots dans l'espace des couplages.
 \[
-\text{Représentation schématique des flots dans l'espace des couplages.}
+H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), ...] \rightarrow H_S[\phi'] = \sum_{i', \alpha} \kappa_\alpha' O_\alpha[\phi'(x_i'), ...]
 \]
 }
 
@@ -164,7 +192,7 @@ Comparer $H$ et $H_S$ $\rightarrow$ renormalisation des constantes de couplage.
 \end{figure}
 
 \[
-\xi \propto |T-T_c|^{-\nu} \text{,~} \nu = \frac{1}{\lambda_1}
+\xi \propto |T-T_c|^{-\nu} %\text{,~} \nu = \frac{1}{\lambda_1}
 \]
 }
 
@@ -234,6 +262,9 @@ Dépendance en impulsion typique du régulateur $R_k(q)$.
 \subsection{L'Ansatz pour l'action effective du modèle}
 \begin{frame}
 
+\centering
+$ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash} \phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho)$
+
 \begin{block}{Symétries $\implies$ forme générale de l'action effective de Lifshitz :}
 $\Gamma_k[\phi] = \int_{x} U(\rho) + \left( \frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2 + \frac{1}{4} Y_\perp(\rho) (\partial_\perp \rho)^2 + ... \right) + \left( \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 + ... \right) + \left( \frac{1}{2} Z_\sslash(\rho) (\partial_\sslash^2 \phi)^2 + ... \right)$
 \end{block}
@@ -255,7 +286,7 @@ $\Gamma_k[\phi_i] = \int_x  \frac{Z_\perp}{2} (\partial_\perp \phi)^2 + \frac{\r
 
 \item $\partial_t \rho_0 = -\theta \left(2-\eta_\sslash\right) \rho_0 - 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $
 
-\item $\eta_\perp = 32 v_{d-m} v_m \rho u^{(2)}(\rho)^2$
+\item $\eta_\perp = 32 v_{d-m} v_m \rho u^{(2)}(\rho)^2  m_{1,2202}$
 
 \item $\eta_\sslash = \eta_\perp  \Big[ m_{1,3100} - \frac{1}{2} k_{1,2100}-\frac{2}{m}\left( 6 s_{1,4102}-6 v_{1,31002}+ w_{1,2102} \right)$ \\
 \hfill$+~\frac{2}{m(m+2)}\big( 24 t_{1,5104} -36 z_{1,4104}+6 u_{1,3104} +8 y_{1,3104} - x_{1,2104} \big) \Big]$
@@ -272,7 +303,7 @@ Approximation du potentiel local : $\theta \simeq \theta_{\text{cm}} = \frac{1}{
 %$ 0 = -d_m u_t(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_t'(\rho)$ \\
 %\hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_t'(\rho) + 2 \rho u_t''(\rho) \right) + (n-1)l_0^{dm}\left(u_t'(\rho)\right) \right)$
 %\end{block}
-On a choisi de résoudre directement les équations de point fixe. 
+Point de Lifshitz décrit par un point fixe $\rightarrow$ résolution des équations de point fixe 
 \begin{block}{}
 $0 = u(\rho) - a  \rho u'(\rho) + b(\rho_0) \left( \frac{1}{1 + \rho_0 + u'(\rho) + 2 \rho u''(\rho)} + \frac{n-1}{1+\rho_0+u'(\rho)} \right)$ \\
 $u'(0) = \sigma$ \\
@@ -294,49 +325,103 @@ $u\phantom{'}(0) = n b(\rho_0)/(1+\sigma)$
 \subsection{Les exposants critiques}
 
 \begin{frame}
+
+% modifier la taille des images de cette diapo
+\newcommand{\scale}{1}
+
 \only<1>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=1.5]{img/emergence_lif_1.pdf}\hfill%
+\includegraphics[scale=\scale]{img/emergence_lif_1.pdf}\hfill%
 \end{figure} 
 }
 
 \only<2>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=1.5]{img/emergence_lif_2.pdf}\hfill%
+\includegraphics[scale=\scale]{img/emergence_lif_2.pdf}\hfill%
 \end{figure} 
 }
 
 \only<3>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=1.5]{img/emergence_lif_3.pdf}\hfill%
+\includegraphics[scale=\scale]{img/emergence_lif_3.pdf}\hfill%
 \end{figure} 
 }
 
 \only<4>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=1.5]{img/emergence_lif_4.pdf}\hfill%
+\includegraphics[scale=\scale]{img/emergence_lif_4.pdf}\hfill%
 \end{figure} 
 }
 
 \only<5>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=1.5]{img/emergence_lif_5.pdf}\hfill%
-\end{figure} 
+\includegraphics[scale=\scale]{img/emergence_lif_5.pdf}\hfill%
+\end{figure}
 }
+
+\only<1-5>{
+\centering
+Position de la singularité $\rho_\text{sing}$ en fonction de la condition initiale $\sigma$.
+}
+\end{frame}
+
+\subsection{Flot du potentiel}
+\begin{frame}
+
+
+
+\begin{columns}
+
+\begin{column}{6cm}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{img/plotflowd3.pdf}
+\label{}
+\end{figure}
+\end{column}
+
+\begin{column}{6cm}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{img/plotlogflowd3.pdf}
+\label{}
+\end{figure}
+\end{column}
+
+\end{columns}
+
+\[
+u_t(\rho) = u(\rho) + \delta u_\sslash(\rho) e^{t/\nu_\sslash} + \delta u_\perp(\rho) e^{t/\nu_\perp}
+\]
+
+\begin{center}
+\label{tab:results}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} ~ & nos résultats & développement perturbatif & Wilson-Polchinski \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} $\nu_\sslash$ & 0.399 & 0.392 & 0.317 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} $\nu_\perp$ & 0.799 & 0.798 & 0.634 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+
 \end{frame}
 
 \section{Conclusion}
 \begin{frame}
 
 \begin{itemize}
-\item modélisation d'un phénomène mal compris : la ségrégation
-\item relations entre physique, mathématiques et analyse numérique 
-\item un domaine de la physique nouveau et en plein essor
+\item Calcul des exposants critiques d'un modèle non trivial, par une méthode originale.
+\item Prise en compte du potentiel complet.
+\item Prise en compte des dimensions anormales.
 \end{itemize}
 
 \end{frame}
