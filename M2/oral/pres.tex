@@ -55,37 +55,38 @@ Laboratoire de physique théorique de la matière condensée (LPTMC) \\
 
 \begin{frame}
 
+\newcommand{\scaleOne}{0.22} %scale of the images in frame 1
 \only<1>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=0.25]{img/sol_Lif_t0.png}\hfill%
+\includegraphics[scale=\scaleOne]{img/sol_Lif_t0.png}\hfill%
 \end{figure} 
 }
 
 \only<2>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=0.25]{img/sol_Lif_t20.png}\hfill%
+\includegraphics[scale=\scaleOne]{img/sol_Lif_t20.png}\hfill%
 \end{figure} 
 }
 
 \only<3>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=0.25]{img/sol_Lif_t60.png}\hfill%
+\includegraphics[scale=\scaleOne]{img/sol_Lif_t60.png}\hfill%
 \end{figure} 
 }
 
 \only<4>{
 \begin{figure}[htp] 
 \centering
-\includegraphics[scale=0.25]{img/sol_Lif_t400.png}\hfill%
+\includegraphics[scale=\scaleOne]{img/sol_Lif_t400.png}\hfill%
 \end{figure} 
 }
 
 \only<1-4>{
-Modèle de Lifshitz : champ $\phi(x)$ à $n$ composantes, anisotrope. \\
-Phase de Lifshitz : $\phi(x)$ périodique dans $m$ directions de l'espace de dimension $d$.
+Modèle de Lifshitz : champ $\phi(x)$ à $n$ composantes, \textcolor{BrickRed}{anisotrope}. \\
+Phase de Lifshitz : $\phi(x)$ \textcolor{BrickRed}{périodique} dans $m$ directions de l'espace de dimension $d$.
 }
 
 \end{frame}
@@ -94,15 +95,15 @@ Phase de Lifshitz : $\phi(x)$ périodique dans $m$ directions de l'espace de dim
 
 \begin{columns}
 
-\begin{column}{5cm}
+\begin{column}{5.5cm}
 \begin{block}{Intérêt expérimental}
 
-Description de nombreux systèmes : cristaux magnétiques, ferroélectriques, mélanges binaires...
+Description de nombreux systèmes : cristaux magnétiques (MnP), ferroélectriques, mélanges binaires ( - )...
 
 \end{block}
 \end{column}
 
-\begin{column}{5cm}
+\begin{column}{5.5cm}
 \begin{block}{Intérêt théorique}
 Un exemple de système anisotropique ``fort'' : les exposants critiques dépendent de la direction.
 \end{block}
@@ -114,16 +115,18 @@ Un exemple de système anisotropique ``fort'' : les exposants critiques dépende
 
 \begin{frame}
 
+\begin{block}{Hamiltonien de Lifshitz}
+\centering
+$ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash}\phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho) \text{,~} \rho \define \frac{\phi^2}{2}$
+\end{block}
+
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.65]{img/phase_diagram.pdf}
 \label{}
 \end{figure}
 
-\begin{block}{Hamiltonien de Lifshitz}
-\centering
-$ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash}\phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho) \text{,~} \rho \define \frac{\phi^2}{2}$
-\end{block}
+En champ moyen $\rho^{\text{Lif}}_0 = 0$ $\rightarrow$ \textcolor{BrickRed}{ajout d'un terme d'ordre $\partial_\sslash^4$}.
 
 \end{frame}
 
@@ -132,6 +135,11 @@ $ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash}
 
 
 \begin{frame}
+
+\centering 
+Problème à $N$ corps $\rightarrow$ fluctuations à toutes les échelles
+
+Renormalisation : considérer le problème échelle par échelle.
 
 \begin{figure}[htp]
 \centering
@@ -159,43 +167,12 @@ $ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash}
 \label{fig:renorm_proc}
 \end{figure}
 
-\[H[\phi(x_i)] \rightarrow \tilde{H}[\tilde{\phi}(x_b)]  \rightarrow \left.\begin{aligned}
+\[ \textcolor{BrickRed}{H[\phi(x_i)]} \rightarrow \tilde{H}[\tilde{\phi}(x_b)]  \rightarrow \left.\begin{aligned}
         x' = x/S \\
         \phi' = S^\Delta \phi
        \end{aligned}
  \right\}
-  H_S[\phi'(x'_i)]\]
-
-\end{frame}
-
-\begin{frame}
-
-\only<1>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.4]{img/flot.pdf}
-\label{}
-\end{figure}
-
-\centering
-Représentation schématique des flots dans l'espace des couplages.
-\[
-H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), ...] \rightarrow H_S[\phi'] = \sum_{i', \alpha} \kappa_\alpha' O_\alpha[\phi'(x_i'), ...]
-\]
-}
-
-\only<2>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.4]{img/flot_2.pdf}
-\label{}
-\end{figure}
-
-\[
-\xi \propto |T-T_c|^{-\nu} %\text{,~} \nu = \frac{1}{\lambda_1}
-\]
-}
-
+  \textcolor{BrickRed}{H'[\phi'(x'_i)]} \]
 \end{frame}
 
 \subsection{Application au modèle de Lifshitz en champ moyen}
@@ -218,24 +195,39 @@ Directions inéquivalentes $\implies$ échelles inéquivalentes $S_\sslash$, $S_
 \centering
 $\theta_\text{cm} = \frac{1}{2}$, $d_c^> = 4 + \frac{m}{2}$
 \end{block}
+\end{frame}
 
+\subsection{Flots et exposants critiques}
+\begin{frame}
+\only<1>{
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.4]{img/flot.pdf}
+\label{}
+\end{figure}
+
+\centering
+$T=T_c$ (et $\rho_0 = \rho_{0c}$) $\rightarrow$ \textcolor{BrickRed}{point fixe} sur la surface critique\\
+Voisinage du point fixe : lois d'échelle $\rightarrow$ exposants critiques
+\[
+H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), ...] \rightarrow H'[\phi'] = \sum_{i', \alpha} \kappa_\alpha' O_\alpha[\phi'(x_i'), ...]
+\]
+}
 \end{frame}
 
 \subsection{Le groupe de normalisation non perturbatif}
-
 \begin{frame}
+
+Équation de Wetterich : évolution exacte de $\gam_k[\phi]$, action effective à l'échelle $k$.
 
 \begin{columns}
 
 \begin{column}{6cm}
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=0.7]{img/regulator2.pdf}
+\includegraphics[scale=0.825]{img/propagateur.pdf}
 \label{}
 \end{figure}
-\begin{center}
-Dépendance en impulsion typique du régulateur $R_k(q)$.
-\end{center}
 \end{column}
 
 \begin{column}{6cm}
@@ -243,15 +235,20 @@ Dépendance en impulsion typique du régulateur $R_k(q)$.
 \centering
 \includegraphics[scale=0.825]{img/dtgam.eps}
 \label{}
-\end{figure}
-\[\p{t} \gam_k[\phi] = \frac{1}{2} \int_q \p{t}R_k(q)  G_k(q,-q)  \] 
+\end{figure} 
+\end{column}
 
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.825]{img/propagateur.pdf}
-\label{}
-\end{figure}
-\[G_k(q_1,q_2) =  \left( \Gamma^{(2)}_k + R_k \right)^{-1}_{q_1,q_2} \] 
+\end{columns}
+
+\begin{columns}
+
+\begin{column}{6cm}
+\[G_k(q_1,q_2 ; \phi) =  \left( \Gamma^{(2)}_k[\phi] + R_k \right)^{-1}_{q_1,q_2} \] 
+
+\end{column}
+
+\begin{column}{6cm}
+\[\p{t} \gam_k[\phi] = \frac{1}{2} \int_q \p{t}R_k(q)  G_k(q,-q;\phi)  \] 
 \end{column}
 
 \end{columns}
@@ -274,6 +271,8 @@ Pour calculer les exposants critiques la structure impulsionnelle importe peu $\
 \begin{block}{Forme définitive de l'Ansatz :}
 $\Gamma_k[\phi_i] = \int_x  \frac{Z_\perp}{2} (\partial_\perp \phi)^2 + \frac{\rho_0}{2} (\partial_\sslash \phi)^2 + \frac{Z_\sslash}{2} (\partial_\sslash^2 \phi)^2 + U(\rho).$
 \end{block}
+
+Prise en compte de \textcolor{BrickRed}{potentiel complet}.
 \end{frame}
 
 \subsection{Flots de renormalisation}
@@ -283,13 +282,13 @@ $\Gamma_k[\phi_i] = \int_x  \frac{Z_\perp}{2} (\partial_\perp \phi)^2 + \frac{\r
 \begin{itemize}
 \item $\partial_t u_t(\rho) = -d_m u_t(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_t'(\rho)$ \\
 \hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_t'(\rho) + 2 \rho u_t''(\rho) \right) + (n-1)l_0^{dm}\left(u_t'(\rho)\right) \right)$
-
+\phantom{sdsldk}
 \item $\partial_t \rho_0 = -\theta \left(2-\eta_\sslash\right) \rho_0 - 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $
 
-\item $\eta_\perp = 32 v_{d-m} v_m \rho u^{(2)}(\rho)^2  m_{1,2202}$
+%\item $\eta_\perp = 32 v_{d-m} v_m \rho u^{(2)}(\rho)^2  m_{1,2202}$
 
-\item $\eta_\sslash = \eta_\perp  \Big[ m_{1,3100} - \frac{1}{2} k_{1,2100}-\frac{2}{m}\left( 6 s_{1,4102}-6 v_{1,31002}+ w_{1,2102} \right)$ \\
-\hfill$+~\frac{2}{m(m+2)}\big( 24 t_{1,5104} -36 z_{1,4104}+6 u_{1,3104} +8 y_{1,3104} - x_{1,2104} \big) \Big]$
+%\item $\eta_\sslash = \eta_\perp  \Big[ m_{1,3100} - \frac{1}{2} k_{1,2100}-\frac{2}{m}\left( 6 s_{1,4102}-6 v_{1,31002}+ w_{1,2102} \right)$ \\
+%\hfill$+~\frac{2}{m(m+2)}\big( 24 t_{1,5104} -36 z_{1,4104}+6 u_{1,3104} +8 y_{1,3104} - x_{1,2104} \big) \Big]$
 \end{itemize}
 \end{block}
 
@@ -303,22 +302,29 @@ Approximation du potentiel local : $\theta \simeq \theta_{\text{cm}} = \frac{1}{
 %$ 0 = -d_m u_t(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_t'(\rho)$ \\
 %\hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_t'(\rho) + 2 \rho u_t''(\rho) \right) + (n-1)l_0^{dm}\left(u_t'(\rho)\right) \right)$
 %\end{block}
-Point de Lifshitz décrit par un point fixe $\rightarrow$ résolution des équations de point fixe 
+Voisinage du point de Lifshitz $\rightarrow$ résolution des équations de point fixe 
 \begin{block}{}
 $0 = u(\rho) - a  \rho u'(\rho) + b(\rho_0) \left( \frac{1}{1 + \rho_0 + u'(\rho) + 2 \rho u''(\rho)} + \frac{n-1}{1+\rho_0+u'(\rho)} \right)$ \\
-$u'(0) = \sigma$ \\
-$u\phantom{'}(0) = n b(\rho_0)/(1+\sigma)$
+$\rho_0 = 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $ \\
 \end{block}
 
-\begin{block}{Stratégie de résolution}
-\begin{itemize}
-\item Commencer à $d=d_c^>$ ($\sigma^\text{Lif} = 0$, $\rho^\text{Lif}_{0} = 0$).
-\item $d \rightarrow d - \delta d$. 
-\item Trouver $\sigma^\text{Lif}$.
-\item Trouver $\rho^\text{Lif}_{0}$.
-\item Revenir à l'étape (2).
-\end{itemize}
+Condition initiale :\\
+$u'(0) = \sigma$ \\
+$u\phantom{'}(0) = n b(\rho_0)/(1+\sigma)$
+
+\begin{block}{}
+Singularité à $\rho_\text{sing}(\sigma)<\infty$, sauf si $\sigma = \sigma_c$, \textcolor{BrickRed}{température critique}.
 \end{block}
+
+%\begin{block}{Stratégie de résolution}
+%\begin{itemize}
+%\item Commencer à $d=d_c^>$ ($\sigma^\text{Lif} = 0$, $\rho^\text{Lif}_{0} = 0$).
+%\item $d \rightarrow d - \delta d$. 
+%\item Trouver $\sigma^\text{Lif}$.
+%\item Trouver $\rho^\text{Lif}_{0}$.
+%\item Revenir à l'étape (2).
+%\end{itemize}
+%\end{block}
 
 \end{frame}
 
