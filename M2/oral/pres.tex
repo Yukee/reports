@@ -20,21 +20,19 @@
 
 %\usepackage[caption=false]{subfig}
 
-
 \setbeamercovered{dynamic} %prevent losing position when using dynamic
 
 \usetheme{Darmstadt}
-\usecolortheme{seahorse}
-
+\usecolortheme{dolphin}
 
 \newcommand{\p}[1]{\partial_{#1}}
 % the triple equal sign I use to define something
-\newcommand{\define}{\ensuremath{ \overset{\text{def}}{=} }}
+\newcommand{\define}{\ensuremath{ \overset{\text{déf}}{=} }}
 \newcommand{\gam}{\ensuremath{\Gamma}} % shortcut for the uppercase gamma letter used everywhere
 
+%\usepackage{fourier}
 
-
-\title[Étude du point de Lifshitz par le groupe de renormalisation.]{Étude du point de Lifshitz par le groupe de renormalisation.}
+\title[Étude du point de Lifshitz par le groupe de renormalisation.]{Étude du point de Lifshitz par le groupe de renormalisation non perturbatif.}
 \date{Stage du 13 janvier au 7 mars 2014 au \\ 
 Laboratoire de physique théorique de la matière condensée (LPTMC) \\ 
 \small{UMPC}}
@@ -42,6 +40,9 @@ Laboratoire de physique théorique de la matière condensée (LPTMC) \\
 \textbf{Responsable de stage :} Dominique Mouhanna}
 
 \begin{document}
+
+% Helvetica font
+%\fontfamily{phv}\selectfont
 
 \begin{frame}
 \begin{titlepage}
@@ -98,7 +99,7 @@ Phase de Lifshitz : $\phi(x)$ \textcolor{BrickRed}{périodique} dans $m$ directi
 \begin{column}{5.5cm}
 \begin{block}{Intérêt expérimental}
 
-Description de nombreux systèmes : cristaux magnétiques (MnP), ferroélectriques, mélanges binaires ( - )...
+Description de nombreux systèmes : cristaux magnétiques (MnP), ferroélectriques, cristaux organiques (TTF-TCNQ),...
 
 \end{block}
 \end{column}
@@ -167,12 +168,34 @@ Renormalisation : considérer le problème échelle par échelle.
 \label{fig:renorm_proc}
 \end{figure}
 
-\[ \textcolor{BrickRed}{H[\phi(x_i)]} \rightarrow \tilde{H}[\tilde{\phi}(x_b)]  \rightarrow \left.\begin{aligned}
+\[ \textcolor{BrickRed}{H[\phi(x_i)]} \rightarrow \tilde H [\tilde{\phi}(x_b)]  \rightarrow \left.\begin{aligned}
         x' = x/S \\
         \phi' = S^\Delta \phi
        \end{aligned}
  \right\}
   \textcolor{BrickRed}{H'[\phi'(x'_i)]} \]
+  
+  
+ \centering 
+ $H'[\phi']$ : décrit le système à l'échelle $\lambda = 3 a$.
+\end{frame}
+
+\subsection{Flots et exposants critiques}
+\begin{frame}
+\only<1>{
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.4]{img/flot.pdf}
+\label{}
+\end{figure}
+
+\centering
+$T=T_c$ (et $\rho_0 = \rho_{0c}$) $\rightarrow$ \textcolor{BrickRed}{point fixe} sur la surface critique\\
+Voisinage du point fixe : lois d'échelle $\rightarrow$ exposants critiques
+\[
+H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), ...] \rightarrow H'[\phi'] = \sum_{i', \alpha} \kappa_\alpha' O_\alpha[\phi'(x_i'), ...]
+\]
+}
 \end{frame}
 
 \subsection{Application au modèle de Lifshitz en champ moyen}
@@ -197,28 +220,10 @@ $\theta_\text{cm} = \frac{1}{2}$, $d_c^> = 4 + \frac{m}{2}$
 \end{block}
 \end{frame}
 
-\subsection{Flots et exposants critiques}
-\begin{frame}
-\only<1>{
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.4]{img/flot.pdf}
-\label{}
-\end{figure}
-
-\centering
-$T=T_c$ (et $\rho_0 = \rho_{0c}$) $\rightarrow$ \textcolor{BrickRed}{point fixe} sur la surface critique\\
-Voisinage du point fixe : lois d'échelle $\rightarrow$ exposants critiques
-\[
-H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), ...] \rightarrow H'[\phi'] = \sum_{i', \alpha} \kappa_\alpha' O_\alpha[\phi'(x_i'), ...]
-\]
-}
-\end{frame}
-
 \subsection{Le groupe de normalisation non perturbatif}
 \begin{frame}
 
-Équation de Wetterich : évolution exacte de $\gam_k[\phi]$, action effective à l'échelle $k$.
+Équation de Wetterich : évolution exacte de $\gam_k[\phi]$, action effective à l'échelle $k \propto S^{-1}$.
 
 \begin{columns}
 
@@ -248,7 +253,7 @@ H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), .
 \end{column}
 
 \begin{column}{6cm}
-\[\p{t} \gam_k[\phi] = \frac{1}{2} \int_q \p{t}R_k(q)  G_k(q,-q;\phi)  \] 
+\[\p{k} \gam_k[\phi] = \frac{1}{2} \int_q \p{k}R_k(q)  G_k(q,-q;\phi)  \] 
 \end{column}
 
 \end{columns}
@@ -263,7 +268,8 @@ H[\phi] = \sum_{i, \alpha} \kappa_\alpha O_\alpha[\phi(x_i), \nabla \phi(x_i), .
 $ H[\phi] = \int_x  \frac{1}{2}(\p{\perp} \phi)^2 + \frac{\rho_0}{2}(\p{\sslash} \phi)^2 + \frac{\sigma_0}{2} (\p{\sslash}^2 \phi)^2 + U(\rho)$
 
 \begin{block}{Symétries $\implies$ forme générale de l'action effective de Lifshitz :}
-$\Gamma_k[\phi] = \int_{x} U(\rho) + \left( \frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2 + \frac{1}{4} Y_\perp(\rho) (\partial_\perp \rho)^2 + ... \right) + \left( \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 + ... \right) + \left( \frac{1}{2} Z_\sslash(\rho) (\partial_\sslash^2 \phi)^2 + ... \right)$
+$\Gamma_k[\phi] = \int_{x} U(\rho) + \frac{1}{2} Z_\perp(\rho) (\partial_\perp \phi)^2 + \frac{1}{4} Y_\perp(\rho) (\partial_\perp \rho)^2 + ... $\\
+\hfill$+~ \frac{1}{2} \rho_0(\rho) (\partial_\sslash \phi)^2 + ...  +  \frac{1}{2} Z_\sslash(\rho) (\partial_\sslash^2 \phi)^2 + ... $
 \end{block}
 
 Pour calculer les exposants critiques la structure impulsionnelle importe peu $\rightarrow$ simplifications.
@@ -280,10 +286,10 @@ Prise en compte de \textcolor{BrickRed}{potentiel complet}.
 
 \begin{block}{Équations de flot du modèle}
 \begin{itemize}
-\item $\partial_t u_t(\rho) = -d_m u_t(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_t'(\rho)$ \\
-\hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_t'(\rho) + 2 \rho u_t''(\rho) \right) + (n-1)l_0^{dm}\left(u_t'(\rho)\right) \right)$
+\item $k \partial_k u_k(\rho) = -d_m u_k(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_k'(\rho)$ \\
+\hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_k'(\rho) + 2 \rho u_k''(\rho) \right) + (n-1)l_0^{dm}\left(u_k'(\rho)\right) \right)$
 \phantom{sdsldk}
-\item $\partial_t \rho_0 = -\theta \left(2-\eta_\sslash\right) \rho_0 - 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $
+\item $k \partial_k \rho_0 = -\theta \left(2-\eta_\sslash\right) \rho_0 - 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $
 
 %\item $\eta_\perp = 32 v_{d-m} v_m \rho u^{(2)}(\rho)^2  m_{1,2202}$
 
@@ -293,6 +299,11 @@ Prise en compte de \textcolor{BrickRed}{potentiel complet}.
 \end{block}
 
 Approximation du potentiel local : $\theta \simeq \theta_{\text{cm}} = \frac{1}{2}$, $\eta_{\sslash, \perp} \simeq \eta_{\text{cm}} = 0$.
+
+\begin{block}{}
+Voisinage du point de Lifshitz $\rightarrow$ résolution des \textcolor{BrickRed}{équations de point fixe} : $\p{k} u = 0$, $\p{k}\rho_0 = 0$.
+\end{block}
+
 \end{frame}
 
 \subsection{Le potentiel au point de Lifshitz}
@@ -302,13 +313,16 @@ Approximation du potentiel local : $\theta \simeq \theta_{\text{cm}} = \frac{1}{
 %$ 0 = -d_m u_t(\rho) + (\theta \eta_\sslash + d_m - 4 \theta) \rho u_t'(\rho)$ \\
 %\hfill $+~8 v_m v_{d-m} \left( l_0^{dm}\left(u_t'(\rho) + 2 \rho u_t''(\rho) \right) + (n-1)l_0^{dm}\left(u_t'(\rho)\right) \right)$
 %\end{block}
-Voisinage du point de Lifshitz $\rightarrow$ résolution des équations de point fixe 
-\begin{block}{}
-$0 = u(\rho) - a  \rho u'(\rho) + b(\rho_0) \left( \frac{1}{1 + \rho_0 + u'(\rho) + 2 \rho u''(\rho)} + \frac{n-1}{1+\rho_0+u'(\rho)} \right)$ \\
-$\rho_0 = 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $ \\
+
+\begin{block}{Équations de point fixe :}
+\begin{itemize}
+\item $0 = u(\rho) - a  \rho u'(\rho) + b(\rho_0) \left( \frac{1}{1 + \rho_0 + u'(\rho) + 2 \rho u''(\rho)} + \frac{n-1}{1+\rho_0+u'(\rho)} \right)$ \\
+\phantom{ddfdf}
+\item $\rho_0 = 64 \frac{ v_{d-m} v_m}{m} \rho u^{(2)}(\rho)^2 m_{1,2202} $ \\
+\end{itemize}
 \end{block}
 
-Condition initiale :\\
+Conditions initiales :\\
 $u'(0) = \sigma$ \\
 $u\phantom{'}(0) = n b(\rho_0)/(1+\sigma)$
 
@@ -402,14 +416,17 @@ Position de la singularité $\rho_\text{sing}$ en fonction de la condition initi
 \end{columns}
 
 \[
-u_t(\rho) = u(\rho) + \delta u_\sslash(\rho) e^{t/\nu_\sslash} + \delta u_\perp(\rho) e^{t/\nu_\perp}
+\begin{aligned}
+u_t(\rho)  &= u(\rho) + \delta u_\sslash(\rho) e^{t/\nu_\sslash} + \delta u_\perp(\rho) e^{t/\nu_\perp} \\
+t &\define \log k
+\end{aligned}
 \]
 
 \begin{center}
 \label{tab:results}
 \begin{tabular}{|c|c|c|c|}
 \hline 
-\rule[-1ex]{0pt}{2.5ex} ~ & nos résultats & développement perturbatif & Wilson-Polchinski \\ 
+\rule[-1ex]{0pt}{2.5ex} ~ & nos résultats & dév. perturbatif & Wilson-Polchinski \\ 
 \hline 
 \rule[-1ex]{0pt}{2.5ex} $\nu_\sslash$ & 0.399 & 0.392 & 0.317 \\ 
 \hline 
@@ -427,7 +444,7 @@ u_t(\rho) = u(\rho) + \delta u_\sslash(\rho) e^{t/\nu_\sslash} + \delta u_\perp(
 \begin{itemize}
 \item Calcul des exposants critiques d'un modèle non trivial, par une méthode originale.
 \item Prise en compte du potentiel complet.
-\item Prise en compte des dimensions anormales.
+\item Prochain objectif : prise en compte des dimensions anormales.
 \end{itemize}
 
 \end{frame}
