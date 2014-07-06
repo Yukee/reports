@@ -8,7 +8,7 @@
 \subsubsection{The modulated phase and the Lifshitz phase diagram.}
 
 
-In the modulated phase (fig. \eqref{fig:evol_strip}) typical the Lifshitz model, the order parameter is spatially periodic in one or several directions of space. We will label with a $\sslash$ sign quantities living in these directions, and $\perp$ the quantities living in the orthogonal subspace.
+In the modulated phase (fig. \eqref{fig:evol_strip}) typical the Lifshitz model, the order parameter is spatially periodic in one or several directions of space. We will label with a $\sslash$ sign quantities living in these directions, while a $\perp$ sign will mark quantities living in the orthogonal subspace.
 
 \begin{figure}[htp]
 \centering
@@ -46,7 +46,7 @@ Typically, the phase diagram of such a physical system will resemble the one pre
 
 A crucial feature of this phase diagram is the intersection point of the modulated, ferromagnetic and antiferromagnetic phases, called the Lifshitz point ($L$ in fig. \eqref{fig:phase_diagram}). 
 Historically, the manganese phosphite (MnP) magnetic crystal was one of the first systems in which a Lifshitz point could be detected. Moreover, the entire phase diagram around the Lifshitz point of the MnP crystal could be inferred with high precision from experimental measurements \cite{MnP}.
-The phase diagram of a Lifshitz system is bidimensional: one axis being the temperature, and the other and extra parameter -- called $\rho_0$ from now on, whose precise meaning depends on the physical nature of the studied system.
+The phase diagram of a Lifshitz system is bidimensional: one axis being the temperature, and the other an extra parameter -- called $\rho_0$ from now on, whose precise meaning depends on the physical nature of the studied system.
 In the case of the MnP magnetic crystal, the tunable $\rho_0$ parameter is an external magnetic field applied to the crystal, while the order parameter  is the magnetic moment of the atoms. In the modulated phase, it is the angle between the direction of the magnetic moment and a direction of reference that is spatially modulated.
 
 Experiments also provide evidence of Lifshitz point existence in ferroelectrics and liquid crystals.
@@ -54,12 +54,12 @@ Experiments also provide evidence of Lifshitz point existence in ferroelectrics 
 \subsubsection{The Lifshitz model}
 
 The Lifshitz model is a field theory, describing a vector field $\boldsymbol{\phi}$ whose components will be denoted $\phi_i$.
-If we like to think in terms of magnetic systems, like the MnP cristal, we can say that $\boldsymbol{\phi}(x)$ is the coarse-grained magnetization at position $x$.
- To write the action for the Lifshitz model, we choose a basis $(\mathbf{e}_n)_{1 \leq n \leq d}$. We decide that this basis is such that its first $m$ vectors span the $m$ dimensional $\sslash$ subspace, while of course the remaining $d-m$ base vector span the $\perp$ subspace. In this basis, the Lifshitz action is
+This field has a natural interpretation in the magnetic system picture: $\boldsymbol{\phi}(x)$ simply being the coarse-grained magnetization at position $x$.
+ To write the action for the Lifshitz model, we choose a basis $(\mathbf{e}_n)_{1 \leq n \leq d}$. We decide that this basis is such that its first $m$ vectors span the $m$ dimensional $\sslash$ subspace, whereas the remaining $d-m$ base vectors unsurprisingly span the $\perp$ subspace. In this basis, the Lifshitz action is
 \begin{equation}
 S = \int_x \sum_{i=1}^N \left( \frac{1}{2} \left(\sum_{n_\perp=m+1}^{d}\frac{\partial \phi_i}{\partial x_{n_\perp}} \mathbf{e}_{n_\perp}\right)^2 + \frac{\rho_0}{2} \left(\sum_{n_\sslash=1}^{m}\frac{\partial \phi_i}{\partial x_{n_\sslash}} \mathbf{e}_{n_\sslash}\right)^2 + \frac{\sigma_0}{2} \left(\sum_{n_\sslash=1}^{m} \frac{\partial^2 \phi_i}{\partial x_{n_\sslash}^2} \mathbf{e}_{n_\sslash}\right)^2 \right) + U(\phi)
 \end{equation}
-As we want to model the broadest possible class of physical systems, we will say that $U$ is an almost completely arbitrary potential. We only ask for it to have the $O(n)$ symmetry, \textit{i.e.} to be a function of $\rho \define \phi_i \phi_i/2$.
+As we want to model the broadest possible class of physical systems, we will specify the potential $U$ no further. We only ask for it to have the $O(n)$ symmetry, \textit{i.e.} to be a function of $\rho \define \phi_i \phi_i/2$.
 
 From now on we will use the self-explanatory shorthand notation
 \begin{equation}
